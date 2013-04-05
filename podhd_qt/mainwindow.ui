@@ -1,0 +1,1942 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>580</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>POD HD Converter</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tabHd500">
+       <attribute name="title">
+        <string>HD 500</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_5">
+        <item row="0" column="0">
+         <widget class="QLabel" name="fiveLbMain">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="locale">
+           <locale language="English" country="UnitedStates"/>
+          </property>
+          <property name="text">
+           <string>POD HD 500</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLineEdit" name="fiveLeDirectoryChoser">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Select a Directory with Files</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="fiveBtnBrowse">
+            <property name="toolTip">
+             <string>Press button to choose a directory</string>
+            </property>
+            <property name="text">
+             <string>Browse</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="fiveLbConvert">
+          <property name="text">
+           <string>Convert POD HD Desktop &amp; Pro Files to HD 500 Files</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QScrollArea" name="fiveScrollAreaOne">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents_4">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>439</width>
+             <height>207</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_9">
+            <item row="0" column="0">
+             <widget class="QLabel" name="fiveLbPresets">
+              <property name="text">
+               <string>Presets:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QCheckBox" name="fiveChkbxPatchHbe">
+              <property name="text">
+               <string>Patch HD Desktop Presets to 500 (.hbe -&gt; .h5e)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="0">
+             <widget class="QCheckBox" name="fiveChkbxPatchHbs">
+              <property name="text">
+               <string>Patch HD Desktop Setlists to 500 (.hbs -&gt; .h5s)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_3">
+              <property name="text">
+               <string>Bundles:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="0">
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>Setlists:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QCheckBox" name="fiveChkbxPatchHbb">
+              <property name="text">
+               <string>Patch HD Desktop Bundles to 500 (.hbb -&gt; .h5b)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="fiveChkbxPatchHre">
+              <property name="text">
+               <string>Patch HD Pro Presets to 500 (.hre -&gt; .h5e)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QCheckBox" name="fiveChkbxPatchHrb">
+              <property name="text">
+               <string>Patch HD Pro Bundles to 500 (.hrb -&gt; .h5b)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="0">
+             <widget class="QCheckBox" name="fiveChkbxPatchHrs">
+              <property name="text">
+               <string>Patch HD Pro Setlists to 500 (.hrs -&gt; .h5s)</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="fiveLbModify">
+          <property name="text">
+           <string>Modify HD 500 Files:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QScrollArea" name="fiveScrollAreaTwo">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents500">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>439</width>
+             <height>478</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_4">
+            <item row="0" column="0">
+             <widget class="QLabel" name="fiveLbFilesToModify">
+              <property name="text">
+               <string>Select Files to Modify:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QCheckBox" name="fiveChkbxModifyH5e">
+              <property name="text">
+               <string>Modify .h5e files</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="fiveChkbxModifyH5b">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string>Modify .h5b files</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QCheckBox" name="fiveChkbxModifyH5s">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string>Modify .h5s files</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="0">
+             <widget class="QCheckBox" name="fiveChkbxEditFirstAmp">
+              <property name="toolTip">
+               <string>You'll have to set &quot;Input Setup&quot; on you POD HD to 'Presets' (instead of 'Global') to see effects.</string>
+              </property>
+              <property name="text">
+               <string>1. Amp</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="1">
+             <widget class="QCheckBox" name="fiveChkbxEditFirstCab">
+              <property name="toolTip">
+               <string>You'll have to set &quot;Input Setup&quot; on you POD HD to 'Presets' (instead of 'Global') to see effects.</string>
+              </property>
+              <property name="text">
+               <string>1. Cab</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="0">
+             <widget class="QComboBox" name="fiveCbFirstAmp"/>
+            </item>
+            <item row="10" column="1">
+             <widget class="QComboBox" name="fiveCbFirstCab"/>
+            </item>
+            <item row="11" column="0">
+             <widget class="QCheckBox" name="fiveChkbxEditFirstMic">
+              <property name="toolTip">
+               <string>You'll have to set &quot;Input Setup&quot; on you POD HD to 'Presets' (instead of 'Global') to see effects.</string>
+              </property>
+              <property name="text">
+               <string>1. Mic</string>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="0">
+             <widget class="QComboBox" name="fiveCbFirstMic"/>
+            </item>
+            <item row="13" column="0">
+             <widget class="QCheckBox" name="fiveChkbxEditSecondAmp">
+              <property name="toolTip">
+               <string>You'll have to set &quot;Input Setup&quot; on you POD HD to 'Presets' (instead of 'Global') to see effects.</string>
+              </property>
+              <property name="text">
+               <string>2. Amp</string>
+              </property>
+             </widget>
+            </item>
+            <item row="13" column="1">
+             <widget class="QCheckBox" name="fiveChkbxEditSecondCab">
+              <property name="toolTip">
+               <string>You'll have to set &quot;Input Setup&quot; on you POD HD to 'Presets' (instead of 'Global') to see effects.</string>
+              </property>
+              <property name="text">
+               <string>2. Cab</string>
+              </property>
+             </widget>
+            </item>
+            <item row="14" column="0">
+             <widget class="QComboBox" name="fiveCbSecondAmp"/>
+            </item>
+            <item row="14" column="1">
+             <widget class="QComboBox" name="fiveCbSecondCab"/>
+            </item>
+            <item row="15" column="0">
+             <widget class="QCheckBox" name="fiveChkbxEditSecondMic">
+              <property name="toolTip">
+               <string>You'll have to set &quot;Input Setup&quot; on you POD HD to 'Presets' (instead of 'Global') to see effects.</string>
+              </property>
+              <property name="text">
+               <string>2. Mic</string>
+              </property>
+             </widget>
+            </item>
+            <item row="16" column="0">
+             <widget class="QComboBox" name="fiveCbSecondMic"/>
+            </item>
+            <item row="4" column="0" colspan="2">
+             <widget class="Line" name="fiveLine">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="18" column="0">
+             <widget class="Line" name="filveLine_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="19" column="0">
+             <widget class="QCheckBox" name="fiveChkbxEditInputs">
+              <property name="text">
+               <string>Change Inputs:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="20" column="0">
+             <widget class="QLabel" name="fiveLbInputOne">
+              <property name="text">
+               <string>Input Source 1</string>
+              </property>
+             </widget>
+            </item>
+            <item row="21" column="0">
+             <widget class="QComboBox" name="fiveCbSourceOne"/>
+            </item>
+            <item row="21" column="1">
+             <widget class="QComboBox" name="fiveCbSourceTwo"/>
+            </item>
+            <item row="22" column="0">
+             <widget class="QLabel" name="fiveLbGuitarIn">
+              <property name="text">
+               <string>Guitar IN-Z</string>
+              </property>
+             </widget>
+            </item>
+            <item row="20" column="1">
+             <widget class="QLabel" name="fiveLbInputTwo">
+              <property name="text">
+               <string>Input Source 2</string>
+              </property>
+             </widget>
+            </item>
+            <item row="23" column="0">
+             <widget class="QComboBox" name="fiveCbGuitarInput"/>
+            </item>
+            <item row="7" column="0" colspan="2">
+             <widget class="Line" name="fiveLine_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QCheckBox" name="fiveChkbxEditAmpToPre">
+              <property name="text">
+               <string>Set all Amps to Pre Amps</string>
+              </property>
+              <property name="autoExclusive">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QCheckBox" name="fiveChkbxEditPreToAmp">
+              <property name="text">
+               <string>Set all Pre Amps to Amps</string>
+              </property>
+              <property name="autoExclusive">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="fiveLbToEdit">
+              <property name="text">
+               <string>Select Parameter to Modify:</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="fiveLbGeneral">
+          <property name="text">
+           <string>General:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0">
+         <widget class="QCheckBox" name="fiveChkbxBackup">
+          <property name="text">
+           <string>Make backup</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="fiveLbAfterRun">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="fiveBtnRun">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="toolTip">
+             <string>Click to perform selected actions</string>
+            </property>
+            <property name="text">
+             <string>Run</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabDesktop">
+       <attribute name="title">
+        <string>HD Desktop</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="1" colspan="3">
+         <widget class="QLabel" name="desktopLbMain">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="locale">
+           <locale language="English" country="UnitedStates"/>
+          </property>
+          <property name="text">
+           <string>POD HD Desktop</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1" colspan="3">
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QLineEdit" name="desktopLeDirectoryChoser">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Select a Directory with Files</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="desktopBtnBrowse">
+            <property name="toolTip">
+             <string>Press button to choose a directory</string>
+            </property>
+            <property name="text">
+             <string>Browse</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="9" column="1" colspan="2">
+         <widget class="QLabel" name="desktopLbAfterRun">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="3">
+         <widget class="QPushButton" name="desktopBtnRun">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="toolTip">
+           <string>Click to perform selected actions</string>
+          </property>
+          <property name="text">
+           <string>Run</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="1">
+         <widget class="QCheckBox" name="desktopChkbxBackup">
+          <property name="text">
+           <string>Make backup</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1" colspan="3">
+         <widget class="QScrollArea" name="desktopScrollAreaOne">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContentsDesktop">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>439</width>
+             <height>207</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_6">
+            <item row="0" column="1">
+             <widget class="QLabel" name="desktopLbPresets">
+              <property name="text">
+               <string>Presets:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLabel" name="desktopLbBundles">
+              <property name="text">
+               <string>Bundles:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QLabel" name="desktopLbSetlists">
+              <property name="text">
+               <string>Setlists:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="1">
+             <widget class="QCheckBox" name="desktopChkbxPatchH5s">
+              <property name="text">
+               <string>Patch HD 500 Setlists to Desktop (.h5s -&gt; .hbs)</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QCheckBox" name="desktopChkbxPatchH5b">
+              <property name="text">
+               <string>Patch HD 500 Bundles to Dekstop (.h5b -&gt; .hbb)</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QCheckBox" name="desktopChkbxPatchH5e">
+              <property name="text">
+               <string>Patch HD 500 Presets to Desktop (.h5e -&gt; .hbe)</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QCheckBox" name="desktopChkbxPatchHre">
+              <property name="text">
+               <string>Patch HD Pro Presets to Desktop (.hre -&gt; .hbe)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <widget class="QCheckBox" name="desktopChkbxPatchHrb">
+              <property name="text">
+               <string>Patch HD Pro Bundles to Dekstop (.hrb -&gt; .hbb)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="1">
+             <widget class="QCheckBox" name="desktopChkbxPatchHrs">
+              <property name="text">
+               <string>Patch HD Pro Setlists to Desktop (.hrs -&gt; .hbs)</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item row="6" column="1">
+         <widget class="QLabel" name="lbGeneral">
+          <property name="text">
+           <string>General:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLabel" name="desktopConvert">
+          <property name="text">
+           <string>Convert HD 500 &amp; Pro Files to HD Desktop Files:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QLabel" name="desktopModify">
+          <property name="text">
+           <string>Modify HD Desktop Files:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1" colspan="3">
+         <widget class="QScrollArea" name="desktopScrollAreaTwo">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>439</width>
+             <height>478</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_10">
+            <item row="18" column="0">
+             <widget class="QCheckBox" name="desktopChkbxEditInputs">
+              <property name="toolTip">
+               <string>You'll have to set &quot;Input Setup&quot; on you POD HD to 'Presets' (instead of 'Global') to see effects.</string>
+              </property>
+              <property name="text">
+               <string>Change Inputs:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="19" column="0">
+             <widget class="QLabel" name="desktopLbInputOne">
+              <property name="text">
+               <string>Input Source 1</string>
+              </property>
+             </widget>
+            </item>
+            <item row="19" column="1">
+             <widget class="QLabel" name="desktopLbInputTwo">
+              <property name="text">
+               <string>Input Source 2</string>
+              </property>
+             </widget>
+            </item>
+            <item row="20" column="0">
+             <widget class="QComboBox" name="desktopCbSourceOne"/>
+            </item>
+            <item row="20" column="1">
+             <widget class="QComboBox" name="desktopCbSourceTwo"/>
+            </item>
+            <item row="21" column="0">
+             <widget class="QLabel" name="desktopLbGuitarIn">
+              <property name="text">
+               <string>Guitar IN-Z</string>
+              </property>
+             </widget>
+            </item>
+            <item row="22" column="0">
+             <widget class="QComboBox" name="desktopCbGuitarInput"/>
+            </item>
+            <item row="3" column="0">
+             <widget class="QCheckBox" name="desktopChkbxModifyHbs">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string>Modify .hbs files</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="desktopChkbxModifyHbb">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string>Modify .hbb files</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QCheckBox" name="desktopChkbxModifyHbe">
+              <property name="text">
+               <string>Modify .hbe files</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="desktopLbFilesToModify">
+              <property name="text">
+               <string>Select Files to Modify:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0" colspan="2">
+             <widget class="Line" name="desktopLine">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="0">
+             <widget class="QCheckBox" name="desktopChkbxEditFirstAmp">
+              <property name="text">
+               <string>1. Amp</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="1">
+             <widget class="QCheckBox" name="desktopChkbxEditFirstCab">
+              <property name="text">
+               <string>1. Cab</string>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="0">
+             <widget class="QCheckBox" name="desktopChkbxEditFirstMic">
+              <property name="text">
+               <string>1. Mic</string>
+              </property>
+             </widget>
+            </item>
+            <item row="13" column="0">
+             <widget class="QCheckBox" name="desktopChkbxEditSecondAmp">
+              <property name="text">
+               <string>2. Amp</string>
+              </property>
+             </widget>
+            </item>
+            <item row="13" column="1">
+             <widget class="QCheckBox" name="desktopChkbxEditSecondCab">
+              <property name="text">
+               <string>2. Cab</string>
+              </property>
+             </widget>
+            </item>
+            <item row="15" column="0">
+             <widget class="QCheckBox" name="desktopChkbxEditSecondMic">
+              <property name="text">
+               <string>2. Mic</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="0">
+             <widget class="QComboBox" name="desktopCbFirstAmp"/>
+            </item>
+            <item row="10" column="1">
+             <widget class="QComboBox" name="desktopCbFirstCab"/>
+            </item>
+            <item row="12" column="0">
+             <widget class="QComboBox" name="desktopCbFirstMic"/>
+            </item>
+            <item row="14" column="0">
+             <widget class="QComboBox" name="desktopCbSecondAmp"/>
+            </item>
+            <item row="14" column="1">
+             <widget class="QComboBox" name="desktopCbSecondCab"/>
+            </item>
+            <item row="16" column="0">
+             <widget class="QComboBox" name="desktopCbSecondMic"/>
+            </item>
+            <item row="17" column="0" colspan="2">
+             <widget class="Line" name="desktopLine_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="0" colspan="2">
+             <widget class="Line" name="desktopLine_3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QCheckBox" name="desktopChkbxEditAmpToPre">
+              <property name="text">
+               <string>Set all Amps to Pre Amps</string>
+              </property>
+              <property name="autoExclusive">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QCheckBox" name="desktopChkbxEditPreToAmp">
+              <property name="text">
+               <string>Set all Pre Amps to Amps</string>
+              </property>
+              <property name="autoExclusive">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="desktopLbToEdit">
+              <property name="text">
+               <string>Select Parameter to Modify:</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabHdPro">
+       <attribute name="title">
+        <string>HD Pro</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_7">
+        <item row="0" column="0">
+         <widget class="QLabel" name="proLbmain">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="locale">
+           <locale language="English" country="UnitedStates"/>
+          </property>
+          <property name="text">
+           <string>POD HD Pro</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QLineEdit" name="proLeDirectoryChoser">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Select a Directory with Files</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="proBtnBrowse">
+            <property name="toolTip">
+             <string>Press button to choose a directory</string>
+            </property>
+            <property name="text">
+             <string>Browse</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="3" column="0">
+         <widget class="QScrollArea" name="proScrollAreaOne">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContentsPro">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>439</width>
+             <height>207</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_8">
+            <item row="0" column="0">
+             <widget class="QLabel" name="proLbPresets">
+              <property name="text">
+               <string>Presets:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0" colspan="2">
+             <widget class="QLabel" name="proLbBundles">
+              <property name="text">
+               <string>Bundles:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="0">
+             <widget class="QLabel" name="proLbSetlists">
+              <property name="text">
+               <string>Setlists:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QCheckBox" name="proChkbxPatchH5e">
+              <property name="text">
+               <string>Patch HD 500 Presets to Pro (.h5e -&gt; .hre)</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="0">
+             <widget class="QCheckBox" name="proChkbxPatchH5s">
+              <property name="text">
+               <string>Patch HD 500 Setlists to Pro (.h5s -&gt; .hrs)</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QCheckBox" name="proChkbxPatchH5b">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string>Patch HD 500 Bundles to Pro (.h5b -&gt; .hrb)</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="proChkbxPatchHbe">
+              <property name="text">
+               <string>Patch HD Desktop Presets to Pro (.hbe -&gt; .hre)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QCheckBox" name="proChkbxPatchHbb">
+              <property name="text">
+               <string>Patch HD Desktop Bundles to Pro (.hbb -&gt; .hrb)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="0">
+             <widget class="QCheckBox" name="proChkbxPatchHbs">
+              <property name="text">
+               <string>Patch HD Desktop Setlists to Pro (.hbs -&gt; .hrs)</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="proLbGeneral">
+          <property name="text">
+           <string>General:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0">
+         <widget class="QCheckBox" name="proChkbxBackup">
+          <property name="text">
+           <string>Make backup</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QLabel" name="proLbAfterRun">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="proBtnRun">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="toolTip">
+             <string>Click to perform selected actions</string>
+            </property>
+            <property name="text">
+             <string>Run</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="proLbConvert">
+          <property name="text">
+           <string>Convert HD 500 &amp; Desktop Files to HD Pro Files:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="proLbModifyFiles">
+          <property name="text">
+           <string>Modify HD Pro Files:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QScrollArea" name="proScrollAreaTwo">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents_3">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>439</width>
+             <height>478</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_11">
+            <item row="13" column="1">
+             <widget class="QComboBox" name="proCbFirstCab"/>
+            </item>
+            <item row="10" column="1">
+             <widget class="QCheckBox" name="proChkbxEditFirstCab">
+              <property name="text">
+               <string>1. Cab</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="0">
+             <widget class="QCheckBox" name="proChkbxEditFirstAmp">
+              <property name="text">
+               <string>1. Amp</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QCheckBox" name="proChkbxModifyHrb">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string>Modify .hrs files</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="proChkbxModifyHre">
+              <property name="text">
+               <string>Modify .hre files</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QCheckBox" name="proChkbxModifyHrs">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string>Modify .hrb files</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="proLbFilesToModify">
+              <property name="text">
+               <string>Select Files to Modify:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0" colspan="2">
+             <widget class="Line" name="proLine">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="13" column="0">
+             <widget class="QComboBox" name="proCbFirstAmp"/>
+            </item>
+            <item row="14" column="0">
+             <widget class="QCheckBox" name="proChkbxEditFirstMic">
+              <property name="text">
+               <string>1. Mic</string>
+              </property>
+             </widget>
+            </item>
+            <item row="15" column="0">
+             <widget class="QComboBox" name="proCbFirstMic"/>
+            </item>
+            <item row="16" column="0">
+             <widget class="QCheckBox" name="proChkbxEditSecondAmp">
+              <property name="text">
+               <string>2. Amp</string>
+              </property>
+             </widget>
+            </item>
+            <item row="16" column="1">
+             <widget class="QCheckBox" name="proChkbxEditSecondCab">
+              <property name="text">
+               <string>2. Cab</string>
+              </property>
+             </widget>
+            </item>
+            <item row="18" column="0">
+             <widget class="QCheckBox" name="proChkbxEditSecondMic">
+              <property name="text">
+               <string>2. Mic</string>
+              </property>
+             </widget>
+            </item>
+            <item row="17" column="0">
+             <widget class="QComboBox" name="proCbSecondAmp"/>
+            </item>
+            <item row="17" column="1">
+             <widget class="QComboBox" name="proCbSecondCab"/>
+            </item>
+            <item row="19" column="0">
+             <widget class="QComboBox" name="proCbSecondMic"/>
+            </item>
+            <item row="20" column="0" colspan="2">
+             <widget class="Line" name="proLine_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="21" column="0">
+             <widget class="QCheckBox" name="proChkbxEditInputs">
+              <property name="text">
+               <string>Change Inputs:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="22" column="0">
+             <widget class="QLabel" name="proLbInputOne">
+              <property name="text">
+               <string>Input Source 1</string>
+              </property>
+             </widget>
+            </item>
+            <item row="22" column="1">
+             <widget class="QLabel" name="proLbInputTwo">
+              <property name="text">
+               <string>Input Source 2</string>
+              </property>
+             </widget>
+            </item>
+            <item row="24" column="0">
+             <widget class="QLabel" name="proLbGuitarIn">
+              <property name="text">
+               <string>Guitar IN-Z</string>
+              </property>
+             </widget>
+            </item>
+            <item row="23" column="0">
+             <widget class="QComboBox" name="proCbSourceOne"/>
+            </item>
+            <item row="25" column="0">
+             <widget class="QComboBox" name="proCbGuitarInput"/>
+            </item>
+            <item row="23" column="1">
+             <widget class="QComboBox" name="proCbSourceTwo"/>
+            </item>
+            <item row="7" column="0">
+             <widget class="QCheckBox" name="proChkbxEditAmpToPre">
+              <property name="text">
+               <string>Set all Amps to Pre Amps</string>
+              </property>
+              <property name="autoExclusive">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="1">
+             <widget class="QCheckBox" name="proChkbxEditPreToAmp">
+              <property name="text">
+               <string>Set all Pre Amps to Amps</string>
+              </property>
+              <property name="autoExclusive">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="0" colspan="2">
+             <widget class="Line" name="proLine_3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="proLbToEdit">
+              <property name="text">
+               <string>Select Parameter to Modify:</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabHd300">
+       <attribute name="title">
+        <string>HD 300 / 400</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0" colspan="3">
+         <widget class="QLabel" name="threeLbMain">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="locale">
+           <locale language="English" country="UnitedStates"/>
+          </property>
+          <property name="text">
+           <string>Translate POD HD 500 / HD Desktop / HD Pro Presets to POD HD 300 / HD 400 Presets</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="3">
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QLineEdit" name="threeLeDirectoryChoser">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Select a Directory with Presets</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="threeBtnbrowse">
+            <property name="toolTip">
+             <string>Press button to choose a directory</string>
+            </property>
+            <property name="text">
+             <string>Browse</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="threeLbModify">
+          <property name="text">
+           <string>Modify Translation:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="0">
+         <widget class="QLabel" name="threeLbGeneral">
+          <property name="text">
+           <string>General:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="0">
+         <widget class="QCheckBox" name="threeChkbxBackup">
+          <property name="text">
+           <string>Make backup</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="12" column="0" colspan="2">
+         <widget class="QLabel" name="threeLbAfterRun">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="12" column="2">
+         <widget class="QPushButton" name="threeBtnRun">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="toolTip">
+           <string>Click to perform selected actions</string>
+          </property>
+          <property name="text">
+           <string>Run</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0" rowspan="2" colspan="3">
+         <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="0,0,0">
+          <item>
+           <widget class="QCheckBox" name="threeChkbxPatchH3e">
+            <property name="text">
+             <string>Translate Presets to POD HD 300</string>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="Line" name="threeLine">
+            <property name="lineWidth">
+             <number>1</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="threeChkbxPatchH4e">
+            <property name="text">
+             <string>Translate Presets to POD HD 400</string>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="7" column="0" colspan="3">
+         <widget class="QStackedWidget" name="threeStackedWidget">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="threePage0"/>
+          <widget class="QWidget" name="threePage300">
+           <layout class="QGridLayout" name="gridLayout_12">
+            <item row="0" column="0">
+             <widget class="QScrollArea" name="threeScrollArea300">
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_2">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>421</width>
+                 <height>781</height>
+                </rect>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_14">
+                <item row="1" column="0">
+                 <widget class="QLabel" name="threePg3LbDynamics">
+                  <property name="text">
+                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Dynamics:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="threePg3LbTubeComp">
+                  <property name="text">
+                   <string>Tube Comp:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QComboBox" name="threePg3CbTubeComp"/>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QLabel" name="threePg3LbBlueCompTreb">
+                  <property name="text">
+                   <string>Blue Comp Treb:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QComboBox" name="threePg3CbBlueComp"/>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QLabel" name="threePg3LbVettaJuice">
+                  <property name="text">
+                   <string>Vetta Juice:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="1">
+                 <widget class="QComboBox" name="threePg3CbVettaJuice"/>
+                </item>
+                <item row="5" column="0">
+                 <widget class="QLabel" name="threePg3LbDistortion">
+                  <property name="text">
+                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Distortion:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="0">
+                 <widget class="QLabel" name="threePg3LbBuzzSaw">
+                  <property name="text">
+                   <string>Buzz Saw:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="0">
+                 <widget class="QLabel" name="threePg3LbModulation">
+                  <property name="text">
+                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Modulation:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="8" column="0">
+                 <widget class="QLabel" name="threePg3LbTriChorus">
+                  <property name="text">
+                   <string>Tri Chorus:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="9" column="0">
+                 <widget class="QLabel" name="threePg3LbJetFlanger">
+                  <property name="text">
+                   <string>Jet Flanger:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="10" column="0">
+                 <widget class="QLabel" name="threePg3LbACFlanger">
+                  <property name="text">
+                   <string>AC Flanger:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="11" column="0">
+                 <widget class="QLabel" name="threePg3Lb80AFlanger">
+                  <property name="text">
+                   <string>80A Flanger:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="12" column="0">
+                 <widget class="QLabel" name="threePg3LbRotaryDrum">
+                  <property name="text">
+                   <string>Rotary Drum &amp; Horn:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="13" column="0">
+                 <widget class="QLabel" name="threePg3LbFilter">
+                  <property name="text">
+                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Filter:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0" colspan="2">
+                 <widget class="QLabel" name="threePg3LbEffectsMapping300">
+                  <property name="text">
+                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;HD 300 Missing Effects Mapping:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="14" column="0">
+                 <widget class="QLabel" name="threePg3LbVocoder">
+                  <property name="text">
+                   <string>Vocoder:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="18" column="0">
+                 <widget class="QLabel" name="threePg3LbAttackSynth">
+                  <property name="text">
+                   <string>Attack Synth:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="17" column="0">
+                 <widget class="QLabel" name="threePg3LbOctiSynth">
+                  <property name="text">
+                   <string>Octisynth:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="16" column="0">
+                 <widget class="QLabel" name="threePg3LbCometTrails">
+                  <property name="text">
+                   <string>Comet Trails:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="15" column="0">
+                 <widget class="QLabel" name="threePg3LbSlowFilter">
+                  <property name="text">
+                   <string>Slow Filter:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="19" column="0">
+                 <widget class="QLabel" name="threePg3LbEqualizer">
+                  <property name="text">
+                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Equalizer:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="22" column="0">
+                 <widget class="QLabel" name="threePg3LbMidFocusEQ">
+                  <property name="text">
+                   <string>Mid Focus EQ:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="21" column="0">
+                 <widget class="QLabel" name="threePg3LbStudioEQ">
+                  <property name="text">
+                   <string>Studio EQ:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="20" column="0">
+                 <widget class="QLabel" name="threePg3LbGraphicEQ">
+                  <property name="text">
+                   <string>Graphic EQ:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="24" column="0">
+                 <widget class="QLabel" name="threePg3LbMultiHeadDisplay">
+                  <property name="text">
+                   <string>Multi-Head-Delay:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="23" column="0">
+                 <widget class="QLabel" name="threePg3LbDelay">
+                  <property name="text">
+                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Delay:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="25" column="0">
+                 <widget class="QLabel" name="threePg3LbReverb">
+                  <property name="text">
+                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Reverb:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="26" column="0">
+                 <widget class="QLabel" name="threePg3LbDucking">
+                  <property name="text">
+                   <string>Ducking:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="28" column="0">
+                 <widget class="QLabel" name="threePg3LbParticleVerb">
+                  <property name="text">
+                   <string>Particle Verb:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="27" column="0">
+                 <widget class="QLabel" name="threePg3Lb63Spring">
+                  <property name="text">
+                   <string>'63 Spring:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="29" column="0">
+                 <widget class="QLabel" name="threePg3LbWah">
+                  <property name="text">
+                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Wah:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="31" column="0">
+                 <widget class="QLabel" name="threePg3LbChromeCustom">
+                  <property name="text">
+                   <string>Chrome Custom:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="30" column="0">
+                 <widget class="QLabel" name="threePg3LbThroaty">
+                  <property name="text">
+                   <string>Throaty:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="31" column="1">
+                 <widget class="QComboBox" name="threePg3CbChromeCustom"/>
+                </item>
+                <item row="30" column="1">
+                 <widget class="QComboBox" name="threePg3CbThroaty"/>
+                </item>
+                <item row="28" column="1">
+                 <widget class="QComboBox" name="threePg3CbParticleVerb"/>
+                </item>
+                <item row="27" column="1">
+                 <widget class="QComboBox" name="threePg3Cb63Spring"/>
+                </item>
+                <item row="26" column="1">
+                 <widget class="QComboBox" name="threePg3CbDucking"/>
+                </item>
+                <item row="24" column="1">
+                 <widget class="QComboBox" name="threePg3CbMultiHeadDelay"/>
+                </item>
+                <item row="22" column="1">
+                 <widget class="QComboBox" name="threePg3CbMidFocusEQ"/>
+                </item>
+                <item row="21" column="1">
+                 <widget class="QComboBox" name="threePg3CbStudioEQ"/>
+                </item>
+                <item row="20" column="1">
+                 <widget class="QComboBox" name="threePg3CbGraphicEQ"/>
+                </item>
+                <item row="18" column="1">
+                 <widget class="QComboBox" name="threePg3CbAttackSynth"/>
+                </item>
+                <item row="17" column="1">
+                 <widget class="QComboBox" name="threePg3CbOctiSynth"/>
+                </item>
+                <item row="16" column="1">
+                 <widget class="QComboBox" name="threePg3CbCometTrails"/>
+                </item>
+                <item row="15" column="1">
+                 <widget class="QComboBox" name="threePg3CbSlowFilter"/>
+                </item>
+                <item row="14" column="1">
+                 <widget class="QComboBox" name="threePg3CbVocoder"/>
+                </item>
+                <item row="12" column="1">
+                 <widget class="QComboBox" name="threePg3CbRotaryDrum"/>
+                </item>
+                <item row="11" column="1">
+                 <widget class="QComboBox" name="threePg3Cb80AFlanger"/>
+                </item>
+                <item row="10" column="1">
+                 <widget class="QComboBox" name="threePg3CbACFlanger"/>
+                </item>
+                <item row="9" column="1">
+                 <widget class="QComboBox" name="threePg3CbJetFlanger"/>
+                </item>
+                <item row="8" column="1">
+                 <widget class="QComboBox" name="threePg3CbTriChorus"/>
+                </item>
+                <item row="6" column="1">
+                 <widget class="QComboBox" name="threePg3CbBuzzSaw"/>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="threePage400">
+           <layout class="QGridLayout" name="gridLayout_13">
+            <item row="0" column="0">
+             <widget class="QScrollArea" name="threeScrollArea400">
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_5">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>438</width>
+                 <height>292</height>
+                </rect>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_15">
+                <item row="0" column="0" colspan="2">
+                 <widget class="QLabel" name="threePg3LbEffectsMapping400">
+                  <property name="text">
+                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;HD 400 Missing Effects Mapping:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="threePg4LbDynamics">
+                  <property name="text">
+                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Dynamics:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="threePg4LbTubeComp">
+                  <property name="text">
+                   <string>Tube Comp:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QComboBox" name="threePg4CbTubeComp"/>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QLabel" name="threePg4LbModulation">
+                  <property name="text">
+                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Modulation:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QLabel" name="threePg4LbTriChorus">
+                  <property name="text">
+                   <string>Tri Chorus:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="1">
+                 <widget class="QComboBox" name="threePg4CbTriChorus"/>
+                </item>
+                <item row="5" column="0">
+                 <widget class="QLabel" name="threePg4LbJetFlanger">
+                  <property name="text">
+                   <string>Jet Flanger:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="1">
+                 <widget class="QComboBox" name="threePg4CbJetFlanger"/>
+                </item>
+                <item row="6" column="0">
+                 <widget class="QLabel" name="threePg4LbACFlanger">
+                  <property name="text">
+                   <string>AC Flanger:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="1">
+                 <widget class="QComboBox" name="threePg4CbACFlanger"/>
+                </item>
+                <item row="8" column="0">
+                 <widget class="QLabel" name="threePg4LbFilter">
+                  <property name="text">
+                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Filter:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="9" column="0">
+                 <widget class="QLabel" name="threePg4LbVocoder">
+                  <property name="text">
+                   <string>Vocoder:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="9" column="1">
+                 <widget class="QComboBox" name="threePg4CbVocoder"/>
+                </item>
+                <item row="10" column="0">
+                 <widget class="QLabel" name="threePg4LbCometTrails">
+                  <property name="text">
+                   <string>Comet Trails:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="10" column="1">
+                 <widget class="QComboBox" name="threePg4CbCometTrails"/>
+                </item>
+                <item row="7" column="0">
+                 <widget class="QLabel" name="threePg4Lb80AFlanger">
+                  <property name="text">
+                   <string>80A Flanger:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="1">
+                 <widget class="QComboBox" name="threePg4Cb80AFlanger"/>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>500</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuDatei">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="actionClose"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuDatei"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,305 @@
+POD HD 300
+
+PresetName:
+28-37
+ 
+AMP:
+
+OFF: 39 (00 == off ;80 == on) (byte)
+Cab: 3D (1 == Blackface Dbl; 2 == Highway; 9 Blue Bell; 10 = XXL V-30, 12 == off)
+Amp: 3B (0 == Blackface Double Nrm; 1 == Hiway 100 Custom)
+Pre Amp: 4D (00 == off; 01 == on)
+
+Drive: 3E & 3F (short)
+Bass: 40 & 41
+Mid: 42 & 43
+Treble: 44 & 45
+Pres: 48 & 49
+CH VOL: 46 & 47
+ER (Early Reflections): 4E & 4F
+BYP Vol. 50 & 51
+
+Mic: 4C (0 == 57 On Axis; 1 == 57 Off Axis; )
+
+HUM: 5C & 5D
+SAG: 5E & 5F
+BIAS: 60 & 61
+BIAS X: 62 & 63
+MASTER: 64 & 65
+
+DT Series Amp Controls:
+
+Class/ Mode: 4A (1E ==  "A && Pent";  1F == "A/B && Pent"; 1C A && Tri; 1D == A/B && Tri )
+Topolgy: 4B ( 00== "I"; 01 == "III"; 02 == "II"; 03 == "IV")
+
+
+FX1 :
+79=?! (hash?) == defines Potis?
+
+Off/On: 72 (00 = Off && Pre; 02 == Off && Post 04 == On && Pre; 06 == On & Post)
+
+Model: 75 && 6E (see list at end)
+Distortion Poti:
+
+79: 26 ?
+
+Bass: 8E && 8F
+Tone: 90 && 91
+Treble: 92 && 93
+Drive: 8C && 8D
+Output: 94 && 95
+
+Compressor:
+
+Sustain: 8C 8D
+Level: 8E 8F
+
+FX2 :
+
+OFF/On: 7A (00 Off && Pre;)
+
+Model: 7D && 6F (see list at end)
+
+81: Phaser = 27
+	
+
+
+Tap: 7A (05 Control,04 Don't Control)
+Speed: 96 && 97
+Depth: 98 && 99
+FDBack: 9A && 9B
+Manual: 9C && 9D
+Mix: A0 && A1
+
+FX3:
+
+Off/On: 82
+
+Model: 85 && 70 (see list at end)
+
+Tap: 82 (05 Control,04 Don't Control)
+Time: A2 && A3
+FDBack: A4 && A5
+Modspped: A6 && A7
+Depth: A8 && A9
+Mix: AA && AB
+
+
+WAH:
+
+Off/on: 39? (Wah On + Gate-NR C3; Wah + NR = C2, Wah + Gate = C1, Wha = C0 )
+Position: BA
+Model: 6D 
+
+00 == Vetta Wah
+01 == Fassel
+04 == Conductor
+// hd 400
+06 == Throaty
+07 == Chrome Custom 
+
+
+Reverb:
+39: 
+Pre Post: 72?
+Model: 6C
+
+0A Plate
+55 Room
+56 Chamber
+57 Hall
+58 Cave
+5A Octo
+5B Tile
+5C Echo
+
+// hd 400
+59 Ducking
+
+Pre DLY: B2 && B3
+Decay: B0 && B1
+Tone: B4 && B5
+Mix: B8 && B9
+
+Gate:
+Mode: 39?  (80 == off; 81 == Gate; 82 == NR; 83 == Gate+NR + Wah OFF;)
+Tresh: 58 & 59 (negative 16Bit (int)) -> -96DB : 0xDA 80 - 00 db 0000
+Decay: 5A & 5B
+
+Vol:
+Min: 54 & 55
+Max: 56 & 57
+Post/Pre: 39??
+
+Tempo:
+BPM: 52 && 53
+
+Byte 0x30:
+
+Gate: Mode: 39?  (80 == off; 81 == Gate; 82 == NR; 83 == Gate+NR + Wah OFF;)
+
+Wah: Off/on: 39? (Wah On + Gate-NR C3; Wah + NR = C2, Wah + Gate = C1, Wha = C0 )
+Type: 6C
+Position: BA
+
+
+Amp On Reverb Pre, Gate off, Wah, off == 80
+Amp On Reverb Post, Gate off, Wah, off == 88
+
+Amp On Reverb Pre, Gate On, Wah, off == 81
+Amp On Reverb Post, Gate On, Wah, off == 89
+
+Amp On Reverb Pre, Gate NR, Wah, off == 82
+Amp On Reverb Post, Gate NR, Wah, off == 8A
+
+Amp On Reverb Pre, Gate On+NR, Wah, off == 83
+Amp On Reverb Post, Gate On+NR, Wah, off == 8B
+
+Amp On Reverb Pre, Gate Off, Vetta On == C0
+Amp On Reverb Post, Gate Off, Vetta On == C8 
+
+Amp On Reverb Pre, Gate On, Vetta On == C1
+Amp On Reverb Post, Gate On, Vetta On == C9 
+
+Amp On Reverb Pre, Gate NR, Vetta On == C2
+Amp On Reverb Post, Gate NR, Vetta On == CA
+
+Amp On Reverb Pre, Gate On+NR, Vetta On == C3
+Amp On Reverb Post, Gate On+NR, Vetta On == CB
+
+
+- 0x80
+
+Amp Off Reverb Pre, Gate off, Wah, off == 00
+Amp Off Reverb Post, Gate off, Wah, off == 08
+
+Amp Off Reverb Pre, Gate On, Wah, off == 01
+Amp Off Reverb Post, Gate On, Wah, off == 09
+
+Amp Off Reverb Pre, Gate NR, Wah, off == 02
+Amp Off Reverb Post, Gate NR, Wah, off == 0A
+
+Amp Off Reverb Pre, Gate On+NR, Wah, off == 03
+Amp Off Reverb Post, Gate On+NR, Wah, off == 0B
+
+Amp Off Reverb Pre, Gate Off, Vetta On == 40
+Amp Off Reverb Post, Gate Off, Vetta On == 48 
+
+Amp Off Reverb Pre, Gate On, Vetta On == 41
+Amp Off Reverb Post, Gate On, Vetta On == 49 
+
+Amp Off Reverb Pre, Gate NR, Vetta On == 42
+Amp Off Reverb Post, Gate NR, Vetta On == 4A
+
+Amp Off Reverb Pre, Gate On+NR, Vetta On == 43
+Amp Off Reverb Post, Gate On+NR, Vetta On == 4B
+
+Effects:
+
+POD HD 300:
+
+Doppelt: Filter, Mod,
+
+FX1:	6E, 75 (79 == 0n (04), off == (00))
+
+Screamer		: 01, 01
+Tube Drive		: 0B, 0B
+Classic Distrotion	: 0C, 0C
+Heaver Distortion	: 0D, 0D
+Color Drive		: 0E, 0E
+Overdrive:		: 0F, 0F
+Line 6 Drive		: 10, 10
+Line 6 Distrotion	: 11, 11
+Boost Comp		: 12, 12
+Red Comp		: 13, 13
+Blue Comp		: 14, 14
+Vetta Comp		: 16, 16
+Fuzz Pi			: 18, 18
+Octave Fuzz		: 19, 19
+Jet Fuzz		: 1A, 1A
+Sub Octave Fuzz		: 1B, 1B
+Facial Fuzz		: 1D, 1D
+Jumbo Fuzz		: 1E, 1E
+Spring			: 02, 02
+Parametric EQ		: 23, 23
+4 Band Shift EQ		: 24, 24
+Tron Down		: 27, 27
+Tron Up			: 28, 28
+Q Filter		: 29, 29
+Ring Modulator		: 2A, 2A
+Dimension		: 2B, 2B
+Frequency Shifter	: 2C, 2C
+Rotary Drum		: 2D, 2D
+Smart Harmony		: 03, 03
+Pitch Glide		: 2F, 2F
+Synth String		: 31, 31
+Growler			: 32, 32
+Synth-O-Matic		: 33, 33
+Bass Octaver		: 34, 34
+V-Tron			: 35, 35
+Vintage Pre		: 5E, 5E
+Hard Gate		: 5F, 5F
+
+// hd 400
+
+Blue Comp Treb		: 15, 15
+Vetta Juice		: 17, 17
+Buzz Saw		: 1C, 1C
+Rotary Drum & Horn	: 2E, 2E
+Octisynth		: 5D, 5D
+Attack Synth		: 30, 30
+Slow Filter		: 26, 26
+Graphic EQ		: 21, 21
+Studio EQ		: 22, 22
+Mid Focus EQ		: 25, 25
+Spring '63		: 1F, 1F
+Particle Verb		: 20, 20
+
+
+FX2:
+
+Analog Chorus		: 04, 04
+Analog Flanger		: 36, 34
+U-Vibe			: 37, 37
+Phaser			: 38, 38
+Dual Phaser		: 39, 39
+Barberpole Phaser	: 3A, 3A
+Panned Phaser		: 3B, 3B
+Script Phase		: 3C, 3C
+Pitch Vibrato		: 3D, 3D
+Seeker			: 05, 05
+Throbber		: 3E, 3E
+Spin Cycle		: 3F, 3F
+Obi Wah			: 40, 40
+Voice Box		: 41, 41
+Opto Tremolo		: 06, 06
+Bias Tremolo		: 42, 42
+Pattern Tremolo		: 43, 43
+Panner			: 44, 44
+
+
+
+FX3:
+
+Digital Delay		: 07, 07
+Digital Delay w/Mod	: 45, 45
+Analog Echo		: 46, 46
+Analog Echo w/Mod	: 47, 47
+Echo Platter		: 48, 48
+Echo Platter Studio	: 49, 49
+Low Res Delay		: 4A, 4A
+Stereo Delay		: 4B, 4B
+Ping Pong		: 4C, 4C
+Dynamic Delay		: 4D, 4D
+Tape Echo		: 08, 08
+Tape Echo Studio	: 4E, 4E
+Tube Echo		: 4F, 4F
+Tube Echo Studio	: 50, 50
+Auto Volume Echo	: 09, 09
+Sweep Echo		: 52, 52
+Sweep Echo Studio	: 53, 53
+Reverse Delay		: 54, 54
+
+// hd 400
+
+Multi-Head Delay	: 51, 51

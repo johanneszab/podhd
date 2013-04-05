@@ -1,0 +1,411 @@
+POD HD 500:
+
+PresetName:
+28-47 (10 char more!)
+
+
+Guitar In-Z: DFA
+Input Source 1: 1026
+Input Source 2: 1027
+Inputs Setup: 1027
+
+
+Amp:
+
+On/Off: 58 (1/0)
+Model: 0053 (1020?) (byte)
+
+On/Off: 025B (on == 01; off == 00)
+Cab: 0253
+
+
+Drive: 64 && 65 && 66 && 67 (float)
+Bass: 78 && 79 && 7A && 7B
+Mid: 8C && 8D && 8E && 8F
+Treble: A0 && A1 && A2 && A3
+Pres: B4 && B5 && B6 && B7 xx
+CH Vol: C8 C9 CA CB
+E.R.: D74 D75 D76 D77
+
+BYP Vol: DA4 DA5 DA6 DA7
+
+Master: 12C 12D 12E 12F
+Sag: F0 F1 F2 F3
+Hum: DC DD DE DF
+Bias: 104 105 106 107
+Bias x: 118 119 11A 11B
+
+Low Cut: 264 255 256 267
+Res Level: 278 279 27A 27B 
+Thump: 28C 28D 28E 28F
+Decay: 2A0 2A1 2A2 2A3
+
+Mic: 1020
+
+Amp2: (Amp1 + 0x100)
+
+Amp2 Set (Either turnoff or on, but defined!) : 15B (0x01 == set, 0x00 not set) (and 158 && 1 if not set)
+
+On/off: 158 (00 = off / 01 = on)
+
+Model: 0153
+Cab: 0353
+
+Drive: 164 && 165 && 166 && 167
+Bass: 178 && 179 && 17A && 17B
+Mid: 18C && 18D && 18E && 18F
+Treble: 1A0 && 1A1 && 1A2 && 1A3
+Pres: 1B4 && 1B5 && 1B6 && 1B7
+CH Vol: 1C8 1C9 1CA 1CB
+!E.R.: 0D7C D7D D7E D7F (Different - 0x100?)
+
+!BYP Vol: 0DA8 DA9 DAA 0DAB (Different - 0x100?)
+
+Master: None, should be 22D 22E 22F
+Sag: None, should be 1F1 1F2 1F3
+Hum: None, should be 1DC 1DD 1DE 1DF
+Bias: None, should be 204 205 206 207
+Bias x: None, should be 218 219 21A 21B
+
+Low Cut: 364 355 356 367
+Res Level: 378 379 37A 37B 
+Thump: 38C 38D 38E 38F
+Decay: 3A0 3A1 3A2 3A3
+
+Mic: 1021
+
+FX:
+
+1 Row:
+
+On/Off: 45B (On == 01, Off == 00)
+Post / Pre : 455 (Pre Amp == 00, Post Amp == 05)
+Amp Row Numebr: 455: 01 = 1st row Pre, 02 == 2nd row Pre;
+Amp Row Numebr: 455: 03 = 1st row Post, 04 == 2nd row Post;
+FX location within Amp Row : 457: 00 == 1. pos, 01 == 2nd pos.
+
+
+FX- Typ: ?? 451 (00 = Dyn, 05 == Dist, 03 == Mod, Filter = 0A
+		 09 = Pitch, 0C = Pre+EQ, 02 = Delay, 04 = Reverb
+		 07 VolPan, 06 = Wah, 08 = FXLoop)
+Model 453 !
+
+Dist:
+	Model 453
+	1. Bass: 478 479 47A 47B
+	2. Mid: 48C 48D 48E 48F
+	3. Treble: 4A0 4A1 4A2 4A3
+	4. Drive: 464 465 466 467
+	last: Output: 4B4 4B5 4B6 4B7
+
+Mod:
+	1. TempoSync (Mod): 459
+	2. Speed: 464 465 466 467
+	3. Step 1: 478 479 47A 47B
+	4. Step 2: 48C 48D 48E 48F
+pre last	5. Step 3: 4A0 4A1 4A2 4A3
+last	6. Step 4: 4B4 4B5 4B6 4B7
+	Model: 453
+
+Noise Gate:
+	Tresh: 464 465 466 467 - 00% -> 00 00 00 00
+				100% -> 3F 80 00 00
+	Decay 478
+
+Reverb:
+
+
+	
+2 Row: 
+
+On/Off: 55B
+
+FX-Type:  551
+Model:  553
+
+Dist:
+	Model 553
+	1. Bass: 578 579 57A 57B
+	last: Output: 5B4 5B5 5B6 5B7
+
+Mod:
+	1. TempoSync (Mod): 559
+	2. Speed: 564 565 566 567
+	3. Step 1: 578 579 57A 57B
+	4. Step 2: 58C 58D 58E 58F
+pre last	5. Step 3: 5A0 5A1 5A2 5A3
+last	6. Step 4: 5B4 5B5 5B6 5B7
+	Model: 553
+
+3. Row
+
+On/off: 65B
+
+4. Row:
+
+On/Off: 75B
+
+POST FX:
+
+5 Row:
+
+On/Off: 85B
+
+6. Row:
+
+7. Row:
+
+On/Off: A5B
+
+8. Row:
+
+On/off: B5B
+
+
+
+Mixer:
+
+Path A.
+
+Level: D8C D8D
+Pan: D85 D86 D87
+
+Path B:
+
+Level: D90 D91
+Pan: D89 D8A D8B
+
+Controllers:
+
+Amp 1:
+
+Footswitch: 5C
+
+Drive:
+Minimum: 68 69 6A 6B
+Maximum: 6C 6D 6E 6F
+Controller: 70
+
+Bass:
+Minimum: 7C 7D 7E 7F
+Maximum: 80 81 82 83
+Controller: 84
+
+Mid:
+Minimum: 90 91 92 93
+Maximum: 94 95 96 97
+Controller: 98
+
+Treble:
+Minimum: A4 A5 A6 A7
+Maximum: A8 A9 AA AB
+Controller: AC
+
+Pres:
+Minimum: B8 B9 BA BB
+Maximum: BC BD BE BF
+Controller: C0
+
+Ch-Vol:
+Minimum: CC CD CE 7CF
+Maximum: D0 D1 D2 D3
+Controller: D4
+
+Amp 2:
+
+Footswitch: 15C
+
+Drive:
+Minimum: 168 169 16A 16B
+Maximum: 16C 16D 16E 16F
+Controller: 170
+
+Bass:
+Minimum: 17C 17D 17E 17F
+Maximum: 180 181 182 183
+Controller: 184
+
+Mid:
+Minimum: 190 191 192 193
+Maximum: 194 195 196 197
+Controller: 198
+
+Treble:
+Minimum: 1A4 1A5 1A6 1A7
+Maximum: 1A8 1A9 1AA 1AB
+Controller: 1AC
+
+Pres:
+Minimum: 1B8 1B9 1BA 1BB
+Maximum: 1BC 1BD 1BE 1BF
+Controller: 1C0
+
+Ch-Vol:
+Minimum: 1CC 1CD 1CE 1CF
+Maximum: 1D0 1D1 1D2 1D3
+Controller: 1D4
+
+
+FX 1 (Row 2 (2+1)):
+
+Footswitch: 45C
+
+FX 4 (Row 6 (2+4)):
+
+Footswitch: 75C
+
+
+FX 8 (Row 10 (2+8)):
+
+Footswitch: B5C
+
+
+Effects:
+
+Dyn:
+
+Noise Gate		: 11
+Hard Gate		: 13
+Tube Comp		: 0E
+Red Comp		: 0B
+Blue Comp		: 0C
+Blue Comp Treb		: 0D
+Vetta Comp		: 0F
+Vetta Juice		: 10
+Boost Comp		: 12
+
+Dist:
+
+Tube Drive		: 0D
+Screamer		: 0E
+Overdrive		: 10 
+Classic Distortion	: 0B
+Heavy Distorion		: 16
+Color Drive		: 18
+Buzz Saw		: 15
+Facial Fuzz		: 11
+Jumbo Fuzz		: 17
+Fuzz Pi			: 0F
+Jet Fuzz		: 0A
+Line 6 Drive		: 13
+Line 6 Distortion	: 12
+Sub Octave Fuzz		: 14
+Octave Fuzz		: 0C
+
+Mod:
+
+Pattern Tremolo		: 43
+Panner			: 2F
+Bias Tremolo		: 21
+Opto Tremolo		: 20
+Script Phase		: 45
+Panned Phaser		: 24
+Barberpole Phaser	: 40
+Dual Phaser		: 23
+U-Vibe			: 25
+Phaser			: 22
+Pitch Vibrato		: 2D
+Dimension		: 2B
+Analog Chorus		: 2A
+Tri Chorus		: 2C
+Analog Flanger		: 28
+Jet Flanger		: 29
+AC Flanger		: 47
+80A Flanger		: 49
+Frequency Shifter	: 42
+Ring Modulator		: 2E
+Rotary Drum		: 26
+Rotary Dum & Horn	: 27
+
+Filter:
+
+Voice Box		: 1D
+V-Tron			: 1E
+Q-Filter		: 14
+Vocoder			: 26
+Seeker			: 11
+Obi Wah			: 12
+Tron Up			: 0F
+Tron Down		: 10
+Throbber		: 15
+Slow Filter		: 13
+Spin Cycle		: 16
+Comet Trails		: 17
+Octisynth		: 18
+Synth-O-Matic		: 1A
+Attack Synth		: 1B
+Synth String		: 1C
+Growler			: 19
+
+Pitch:
+
+Bass Octaver		: 04
+Pitch Glide		: 02
+Smart Harmony		: 03
+
+Pre+EQ:
+
+Graphic EQ		: 09
+Parametric EQ		: 0B
+Studio EQ		: 0A
+4-Band Shift EQ		: 0C
+Mid Focus EQ		: 0D
+Vintage	Pre		: 0E
+
+Delay:
+
+Ping Pong		: 20
+Dynamic Delay		: 22
+Stereo Delay		: 13
+Digital Delay		: 11
+Digital Delay w/Mod	: 12
+Reverse Delay		: 21
+Lo Res Delay		: 1D
+Tube Echo		: 2A
+Tube Echo Dry		: 2B
+Tape Echo		: 2C
+Tape Echo Dry		: 2D
+Sweep Echo		: 2E
+Sweep Echo Dry		: 2F
+Echo Platter		: 30
+Echo Platter Dry	: 31
+Analog Delay w/Mod	: 15
+Analog Echo		: 14
+Auto-Volume		: 23
+Multi-Head Delay	: 1A
+
+Reverb:
+
+Plate			: 1E
+Room			: 1F
+Chamber			: 20
+Hall			: 21
+Echo			: 26
+Tile			: 25
+Cave			: 24
+Ducking			: 22
+Octo			: 23
+Spring			: 1D
+'63 Spring		: 1C
+Particle Verb		: 27
+
+VolPan:
+
+Volume Pedal		: 04
+Pan			: 05
+
+Wah:
+
+Fassel			: 0C
+Conductor		: 11
+Throaty			: 10
+Colorful		: 12
+Vetta Wah		: 0B
+Chrome			: 0E
+Chrome Custom		: 0F
+Wheeper			: 0D
+
+FXLoop:
+
+FXLoop			: 00
+

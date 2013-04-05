@@ -1,0 +1,49 @@
+Input 1 Source / Input 2 Source
+1026 / 1027
+
+00 Same
+01 Guitar 2
+03 Guitar + Variax
+04 Variax 4
+05 Variax Mags
+06 Line L 6
+07 Line R
+08 Guitar+Line L 8
+09 Guitar+Line R
+0A Gtr+Line L+Var 10
+0B Gtr+Line R+Var
+0C Mic 12
+0D SPDIF L
+0E SPDIF R 14
+0F AES L
+10 AES R 16
+
+Input 1:
+Guitar
+Guitar+Variax
+Variax
+Variax Mags
+Line L
+Line R
+Guitar+Line L
+Guitar+Line R
+Gtr+Line L+Var
+Gtr+Line R+Var
+
+Input 2:
+Same
+Guitar
+Guitar+Variax
+Variax
+Variax Mags
+Line L
+Line R
+Guitar+Line L
+Guitar+Line R
+Gtr+Line L+Var
+Gtr+Line R+Var
+Mic
+SPDIF L
+SPDIF R
+AES L
+AES R

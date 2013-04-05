@@ -1,0 +1,233 @@
+POD HD 300:
+
+FX1:	6E, 75 (79 == 0n (04), off == (00))
+
+Screamer		: 01, 01
+Tube Drive		: 0B, 0B
+Classic Distrotion	: 0C, 0C
+Heaver Distortion	: 0D, 0D
+Color Drive		: 0E, 0E
+Overdrive:		: 0F, 0F
+Line 6 Drive		: 10, 10
+Line 6 Distrotion	: 11, 11
+Boot Comp		: 12, 12
+Red Comp		: 13, 13
+Blue Comp		: 14, 14
+Vetta Comp		: 16, 16
+Fuzz Pi			: 18, 18
+Octave Fuzz		: 19, 19
+Jet Fuzz		: 1A, 1A
+Sub Octave Fuzz		: 1B, 1B
+Facial Fuzz		: 1D, 1D
+Jumbo Fuzz		: 1E, 1E
+Spring			: 02, 02
+Parametric EQ		: 23, 23
+4 Band Shift EQ		: 24, 24
+Tron Down		: 27, 27
+Tron Up			: 28, 28
+Q Filter		: 29, 29
+Ring Modulator		: 2A, 2A
+Dimension		: 2B, 2B
+Frequency Shifter	: 2C, 2C
+Rotary Drum		: 2D, 2D
+Smart Harmony		: 03, 03
+Pitch Glide		: 2F, 2F
+Synth String		: 31, 31
+Growler			: 32, 32
+Synth-O-Matic		: 33, 33
+Bass Octaver		: 34, 34
+V-Tron			: 35, 35
+Vintage Pre		: 5E, 5E
+Hard Gate		: 5F, 5F
+
+FX2:
+
+Analog Chorus		: 04, 04
+Analog Flanger		: 36, 34
+U-Vibe			: 37, 37
+Phaser			: 38, 38
+Dual Phaser		: 39, 39
+Barberpole Phaser	: 3A, 3A
+Panned Phaser		: 3B, 3B
+Script Phase		: 3C, 3C
+Pitch Vibrato		: 3D, 3D
+Seeker			: 05, 05
+Throbber		: 3E, 3E
+Spin Cycle		: 3F, 3F
+Obi Wah			: 40, 40
+Voice Box		: 41, 41
+Opto Tremolo		: 06, 06
+Bias Tremolo		: 42, 42
+Pattern Tremolo		: 43, 43
+Panner			: 44, 44
+
+FX3:
+
+Digital Delay		: 07, 07
+Digital Delay w/Mod	: 45, 45
+Analog Echo		: 46, 46
+Analog Echo w/Mod	: 47, 47
+Echo Platter		: 48, 48
+Echo Platter Studio	: 49, 49
+Low Res Delay		: 4A, 4A
+Stereo Delay		: 4B, 4B
+Ping Pong		: 4C, 4C
+Dynamic Delay		: 4D, 4D
+Tape Echo		: 08, 08
+Tape Echo Studio	: 4E, 4E
+Tube Echo		: 4F, 4F
+Tube Echo Studio	: 50, 50
+Auto Volume Echo	: 09, 09
+Sweep Echo		: 52, 52
+Sweep Echo Studio	: 53, 53
+Reverse Delay		: 54, 54
+
+POD HD 500:
+
+Dyn:
+
+Noise Gate		: 11
+Hard Gate		: 13
+Tube Comp		: 0E
+Red Comp		: 0B
+Blue Comp		: 0C
+Blue Comp Treb		: 0D
+Vetta Comp		: 0F
+Vetta Juice		: 10
+Boost Comp		: 12
+
+Dist:
+
+Tube Drive		: 0D
+Screamer		: 0E
+Overdrive		: 10 
+Classic Distortion	: 0B
+Heavy Distorion		: 16
+Color Drive		: 18
+Buzz Saw		: 15
+Facial Fuzz		: 11
+Jumbo Fuzz		: 17
+Fuzz Pi			: 0F
+Jet Fuzz		: 0A
+Line 6 Drive		: 13
+Line 6 Distortion	: 12
+Sub Octave Fuzz		: 14
+Octave Fuzz		: 0C
+
+Mod:
+
+Pattern Tremolo		: 43
+Panner			: 2F
+Bias Tremolo		: 21
+Opto Tremolo		: 20
+Script Phase		: 45
+Panned Phaser		: 24
+Barberpole Phaser	: 40
+Dual Phaser		: 23
+U-Vibe			: 25
+Phaser			: 22
+Pitch Vibrato		: 2D
+Dimension		: 2B
+Analog Chorus		: 2A
+Tri Chorus		: 2C
+Analog Flanger		: 28
+Jet Flanger		: 29
+AC Flanger		: 47
+80A Flanger		: 49
+Frequency Shifter	: 42
+Ring Modulator		: 2E
+Rotary Drum		: 26
+Rotary Dum & Horn	: 27
+
+Filter:
+
+Voice Box		: 1D
+V-Tron			: 1E
+Q-Filter		: 14
+Vocoder			: 26
+Seeker			: 11
+Obi Wah			: 12
+Tron Up			: 0F
+Tron Down		: 10
+Throbber		: 15
+Slow Filter		: 13
+Spin Cycle		: 16
+Comet Trails		: 17
+Octisynth		: 18
+Synth-O-Matic		: 1A
+Attack Synth		: 1B
+Synth String		: 1C
+Growler			: 19
+
+Pitch:
+
+Bass Octaver		: 04
+Pitch Glide		: 02
+Smart Harmony		: 03
+
+Pre+EQ:
+
+Graphic EQ		: 09
+Parametric EQ		: 0B
+Studio EQ		: 0A
+4-Band Shift EQ		: 0C
+Mid Focus EQ		: 0D
+Vintage	Pre		: 0E
+
+Delay:
+
+Ping Pong		: 20
+Dynamic Delay		: 22
+Stereo Delay		: 13
+Digital Delay		: 11
+Digital Delay w/Mod	: 12
+Reverse Delay		: 21
+Lo Res Delay		: 1D
+Tube Echo		: 2A
+Tube Echo Dry		: 2B
+Tape Echo		: 2C
+Tape Echo Dry		: 2D
+Sweep Echo		: 2E
+Sweep Echo Dry		: 2F
+Echo Platter		: 30
+Echo Platter Dry	: 31
+Analog Delay w/Mod	: 15
+Analog Echo		: 14
+Auto-Volume		: 23
+Multi-Head Delay	: 1A
+
+Reverb:
+
+Plate			: 1E
+Room			: 1F
+Chamber			: 20
+Hall			: 21
+Echo			: 26
+Tile			: 25
+Cave			: 24
+Ducking			: 22
+Octo			: 23
+Spring			: 1D
+'63 Spring		: 1C
+Particle Verb		: 27
+
+VolPan:
+
+Volume Pedal		: 04
+Pan			: 05
+
+Wah:
+
+Fassel			: 0C
+Conductor		: 11
+Throaty			: 10
+Colorful		: 12
+Vetta Wah		: 0B
+Chrome			: 0E
+Chrome Custom		: 0F
+Wheeper			: 0D
+
+FXLoop:
+
+FXLoop			: 00
+

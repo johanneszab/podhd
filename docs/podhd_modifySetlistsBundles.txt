@@ -1,0 +1,106 @@
+Setlists:
+
+1. Amp (Distance, Gap - 0x1028):
+	1. Preset	0x8B
+	2. Preset	0x10B3
+	3. Preset 	0x20DB
+
+	Turned On:
+	1. Preset	0x90
+
+1. Cab (Distance, Gap - 0x1028):
+	1. Preset	0x28B
+	2. Preset	0x12B3
+
+	Turned On:
+	1. Preset	0x293
+
+1. Mic (Distance, Gap - 0x1028)
+	1. Preset	0x1058
+	2. Preset	0x2080
+
+2. Amp
+	1. Preset	0x018B
+	2. preset	0x11B3
+
+	Turned On:
+	1. Preset	0x190
+
+2. Cab (Distance, Gap - 0x1028):
+	1. Preset	0x38B
+	2. Preset	0x13B3
+
+	Turned On:
+	1. Preset	0x393
+
+2. Mic (Distance, Gap - 0x1028)
+	1. Preset	0x1059
+	2. Preset	0x2081
+
+Input Source 1 (Distance, Gap - )
+	1. Preset	0x105E
+	2. Preset	0x2086
+
+Input Source 2 ():
+	1. Preset	0x105F
+	2. Preset	0x2087
+
+Guitar In-Z ():
+	1. Preset	0x0E32
+	2. Preset	0x1E5A
+
+Bundles:
+
+1. Amp (Distance, Gap - 0x1028):
+	1. Preset	0xB3
+	2. Preset	0x10DB
+	3. Preset 	0x2103
+
+	Turned On:
+	1. Preset	0xB8
+
+	2 Setlist (Distance, Gap - 0x40A38) 
+	1. Preset	0x40AEB
+	2. Preset	0x41B13
+	3. Preset 	0x42B3B
+
+1. Cab (Distance, Gap - 0x1028):
+	1. Preset	0x2B3
+	2. Preset	0x12DB
+
+	Turned On:
+	1. Preset	0x2BB
+
+1. Mic (Distance, Gap - 0x1028)
+	1. Preset	0x1080
+	2. Preset	0x20A8
+
+2. Amp
+	1. Preset	0x01B3
+	2. preset	0x11DB
+
+2. Cab (Distance, Gap - 0x1028):
+	1. Preset	0x3B3
+	2. Preset	0x13DB
+
+2. Mic (Distance, Gap - 0x1028)
+	1. Preset	0x1081
+	2. Preset	0x20A9
+
+Input Source 1 (Distance, Gap - )
+	1. Preset	0x1086
+	2. Preset	0x20AE
+
+Input Source 2 ():
+	1. Preset	0x1087
+	2. Preset	0x20AF
+
+Guitar In-Z ():
+	1. Preset	0x0E5A
+	2. Preset	0x1E82
+
+
+		Conent
+                for (int j=0; j<8; j++) {                    for (int i=0; i<64; i++) {                        fileToModify.seek((0x000E5A + (j * 0x40A68)) + (i * 0x001028));                        fileToModify.write(guitarIn, maxSize);
+
+                // Setlist                for (int i=0; i<7; i++) {                    fileToModify.seek(0x040A5E + (i * 0x40A68));                    fileToModify.write(bytes040A5E, maxSize);
