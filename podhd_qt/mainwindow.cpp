@@ -40,6 +40,15 @@ const QStringList hreExtension = QStringList() << ".hre";
 const QStringList hrbExtension = QStringList() << ".hrb";
 const QStringList hrsExtension = QStringList() << ".hrs";
 
+const QStringList fivexeFilter = QStringList() << "*.5xe";
+const QStringList fivexbFilter = QStringList() << "*.5xb";
+const QStringList fivexsFilter = QStringList() << "*.5xs";
+
+const QStringList fivexeExtension = QStringList() << ".5xe";
+const QStringList fivexbExtension = QStringList() << ".5xb";
+const QStringList fivexsExtension = QStringList() << ".5xs";
+
+
 const QStringList sDesktopInputOne = QStringList() << "Guitar" << "Mic";
 const QStringList sDesktopInputTwo = QStringList() << "Same" << "Guitar" << "Mic";
 const QStringList sDesktopGuitarIn = QStringList() << "Auto" << "22k" << "32k" << "70k" << "90k" << "136k" << "320k" << "1M" << "3.5M";
@@ -47,6 +56,10 @@ const QStringList sDesktopGuitarIn = QStringList() << "Auto" << "22k" << "32k" <
 const QStringList s500InputOne = QStringList() << "Guitar" << "Mic" << "Aux" << "Guitar+Aux" << "Guitar+Variax" << "Gtr+Aux+Variax" << "Variax" << "Variax Mags";
 const QStringList s500InputTwo = QStringList() << "Same" << "Guitar" << "Mic" << "Aux" << "Guitar+Aux" << "Guitar+Variax" << "Gtr+Aux+Variax" << "Variax" << "Variax Mags";
 const QStringList s500GuitarIn = QStringList() << "Auto" << "22k" << "32k" << "70k" << "90k" << "136k" << "320k" << "1M" << "3.5M";
+
+const QStringList s500XInputOne = QStringList() << "Guitar" << "Mic" << "Aux" << "Guitar+Aux" << "Guitar+Variax" << "Gtr+Aux+Variax" << "Variax" << "Variax Mags";
+const QStringList s500XInputTwo = QStringList() << "Same" << "Guitar" << "Mic" << "Aux" << "Guitar+Aux" << "Guitar+Variax" << "Gtr+Aux+Variax" << "Variax" << "Variax Mags";
+const QStringList s500XGuitarIn = QStringList() << "Auto" << "22k" << "32k" << "70k" << "90k" << "136k" << "320k" << "1M" << "3.5M";
 
 const QStringList sProInputOne = QStringList() << "Guitar" << "Guitar+Variax" << "Variax" << "Variax+Mags" << "Line L" << "Line R" << "Guitar+Line L"
                                                << "Guitar+Line R" << "Gtr+Line L+Var" << "Gtr+Line R+Var" << "Mic" << "SPDIF L" << "SPDIF R" << "AES L" << "AES R";
@@ -130,15 +143,23 @@ bool CabOneOff = false, CabTwoOff = false;
 
 // QLists
 
-QList<QCheckBox*> desktopPatchChkbxFive;
-QList<QCheckBox*> desktopPatchChkbxPro;
-QList<QCheckBox*> desktopModifyChkbx;
-
+QList<QCheckBox*> fivePatchChkbxFiveX;
 QList<QCheckBox*> fivePatchChkbxDesktop;
 QList<QCheckBox*> fivePatchChkbxPro;
 QList<QCheckBox*> fiveModifyChkbx;
 
+QList<QCheckBox*> fiveXPatchChkbxFive;
+QList<QCheckBox*> fiveXPatchChkbxDesktop;
+QList<QCheckBox*> fiveXPatchChkbxPro;
+QList<QCheckBox*> fiveXModifyChkbx;
+
+QList<QCheckBox*> desktopPatchChkbxFive;
+QList<QCheckBox*> desktopPatchChkbxFiveX;
+QList<QCheckBox*> desktopPatchChkbxPro;
+QList<QCheckBox*> desktopModifyChkbx;
+
 QList<QCheckBox*> proPatchChkbxFive;
+QList<QCheckBox*> proPatchChkbxFiveX;
 QList<QCheckBox*> proPatchChkbxDesktop;
 QList<QCheckBox*> proModifyChkbx;
 
@@ -147,15 +168,17 @@ QList<QCheckBox*> translateCheckboxes400;
 
 QList<QStringList> fileList;
 
+QList<QStringList> fileFilter500;
+QList<QStringList> fileFilter500X;
 QList<QStringList> fileFilterDesktop;
 QList<QStringList> fileFilterPro;
-QList<QStringList> fileFilter500;
 
 QList<QStringList> fileExtension500;
-QList<QStringList> fileExtension300;
-QList<QStringList> fileExtension400;
+QList<QStringList> fileExtension500X;
 QList<QStringList> fileExtensionDesktop;
 QList<QStringList> fileExtensionPro;
+QList<QStringList> fileExtension300;
+QList<QStringList> fileExtension400;
 
 QList<QCheckBox*> listChkbxEditAmp;
 QList<QCheckBox*> listChkbxEditCab;
@@ -211,6 +234,20 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->fiveCbGuitarInput->setCurrentIndex(0);
     ui->fiveCbGuitarInput->setDisabled(true);
 
+    // HD 500X
+
+    ui->fiveXCbSourceOne->addItems(s500XInputOne);
+    ui->fiveXCbSourceOne->setCurrentIndex(0);
+    ui->fiveXCbSourceOne->setDisabled(true);
+
+    ui->fiveXCbSourceTwo->addItems(s500XInputTwo);
+    ui->fiveXCbSourceTwo->setCurrentIndex(0);
+    ui->fiveXCbSourceTwo->setDisabled(true);
+
+    ui->fiveXCbGuitarInput->addItems(s500XGuitarIn);
+    ui->fiveXCbGuitarInput->setCurrentIndex(0);
+    ui->fiveXCbGuitarInput->setDisabled(true);
+
     // HD Desktop
 
     ui->desktopCbSourceOne->addItems(sDesktopInputOne);
@@ -265,6 +302,32 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->fiveCbSecondMic->addItems(sMic);
     ui->fiveCbSecondMic->setCurrentIndex(0);
     ui->fiveCbSecondMic->setDisabled(true);
+
+    // HD 500X
+
+    ui->fiveXCbFirstAmp->addItems(sAmp);
+    ui->fiveXCbFirstAmp->setCurrentIndex(0);
+    ui->fiveXCbFirstAmp->setDisabled(true);
+
+    ui->fiveXCbFirstCab->addItems(sCab);
+    ui->fiveXCbFirstCab->setCurrentIndex(0);
+    ui->fiveXCbFirstCab->setDisabled(true);
+
+    ui->fiveXCbFirstMic->addItems(sMic);
+    ui->fiveXCbFirstMic->setCurrentIndex(0);
+    ui->fiveXCbFirstMic->setDisabled(true);
+
+    ui->fiveXCbSecondAmp->addItems(sAmp);
+    ui->fiveXCbSecondAmp->setCurrentIndex(0);
+    ui->fiveXCbSecondAmp->setDisabled(true);
+
+    ui->fiveXCbSecondCab->addItems(sCab);
+    ui->fiveXCbSecondCab->setCurrentIndex(0);
+    ui->fiveXCbSecondCab->setDisabled(true);
+
+    ui->fiveXCbSecondMic->addItems(sMic);
+    ui->fiveXCbSecondMic->setCurrentIndex(0);
+    ui->fiveXCbSecondMic->setDisabled(true);
 
     // HD Desktop
 
@@ -416,6 +479,9 @@ MainWindow::MainWindow(QWidget *parent) :
     desktopPatchChkbxFive.append(ui->desktopChkbxPatchH5e);
     desktopPatchChkbxFive.append(ui->desktopChkbxPatchH5b);
     desktopPatchChkbxFive.append(ui->desktopChkbxPatchH5s);
+    desktopPatchChkbxFiveX.append(ui->desktopChkbxPatch5xe);
+    desktopPatchChkbxFiveX.append(ui->desktopChkbxPatch5xb);
+    desktopPatchChkbxFiveX.append(ui->desktopChkbxPatch5xs);
     desktopPatchChkbxPro.append(ui->desktopChkbxPatchHre);
     desktopPatchChkbxPro.append(ui->desktopChkbxPatchHrb);
     desktopPatchChkbxPro.append(ui->desktopChkbxPatchHrs);
@@ -425,6 +491,9 @@ MainWindow::MainWindow(QWidget *parent) :
     desktopModifyChkbx.append(ui->desktopChkbxModifyHbs);
 
     // HD 500
+    fivePatchChkbxFiveX.append(ui->fiveChkbxPatch5xe);
+    fivePatchChkbxFiveX.append(ui->fiveChkbxPatch5xb);
+    fivePatchChkbxFiveX.append(ui->fiveChkbxPatch5xs);
     fivePatchChkbxDesktop.append(ui->fiveChkbxPatchHbe);
     fivePatchChkbxDesktop.append(ui->fiveChkbxPatchHbb);
     fivePatchChkbxDesktop.append(ui->fiveChkbxPatchHbs);
@@ -436,6 +505,36 @@ MainWindow::MainWindow(QWidget *parent) :
     fiveModifyChkbx.append(ui->fiveChkbxModifyH5b);
     fiveModifyChkbx.append(ui->fiveChkbxModifyH5s);
 
+    // HD 500X
+    fiveXPatchChkbxFive.append(ui->fiveXChkbxPatchH5e);
+    fiveXPatchChkbxFive.append(ui->fiveXChkbxPatchH5b);
+    fiveXPatchChkbxFive.append(ui->fiveXChkbxPatchH5s);
+    fiveXPatchChkbxDesktop.append(ui->fiveXChkbxPatchHbe);
+    fiveXPatchChkbxDesktop.append(ui->fiveXChkbxPatchHbb);
+    fiveXPatchChkbxDesktop.append(ui->fiveXChkbxPatchHbs);
+    fiveXPatchChkbxPro.append(ui->fiveXChkbxPatchHre);
+    fiveXPatchChkbxPro.append(ui->fiveXChkbxPatchHrb);
+    fiveXPatchChkbxPro.append(ui->fiveXChkbxPatchHrs);
+
+    fiveXModifyChkbx.append(ui->fiveXChkbxModify5xe);
+    fiveXModifyChkbx.append(ui->fiveXChkbxModify5xb);
+    fiveXModifyChkbx.append(ui->fiveXChkbxModify5xs);
+
+    //HD Pro
+    proPatchChkbxFive.append(ui->proChkbxPatchH5e);
+    proPatchChkbxFive.append(ui->proChkbxPatchH5b);
+    proPatchChkbxFive.append(ui->proChkbxPatchH5s);
+    proPatchChkbxFiveX.append(ui->proChkbxPatch5xe);
+    proPatchChkbxFiveX.append(ui->proChkbxPatch5xb);
+    proPatchChkbxFiveX.append(ui->proChkbxPatch5xs);
+    proPatchChkbxDesktop.append(ui->proChkbxPatchHbe);
+    proPatchChkbxDesktop.append(ui->proChkbxPatchHbb);
+    proPatchChkbxDesktop.append(ui->proChkbxPatchHbs);
+
+    proModifyChkbx.append(ui->proChkbxModifyHre);
+    proModifyChkbx.append(ui->proChkbxModifyHrb);
+    proModifyChkbx.append(ui->proChkbxModifyHrs);
+
     //HD 300 / 400
     translateCheckboxes300.append(ui->threeChkbxPatchH3e);
     //translateCheckboxes300.append(ui->threeChkbxPatchH3b);
@@ -445,24 +544,16 @@ MainWindow::MainWindow(QWidget *parent) :
     //translateCheckboxes400.append(ui->threeChkbxPatchH4b);
     //translateCheckboxes400.append(ui->threeChkbxPatchH4s);
 
-
-    //HD Pro
-    proPatchChkbxFive.append(ui->proChkbxPatchH5e);
-    proPatchChkbxFive.append(ui->proChkbxPatchH5b);
-    proPatchChkbxFive.append(ui->proChkbxPatchH5s);
-    proPatchChkbxDesktop.append(ui->proChkbxPatchHbe);
-    proPatchChkbxDesktop.append(ui->proChkbxPatchHbb);
-    proPatchChkbxDesktop.append(ui->proChkbxPatchHbs);
-
-    proModifyChkbx.append(ui->proChkbxModifyHre);
-    proModifyChkbx.append(ui->proChkbxModifyHrb);
-    proModifyChkbx.append(ui->proChkbxModifyHrs);
-
     //fileFilters
     // HD 500
     fileFilter500.append(h5eFilter);
     fileFilter500.append(h5bFilter);
     fileFilter500.append(h5sFilter);
+
+    // HD 500X
+    fileFilter500X.append(fivexeFilter);
+    fileFilter500X.append(fivexbFilter);
+    fileFilter500X.append(fivexsFilter);
 
     // HD Destktop
     fileFilterDesktop.append(hbeFilter);
@@ -490,6 +581,11 @@ MainWindow::MainWindow(QWidget *parent) :
     fileExtension500.append(h5bExtension);
     fileExtension500.append(h5sExtension);
 
+    // HD 500X
+    fileExtension500X.append(fivexeExtension);
+    fileExtension500X.append(fivexbExtension);
+    fileExtension500X.append(fivexsExtension);
+
     // HD 300
     fileExtension300.append(h3eExtension);
     fileExtension300.append(h3bExtension);
@@ -505,51 +601,63 @@ MainWindow::MainWindow(QWidget *parent) :
     // CheckBoxes
 
     listChkbxEditAmp.append(ui->fiveChkbxEditFirstAmp);
+    listChkbxEditAmp.append(ui->fiveXChkbxEditFirstAmp);
     listChkbxEditAmp.append(ui->desktopChkbxEditFirstAmp);
     listChkbxEditAmp.append(ui->proChkbxEditFirstAmp);
 
     listChkbxEditCab.append(ui->fiveChkbxEditFirstCab);
+    listChkbxEditCab.append(ui->fiveXChkbxEditFirstCab);
     listChkbxEditCab.append(ui->desktopChkbxEditFirstCab);
     listChkbxEditCab.append(ui->proChkbxEditFirstCab);
 
     listChkbxEditMic.append(ui->fiveChkbxEditFirstMic);
+    listChkbxEditMic.append(ui->fiveXChkbxEditFirstMic);
     listChkbxEditMic.append(ui->desktopChkbxEditFirstMic);
     listChkbxEditMic.append(ui->proChkbxEditFirstMic);
 
     listChkbxEditAmp.append(ui->fiveChkbxEditSecondAmp);
+    listChkbxEditAmp.append(ui->fiveXChkbxEditSecondAmp);
     listChkbxEditAmp.append(ui->desktopChkbxEditSecondAmp);
     listChkbxEditAmp.append(ui->proChkbxEditSecondAmp);
 
     listChkbxEditCab.append(ui->fiveChkbxEditSecondCab);
+    listChkbxEditCab.append(ui->fiveXChkbxEditSecondCab);
     listChkbxEditCab.append(ui->desktopChkbxEditSecondCab);
     listChkbxEditCab.append(ui->proChkbxEditSecondCab);
 
     listChkbxEditMic.append(ui->fiveChkbxEditSecondMic);
+    listChkbxEditMic.append(ui->fiveXChkbxEditSecondMic);
     listChkbxEditMic.append(ui->desktopChkbxEditSecondMic);
     listChkbxEditMic.append(ui->proChkbxEditSecondMic);
 
     // ComboBoxes
     listCbEditAmp.append(ui->fiveCbFirstAmp);
+    listCbEditAmp.append(ui->fiveXCbFirstAmp);
     listCbEditAmp.append(ui->desktopCbFirstAmp);
     listCbEditAmp.append(ui->proCbFirstAmp);
 
     listCbEditCab.append(ui->fiveCbFirstCab);
+    listCbEditCab.append(ui->fiveXCbFirstCab);
     listCbEditCab.append(ui->desktopCbFirstCab);
     listCbEditCab.append(ui->proCbFirstCab);
 
     listCbEditMic.append(ui->fiveCbFirstMic);
+    listCbEditMic.append(ui->fiveXCbFirstMic);
     listCbEditMic.append(ui->desktopCbFirstMic);
     listCbEditMic.append(ui->proCbFirstMic);
 
     listCbEditAmp.append(ui->fiveCbSecondAmp);
+    listCbEditAmp.append(ui->fiveXCbSecondAmp);
     listCbEditAmp.append(ui->desktopCbSecondAmp);
     listCbEditAmp.append(ui->proCbSecondAmp);
 
     listCbEditCab.append(ui->fiveCbSecondCab);
+    listCbEditCab.append(ui->fiveXCbSecondCab);
     listCbEditCab.append(ui->desktopCbSecondCab);
     listCbEditCab.append(ui->proCbSecondCab);
 
     listCbEditMic.append(ui->fiveCbSecondMic);
+    listCbEditMic.append(ui->fiveXCbSecondMic);
     listCbEditMic.append(ui->desktopCbSecondMic);
     listCbEditMic.append(ui->proCbSecondMic);
 
@@ -661,7 +769,7 @@ MainWindow::MainWindow(QWidget *parent) :
     InputProToDesktop.insert(0x01, 0x01);
     //InputProToDesktop.insert(0x03, 0x06);
     //InputProToDesktop.insert(0x04, 0x08);
-    //åInputProToDesktop.insert(0x05, 0x09);
+    //\E5InputProToDesktop.insert(0x05, 0x09);
     //InputProToDesktop.insert(0x06, 0x);
     //InputProToDesktop.insert(0x07, 0x);
     //InputProToDesktop.insert(0x09, 0x);
@@ -723,6 +831,23 @@ MainWindow::MainWindow(QWidget *parent) :
     connect( ui->fiveChkbxEditInputs, SIGNAL(clicked(bool)), ui->fiveCbSourceTwo, SLOT(setEnabled(bool)) );
     connect( ui->fiveChkbxEditInputs, SIGNAL(clicked(bool)), ui->fiveCbGuitarInput, SLOT(setEnabled(bool)) );
 
+    // HD 500
+    connect( ui->fiveXBtnBrowse, SIGNAL( clicked() ), this, SLOT( getPath() ) );
+    connect( ui->fiveXBtnRun, SIGNAL( clicked() ), this, SLOT( run500X() ) );
+    connect( ui->fiveXLeDirectoryChoser, SIGNAL( textEdited(QString) ), this, SLOT( onTextEdit(QString) ) );
+
+    connect( ui->fiveXChkbxEditFirstAmp, SIGNAL(clicked(bool)), ui->fiveXCbFirstAmp, SLOT(setEnabled(bool)) );
+    connect( ui->fiveXChkbxEditFirstCab, SIGNAL(clicked(bool)), ui->fiveXCbFirstCab, SLOT(setEnabled(bool)) );
+    connect( ui->fiveXChkbxEditFirstMic, SIGNAL(clicked(bool)), ui->fiveXCbFirstMic, SLOT(setEnabled(bool)) );
+
+    connect( ui->fiveXChkbxEditSecondAmp, SIGNAL(clicked(bool)), ui->fiveXCbSecondAmp, SLOT(setEnabled(bool)) );
+    connect( ui->fiveXChkbxEditSecondCab, SIGNAL(clicked(bool)), ui->fiveXCbSecondCab, SLOT(setEnabled(bool)) );
+    connect( ui->fiveXChkbxEditSecondMic, SIGNAL(clicked(bool)), ui->fiveXCbSecondMic, SLOT(setEnabled(bool)) );
+
+    connect( ui->fiveXChkbxEditInputs, SIGNAL(clicked(bool)), ui->fiveXCbSourceOne, SLOT(setEnabled(bool)) );
+    connect( ui->fiveXChkbxEditInputs, SIGNAL(clicked(bool)), ui->fiveXCbSourceTwo, SLOT(setEnabled(bool)) );
+    connect( ui->fiveXChkbxEditInputs, SIGNAL(clicked(bool)), ui->fiveXCbGuitarInput, SLOT(setEnabled(bool)) );
+
     // HD Pro
     connect( ui->proBtnBrowse, SIGNAL( clicked() ), this, SLOT( getPath() ) );
     connect( ui->proBtnRun, SIGNAL( clicked() ), this, SLOT( runPro() ) );
@@ -783,6 +908,7 @@ void MainWindow::getPath() {
         presetDirectory.setPath(path);
     }
     ui->fiveLeDirectoryChoser->setText(path);
+    ui->fiveXLeDirectoryChoser->setText(path);
     ui->desktopLeDirectoryChoser->setText(path);
     ui->proLeDirectoryChoser->setText(path);
     ui->threeLeDirectoryChoser->setText(path);
@@ -843,6 +969,13 @@ void MainWindow::copyModify() {
              }
         }
     }
+    if (ui->fiveXChkbxBackup->isChecked()) {
+        for (int i = 0; i < fiveXModifyChkbx.size(); i++) {
+             if (fiveXModifyChkbx.at(i)->isChecked() ) {
+                 copyFiles(presetDirectory, fileList.at(i), true);
+             }
+        }
+    }
     if (ui->proChkbxBackup->isChecked()) {
         for (int i = 0; i < proModifyChkbx.size(); i++) {
              if (proModifyChkbx.at(i)->isChecked() ) {
@@ -878,6 +1011,14 @@ void MainWindow::copyConvert(QList<QCheckBox*> chkbx) {
     }
 
     if (ui->fiveChkbxBackup->isChecked()) {
+        for (int i = 0; i < chkbx.size(); i++) {
+             if (chkbx.at(i)->isChecked() ) {
+                 copyFiles(presetDirectory, fileList.at(i), true);
+             }
+        }
+    }
+
+    if (ui->fiveXChkbxBackup->isChecked()) {
         for (int i = 0; i < chkbx.size(); i++) {
              if (chkbx.at(i)->isChecked() ) {
                  copyFiles(presetDirectory, fileList.at(i), true);
@@ -976,6 +1117,13 @@ void MainWindow::rename(QList<QCheckBox*> chkbx, QString pressedFrom) {
                 renameFiles(presetDirectory, fileList.at(i), fileExtension500.at(i));
             }
         }
+    } else if (pressedFrom.compare("500X") == 0) {
+
+        for (int i = 0; i < chkbx.size(); i++) {
+            if (chkbx.at(i)->isChecked() ) {
+                renameFiles(presetDirectory, fileList.at(i), fileExtension500X.at(i));
+            }
+        }
     }
 }
 
@@ -1058,6 +1206,28 @@ void MainWindow::changeText500() {
     }
 
     ui->fiveLbAfterRun->setText(StringDone);
+}
+
+void MainWindow::changeText500X() {
+    ui->fiveXLbAfterRun->setText("");
+
+    QString StringDone;
+
+    if (ui->fiveXChkbxBackup->isChecked()) {
+        StringDone = QString("Done: %1 files patched and renamed. Backup created.").arg(presetsPatched);
+    } else {
+        StringDone = QString("Done: %1 files patched and renamed.").arg(presetsPatched);
+    }
+
+    if (ui->fiveXChkbxModify5xe->isChecked() || ui->fiveXChkbxModify5xb->isChecked() || ui->fiveXChkbxModify5xs->isChecked())  {
+        if (ui->fiveXChkbxBackup->isChecked()) {
+            StringDone = QString("Done: %1 files edited. Backup created.").arg(presetsModified);
+        } else {
+            StringDone = QString("Done: %1 files edited.").arg(presetsModified);
+        }
+    }
+
+    ui->fiveXLbAfterRun->setText(StringDone);
 }
 
 void MainWindow::changeTextPro() {
@@ -1146,6 +1316,27 @@ void MainWindow::convert(QString pressedFrom) {
         //        presetsPatched = fileList.at(0).count();
         //        //release h5eFiles
         //}
+    } else if (pressedFrom.compare("500X") == 0) {
+        //if (ui->fiveChkbxPatchHbe->isChecked()) {
+            convertPresetFiles(fileList.at(0), "500X");
+                presetsPatched = presetsPatched + fileList.at(0).count();
+                //release h5eFiles
+        //}
+        //if (ui->fiveChkbxPatchHbb->isChecked()) {
+            convertBundleFiles(fileList.at(1), "500X");
+                presetsPatched = presetsPatched + fileList.at(1).count();
+                //release hbeFiles
+        //}
+        //if (ui->fiveChkbxPatchHbs->isChecked()) {
+            convertSetlistFiles(fileList.at(2), "500X");
+                presetsPatched = presetsPatched + fileList.at(2).count();
+                //release hbeFiles
+        //}
+        //if (ui->fiveChkbxModifyH5e->isChecked()) {
+        //        modifyPresetFiles(fileList.at(0));
+        //        presetsPatched = fileList.at(0).count();
+        //        //release h5eFiles
+        //}
     } else if (pressedFrom.compare("Pro") == 0) {
         //if (ui->proChkbxPatchH5e->isChecked()) {
             convertPresetFiles(fileList.at(0), "Pro");
@@ -1207,6 +1398,24 @@ void MainWindow::modify(QString pressedFrom) {
         if (ui->fiveChkbxModifyH5s->isChecked()) {
 
             convertSetlistFiles(fileList.at(2), "500");
+            presetsModified = presetsModified + fileList.at(2).count();
+            modifySetlistFiles(fileList.at(2));
+        }
+    } else if (pressedFrom.compare("500X") == 0) {
+        if (ui->fiveXChkbxModify5xe->isChecked()) {
+            convertPresetFiles(fileList.at(0), "500X");
+            modifyPresetFiles(fileList.at(0));
+            presetsModified = presetsModified + fileList.at(0).count();
+        }
+        if (ui->fiveXChkbxModify5xb->isChecked()) {
+
+            convertBundleFiles(fileList.at(1), "500X");
+            presetsModified = presetsModified + fileList.at(1).count();
+            modifyBundleFiles(fileList.at(1));
+        }
+        if (ui->fiveXChkbxModify5xs->isChecked()) {
+
+            convertSetlistFiles(fileList.at(2), "500X");
             presetsModified = presetsModified + fileList.at(2).count();
             modifySetlistFiles(fileList.at(2));
         }
@@ -1294,6 +1503,35 @@ void MainWindow::changeAmps(QString pressedFrom) {
             }
             //presetsModified = presetsModified + fileList.at(2).count();
         }
+    } else if (pressedFrom.compare("500X") == 0) {
+        if (ui->fiveXChkbxModify5xe->isChecked()) {
+
+            if (ui->fiveXChkbxEditAmpToPre->isChecked())  {
+                changePresetFilesAmps(AmpsToPreAmps, fileList.at(0));
+            } else if (ui->fiveXChkbxEditPreToAmp->isChecked())  {
+                changePresetFilesAmps(PreAmpsToAmps, fileList.at(0));
+            }
+            //presetsModified = presetsModified + fileList.at(0).count();
+        }
+        if (ui->fiveXChkbxModify5xb->isChecked()) {
+
+            if (ui->fiveXChkbxEditAmpToPre->isChecked())  {
+                changeBundleFilesAmps(AmpsToPreAmps, fileList.at(1));
+            } else if (ui->fiveXChkbxEditPreToAmp->isChecked())  {
+                changeBundleFilesAmps(PreAmpsToAmps, fileList.at(1));
+            }
+
+            //presetsModified = presetsModified + fileList.at(1).count();
+        }
+        if (ui->fiveXChkbxModify5xs->isChecked()) {
+
+            if (ui->fiveXChkbxEditAmpToPre->isChecked())  {
+                changeSetlistFilesAmps(AmpsToPreAmps, fileList.at(2));
+            } else if (ui->fiveXChkbxEditPreToAmp->isChecked())  {
+                changeSetlistFilesAmps(PreAmpsToAmps, fileList.at(2));
+            }
+            //presetsModified = presetsModified + fileList.at(2).count();
+        }
     } else if (pressedFrom.compare("Pro") == 0) {
 
         if (ui->proChkbxModifyHre->isChecked()) {
@@ -1333,6 +1571,10 @@ void MainWindow::processSettings(QString pressedFrom) {
         sourceTwo[0] = '\x00';
         guitarIn[0] = '\x00';
     } else if (pressedFrom.compare("500") == 0) {
+        sourceOne[0] = '\x01';
+        sourceTwo[0] = '\x08';
+        guitarIn[0] = '\x00';
+    } else if (pressedFrom.compare("500X") == 0) {
         sourceOne[0] = '\x01';
         sourceTwo[0] = '\x08';
         guitarIn[0] = '\x00';
@@ -1477,6 +1719,118 @@ void MainWindow::processSettings(QString pressedFrom) {
                 break;
         }
         switch (ui->fiveCbGuitarInput->currentIndex()) {
+            case 0:
+                guitarIn[0] = '\x00';
+                //guitarIn[1] = '\0';
+                break;
+            case 1:
+                guitarIn[0] = '\x01';
+                //guitarIn[1] = '\0';
+                break;
+            case 2:
+                guitarIn[0] = '\x02';
+                //guitarIn[1] = '\0';
+                break;
+            case 3:
+                guitarIn[0] = '\x03';
+                //guitarIn[1] = '\0';
+                break;
+            case 4:
+                guitarIn[0] = '\x04';
+                //guitarIn[1] = '\0';
+                break;
+            case 5:
+                guitarIn[0] = '\x05';
+                //guitarIn[1] = '\0';
+                break;
+            case 6:
+                guitarIn[0] = '\x06';
+                //guitarIn[1] = '\0';
+                break;
+            case 7:
+                guitarIn[0] = '\x07';
+                //guitarIn[1] = '\0';
+                break;
+            case 8:
+                guitarIn[0] = '\x08';
+                //guitarIn[1] = '\0';
+                break;
+        }
+    }
+    if (ui->fiveXChkbxEditInputs->isChecked()) {
+        switch (ui->fiveXCbSourceOne->currentIndex()) {
+            case 0:
+                sourceOne[0] = '\x01';
+                //sourceOne[1] = '\0';
+                break;
+            case 1:
+                sourceOne[0] = '\x02';
+                //sourceOne[1] = '\0';
+                break;
+            case 2:
+                sourceOne[0] = '\x03';
+                //sourceOne[1] = '\0';
+                break;
+            case 3:
+                sourceOne[0] = '\x05';
+                //sourceOne[1] = '\0';
+                break;
+            case 4:
+                sourceOne[0] = '\x06';
+                //sourceOne[1] = '\0';
+                break;
+            case 5:
+                sourceOne[0] = '\x07';
+                //sourceOne[1] = '\0';
+                break;
+            case 6:
+                sourceOne[0] = '\x08';
+                //sourceOne[1] = '\0';
+                break;
+            case 7:
+                sourceOne[0] = '\x09';
+                //sourceOne[1] = '\0';
+                break;
+        }
+        switch (ui->fiveXCbSourceTwo->currentIndex()) {
+            case 0:
+                sourceTwo[0] = '\x00';
+                //sourceTwo[1] = '\0';
+                break;
+            case 1:
+                sourceTwo[0] = '\x01';
+                //sourceTwo[1] = '\0';
+                break;
+            case 2:
+                sourceTwo[0] = '\x02';
+                //sourceTwo[1] = '\0';
+                break;
+            case 3:
+                sourceTwo[0] = '\x03';
+                //sourceTwo[1] = '\0';
+                break;
+            case 4:
+                sourceTwo[0] = '\x05';
+                //sourceTwo[1] = '\0';
+                break;
+            case 5:
+                sourceTwo[0] = '\x06';
+                //sourceTwo[1] = '\0';
+                break;
+            case 6:
+                sourceTwo[0] = '\x07';
+                //sourceTwo[1] = '\0';
+                break;
+            case 7:
+                sourceTwo[0] = '\x08';
+                //sourceTwo[1] = '\0';
+                break;
+            case 8:
+                sourceTwo[0] = '\x09';
+                //sourceTwo[1] = '\0';
+                break;
+        }
+        switch (ui->fiveXCbGuitarInput->currentIndex()) {
             case 0:
                 guitarIn[0] = '\x00';
                 //guitarIn[1] = '\0';
@@ -1711,6 +2065,13 @@ void MainWindow::convertPresetFiles(QStringList presetFiles, QString pressedFrom
         bytes0013[0] = '\x02';
         bytes0014[0] = '\x01';
         bytes0015[0] = '\x30';
+    } else if (pressedFrom.compare("500X") == 0) {
+        bytes000B[0] = '\x2d';
+        bytes000C[0] = '\x02';
+        bytes000D[0] = '\x22';
+        bytes0013[0] = '\x05';
+        bytes0014[0] = '\x00';
+        bytes0015[0] = '\x00';
     } else if (pressedFrom.compare("Pro") == 0) {
         bytes000B[0] = '\x29';
         bytes000C[0] = '\x02';
@@ -1866,6 +2227,45 @@ void MainWindow::convertBundleFiles(QStringList presetFiles, QString pressedFrom
         bytes040AAB[0] = '\x02';
         bytes040AAC[0] = '\x01';
         bytes040AAD[0] = '\x30';
+
+    } else if (pressedFrom.compare("500X") == 0) {
+
+        // Header
+
+        bytes00000B[0] = '\x05';
+        bytes00000C[0] = '\x00';
+        bytes00000D[0] = '\x00';
+        bytes000017[0] = '\x2D';
+
+        bytes000033[0] = '\x05';
+        bytes000034[0] = '\x00';
+        bytes000035[0] = '\x30';
+        bytes00003F[0] = '\x2D';
+
+        bytes00006B[0] = '\x2D';
+        bytes000073[0] = '\x05';
+        bytes000074[0] = '\x00';
+        bytes000075[0] = '\x00';
+
+        // Content 1-8
+
+        bytes001093[0] = '\x2D';
+        bytes00109B[0] = '\x05';
+        bytes00109C[0] = '\x00';
+        bytes00109D[0] = '\x00';
+
+        // Setlist 2-8
+
+        bytes040A5E[0] = '\x01'; // ?
+
+        bytes040A6B[0] = '\x05';
+        bytes040A6C[0] = '\x00';
+        bytes040A6D[0] = '\x00';
+        bytes040A77[0] = '\x2D';
+        bytes040AA3[0] = '\x2D';
+        bytes040AAB[0] = '\x05';
+        bytes040AAC[0] = '\x00';
+        bytes040AAD[0] = '\x00';
 
     } else if (pressedFrom.compare("Pro") == 0) {
 
@@ -2066,6 +2466,26 @@ void MainWindow::convertSetlistFiles(QStringList presetFiles, QString pressedFro
         bytes001073[0] = '\x02';
         bytes001074[0] = '\x01';
         bytes001075[0] = '\x30';
+
+    } else if (pressedFrom.compare("500X") == 0) {
+
+        // Header
+
+        bytes00000B[0] = '\x05';
+        bytes00000C[0] = '\x00';
+        bytes00000D[0] = '\x00';
+        bytes000017[0] = '\x2D';
+        bytes000043[0] = '\x2D';
+        bytes00004B[0] = '\x05';
+        bytes00004C[0] = '\x00';
+        bytes00004D[0] = '\x00';
+
+        // Content 1-8
+
+        bytes00106B[0] = '\x2D';
+        bytes001073[0] = '\x05';
+        bytes001074[0] = '\x00';
+        bytes001075[0] = '\x00';
 
     } else if (pressedFrom.compare("Desktop") == 0) {
 
@@ -4237,7 +4657,7 @@ void MainWindow::modifyPresetFiles(QStringList files) {
         QFile fileToModify(files[i]);
         if (fileToModify.open(QIODevice::ReadWrite)) {
 
-            if (ui->fiveChkbxEditFirstAmp->isChecked() || ui->desktopChkbxEditFirstAmp->isChecked() || ui->proChkbxEditFirstAmp->isChecked()) {
+            if (ui->fiveChkbxEditFirstAmp->isChecked() || ui->fiveXChkbxEditFirstAmp->isChecked() || ui->desktopChkbxEditFirstAmp->isChecked() || ui->proChkbxEditFirstAmp->isChecked()) {
 
                 // Check if first Amp is On
                 fileToModify.seek(0x58);
@@ -4249,7 +4669,7 @@ void MainWindow::modifyPresetFiles(QStringList files) {
                     fileToModify.write(ampOne, maxSize);
                 }
             }
-            if (ui->fiveChkbxEditSecondAmp->isChecked() || ui->desktopChkbxEditSecondAmp->isChecked() || ui->proChkbxEditSecondAmp->isChecked()) {
+            if (ui->fiveChkbxEditSecondAmp->isChecked() || ui->fiveXChkbxEditSecondAmp->isChecked() || ui->desktopChkbxEditSecondAmp->isChecked() || ui->proChkbxEditSecondAmp->isChecked()) {
                 // Check if second Amp is On
                 fileToModify.seek(0x15B);
                 fileToModify.read(hexIn,1);
@@ -4260,7 +4680,7 @@ void MainWindow::modifyPresetFiles(QStringList files) {
                     fileToModify.write(ampTwo, maxSize);
                 }
             }
-            if (ui->fiveChkbxEditFirstCab->isChecked() || ui->desktopChkbxEditFirstCab->isChecked() || ui->proChkbxEditFirstCab->isChecked()) {
+            if (ui->fiveChkbxEditFirstCab->isChecked() || ui->fiveXChkbxEditFirstCab->isChecked() || ui->desktopChkbxEditFirstCab->isChecked() || ui->proChkbxEditFirstCab->isChecked()) {
                 // Check if first Cab is On
                 if(CabOneOff == true) {
                     fileToModify.seek(0x25B);
@@ -4274,7 +4694,7 @@ void MainWindow::modifyPresetFiles(QStringList files) {
                     fileToModify.write(cabOne, maxSize);
                 }
             }
-            if (ui->fiveChkbxEditSecondCab->isChecked() || ui->desktopChkbxEditSecondCab->isChecked() || ui->proChkbxEditSecondCab->isChecked()) {
+            if (ui->fiveChkbxEditSecondCab->isChecked() || ui->fiveXChkbxEditSecondCab->isChecked() || ui->desktopChkbxEditSecondCab->isChecked() || ui->proChkbxEditSecondCab->isChecked()) {
                 // Check if second Cab is On
                 if(CabTwoOff == true) {
                     fileToModify.seek(0x35B);
@@ -4289,19 +4709,19 @@ void MainWindow::modifyPresetFiles(QStringList files) {
                 }
 
             }
-            if (ui->fiveChkbxEditFirstMic->isChecked() || ui->desktopChkbxEditFirstMic->isChecked() || ui->proChkbxEditFirstMic->isChecked()) {
+            if (ui->fiveChkbxEditFirstMic->isChecked() || ui->fiveXChkbxEditFirstMic->isChecked() || ui->desktopChkbxEditFirstMic->isChecked() || ui->proChkbxEditFirstMic->isChecked()) {
 
                 // Set first Microphone
                 fileToModify.seek(0x1020);
                 fileToModify.write(micOne, maxSize);
             }
-            if (ui->fiveChkbxEditSecondMic->isChecked() || ui->desktopChkbxEditSecondMic->isChecked() || ui->proChkbxEditSecondMic->isChecked()) {
+            if (ui->fiveChkbxEditSecondMic->isChecked() || ui->fiveXChkbxEditSecondMic->isChecked() || ui->desktopChkbxEditSecondMic->isChecked() || ui->proChkbxEditSecondMic->isChecked()) {
                 // Set second Microphone
                 fileToModify.seek(0x1021);
                 fileToModify.write(micTwo, maxSize);
 
             }
-            if (ui->fiveChkbxEditInputs->isChecked() || ui->desktopChkbxEditInputs->isChecked() || ui->proChkbxEditInputs->isChecked()) {
+            if (ui->fiveChkbxEditInputs->isChecked() || ui->fiveXChkbxEditInputs->isChecked() || ui->desktopChkbxEditInputs->isChecked() || ui->proChkbxEditInputs->isChecked()) {
                 fileToModify.seek(0x1026);
                 fileToModify.write(sourceOne, maxSize);
 
@@ -4327,7 +4747,7 @@ void MainWindow::modifySetlistFiles(QStringList files) {
         QFile fileToModify(files[k]);
         if (fileToModify.open(QIODevice::ReadWrite)) {
 
-            if (ui->fiveChkbxEditFirstAmp->isChecked() || ui->desktopChkbxEditFirstAmp->isChecked() || ui->proChkbxEditFirstAmp->isChecked()) {
+            if (ui->fiveChkbxEditFirstAmp->isChecked() || ui->fiveXChkbxEditFirstAmp->isChecked() || ui->desktopChkbxEditFirstAmp->isChecked() || ui->proChkbxEditFirstAmp->isChecked()) {
 
                 // Check if first Amp is On
                 for (int i=0; i<64; i++) {
@@ -4340,7 +4760,7 @@ void MainWindow::modifySetlistFiles(QStringList files) {
                     }
                 }
             }
-            if (ui->fiveChkbxEditSecondAmp->isChecked() || ui->desktopChkbxEditSecondAmp->isChecked() || ui->proChkbxEditSecondAmp->isChecked()) {
+            if (ui->fiveChkbxEditSecondAmp->isChecked() || ui->fiveXChkbxEditSecondAmp->isChecked() || ui->desktopChkbxEditSecondAmp->isChecked() || ui->proChkbxEditSecondAmp->isChecked()) {
                 // Check if second Amp is On
                 for (int i=0; i<64; i++) {
                 fileToModify.seek(0x190  + (i * 0x001028));
@@ -4352,7 +4772,7 @@ void MainWindow::modifySetlistFiles(QStringList files) {
                     }
                 }
             }
-            if (ui->fiveChkbxEditFirstCab->isChecked() || ui->desktopChkbxEditFirstCab->isChecked() || ui->proChkbxEditFirstCab->isChecked()) {
+            if (ui->fiveChkbxEditFirstCab->isChecked() || ui->fiveXChkbxEditFirstCab->isChecked() || ui->desktopChkbxEditFirstCab->isChecked() || ui->proChkbxEditFirstCab->isChecked()) {
                 // Check if first Cab is On
                 if(CabOneOff == true) {
                     for (int i=0; i<64; i++) {
@@ -4370,7 +4790,7 @@ void MainWindow::modifySetlistFiles(QStringList files) {
                     }
                 }
             }
-            if (ui->fiveChkbxEditSecondCab->isChecked() || ui->desktopChkbxEditSecondCab->isChecked() || ui->proChkbxEditSecondCab->isChecked()) {
+            if (ui->fiveChkbxEditSecondCab->isChecked() || ui->fiveXChkbxEditSecondCab->isChecked() || ui->desktopChkbxEditSecondCab->isChecked() || ui->proChkbxEditSecondCab->isChecked()) {
                 // Check if second Cab is On
                 if(CabTwoOff == true) {
                     for (int i=0; i<64; i++) {
@@ -4388,7 +4808,7 @@ void MainWindow::modifySetlistFiles(QStringList files) {
                     }
                 }
             }
-            if (ui->fiveChkbxEditFirstMic->isChecked() || ui->desktopChkbxEditFirstMic->isChecked() || ui->proChkbxEditFirstMic->isChecked()) {
+            if (ui->fiveChkbxEditFirstMic->isChecked() || ui->fiveXChkbxEditFirstMic->isChecked() || ui->desktopChkbxEditFirstMic->isChecked() || ui->proChkbxEditFirstMic->isChecked()) {
 
                 // Set first Microphone
                 for (int i=0; i<64; i++) {
@@ -4396,14 +4816,14 @@ void MainWindow::modifySetlistFiles(QStringList files) {
                     fileToModify.write(micOne, maxSize);
                 }
             }
-            if (ui->fiveChkbxEditSecondMic->isChecked() || ui->desktopChkbxEditSecondMic->isChecked() || ui->proChkbxEditSecondMic->isChecked()) {
+            if (ui->fiveChkbxEditSecondMic->isChecked() || ui->fiveXChkbxEditSecondMic->isChecked() || ui->desktopChkbxEditSecondMic->isChecked() || ui->proChkbxEditSecondMic->isChecked()) {
                 // Set second Microphone
                 for (int i=0; i<64; i++) {
                     fileToModify.seek(0x1059 + (i * 0x001028));
                     fileToModify.write(micTwo, maxSize);
                 }
             }
-            if (ui->fiveChkbxEditInputs->isChecked() || ui->desktopChkbxEditInputs->isChecked() || ui->proChkbxEditInputs->isChecked()) {
+            if (ui->fiveChkbxEditInputs->isChecked() || ui->fiveXChkbxEditInputs->isChecked() || ui->desktopChkbxEditInputs->isChecked() || ui->proChkbxEditInputs->isChecked()) {
                 for (int i=0; i<64; i++) {
                     fileToModify.seek(0x00105E + (i * 0x001028));
                     fileToModify.write(sourceOne, maxSize);
@@ -4431,7 +4851,7 @@ void MainWindow::modifyBundleFiles(QStringList files) {
         QFile fileToModify(files[k]);
         if (fileToModify.open(QIODevice::ReadWrite)) {
 
-            if (ui->fiveChkbxEditFirstAmp->isChecked() || ui->desktopChkbxEditFirstAmp->isChecked() || ui->proChkbxEditFirstAmp->isChecked()) {
+            if (ui->fiveChkbxEditFirstAmp->isChecked() || ui->fiveXChkbxEditFirstAmp->isChecked() || ui->desktopChkbxEditFirstAmp->isChecked() || ui->proChkbxEditFirstAmp->isChecked()) {
 
                 // Check if first Amp is On
                 // Content
@@ -4460,7 +4880,7 @@ void MainWindow::modifyBundleFiles(QStringList files) {
                 }
             }
 
-            if (ui->fiveChkbxEditSecondAmp->isChecked() || ui->desktopChkbxEditSecondAmp->isChecked() || ui->proChkbxEditSecondAmp->isChecked()) {
+            if (ui->fiveChkbxEditSecondAmp->isChecked() || ui->fiveXChkbxEditSecondAmp->isChecked() || ui->desktopChkbxEditSecondAmp->isChecked() || ui->proChkbxEditSecondAmp->isChecked()) {
                 // Check if second Amp is On
                 // Content
                 for (int j=0; j<8; j++) {
@@ -4487,7 +4907,7 @@ void MainWindow::modifyBundleFiles(QStringList files) {
                     }
                 }
             }
-            if (ui->fiveChkbxEditFirstCab->isChecked() || ui->desktopChkbxEditFirstCab->isChecked() || ui->proChkbxEditFirstCab->isChecked()) {
+            if (ui->fiveChkbxEditFirstCab->isChecked() || ui->fiveXChkbxEditFirstCab->isChecked() || ui->desktopChkbxEditFirstCab->isChecked() || ui->proChkbxEditFirstCab->isChecked()) {
                 // Content
                 // Check if first Cab is On
                 if(CabOneOff == true) {
@@ -4529,7 +4949,7 @@ void MainWindow::modifyBundleFiles(QStringList files) {
                     }
                 }
             }
-            if (ui->fiveChkbxEditSecondCab->isChecked() || ui->desktopChkbxEditSecondCab->isChecked() || ui->proChkbxEditSecondCab->isChecked()) {
+            if (ui->fiveChkbxEditSecondCab->isChecked() || ui->fiveXChkbxEditSecondCab->isChecked() || ui->desktopChkbxEditSecondCab->isChecked() || ui->proChkbxEditSecondCab->isChecked()) {
                 // Content
                 // Check if second Cab is On
                 if(CabTwoOff == true) {
@@ -4571,7 +4991,7 @@ void MainWindow::modifyBundleFiles(QStringList files) {
                     }
                 }
             }
-            if (ui->fiveChkbxEditFirstMic->isChecked() || ui->desktopChkbxEditFirstMic->isChecked() || ui->proChkbxEditFirstMic->isChecked()) {
+            if (ui->fiveChkbxEditFirstMic->isChecked() || ui->fiveXChkbxEditFirstMic->isChecked() || ui->desktopChkbxEditFirstMic->isChecked() || ui->proChkbxEditFirstMic->isChecked()) {
 
                 // Set first Microphone
                 // Content
@@ -4587,7 +5007,7 @@ void MainWindow::modifyBundleFiles(QStringList files) {
                     fileToModify.write(micOne, maxSize);
                 }
             }
-            if (ui->fiveChkbxEditSecondMic->isChecked() || ui->desktopChkbxEditSecondMic->isChecked() || ui->proChkbxEditSecondMic->isChecked()) {
+            if (ui->fiveChkbxEditSecondMic->isChecked() || ui->fiveXChkbxEditSecondMic->isChecked() || ui->desktopChkbxEditSecondMic->isChecked() || ui->proChkbxEditSecondMic->isChecked()) {
                 // Set second Microphone
                 // Content
                 for (int j=0; j<8; j++) {
@@ -4602,7 +5022,7 @@ void MainWindow::modifyBundleFiles(QStringList files) {
                     fileToModify.write(micTwo, maxSize);
                 }
             }
-            if (ui->fiveChkbxEditInputs->isChecked() || ui->desktopChkbxEditInputs->isChecked() || ui->proChkbxEditInputs->isChecked()) {
+            if (ui->fiveChkbxEditInputs->isChecked() || ui->fiveXChkbxEditInputs->isChecked() || ui->desktopChkbxEditInputs->isChecked() || ui->proChkbxEditInputs->isChecked()) {
                 for (int j=0; j<8; j++) {
                     for (int i=0; i<64; i++) {
                         fileToModify.seek((0x001086 + (j * 0x040A38)) + (i * 0x001028));
@@ -4887,6 +5307,19 @@ void MainWindow::runDesktop() {
     rename(desktopPatchChkbxFive, "Desktop");
     changeTextDesktop();
 
+    getFiles(presetDirectory, fileFilter500X);
+    copyConvert(desktopPatchChkbxFiveX);
+    processSettings("Desktop");
+    processChangeAmps();
+    convert("Desktop");
+
+    convertPresetFilesInputs(Input500ToDesktop, fileList.at(0));
+    convertBundleFilesInputs(Input500ToDesktop, fileList.at(1));
+    convertSetlistFilesInputs(Input500ToDesktop, fileList.at(2));
+
+    rename(desktopPatchChkbxFive, "Desktop");
+    changeTextDesktop();
+
     getFiles(presetDirectory, fileFilterPro);
     copyConvert(desktopPatchChkbxPro);
     processSettings("Desktop");
@@ -4922,6 +5355,10 @@ void MainWindow::run300() {
     copyModify();
     convert("300");
 
+    getFiles(presetDirectory, fileFilter500X);
+    copyModify();
+    convert("300");
+
     getFiles(presetDirectory, fileFilterDesktop);
     copyModify();
     convert("300");
@@ -4936,6 +5373,19 @@ void MainWindow::run500() {
 
     presetsPatched = 0;
     presetsModified = 0;
+
+    getFiles(presetDirectory, fileFilter500X);
+    copyConvert(fivePatchChkbxFiveX);
+    processSettings("500");
+    processChangeAmps();
+    convert("500");
+
+    //convertPresetFilesInputs(InputDesktopTo500, fileList.at(0));
+    //convertBundleFilesInputs(InputDesktopTo500, fileList.at(1));
+    //convertSetlistFilesInputs(InputDesktopTo500, fileList.at(2));
+
+    rename(fivePatchChkbxFiveX, "500");
+    changeText500();
 
     getFiles(presetDirectory, fileFilterDesktop);
     copyConvert(fivePatchChkbxDesktop);
@@ -4976,6 +5426,63 @@ void MainWindow::run500() {
     }
 }
 
+void MainWindow::run500X() {
+
+    presetsPatched = 0;
+    presetsModified = 0;
+
+    getFiles(presetDirectory, fileFilter500);
+    copyConvert(fiveXPatchChkbxFive);
+    processSettings("500X");
+    processChangeAmps();
+    convert("500X");
+
+    //convertPresetFilesInputs(InputDesktopTo500, fileList.at(0));
+    //convertBundleFilesInputs(InputDesktopTo500, fileList.at(1));
+    //convertSetlistFilesInputs(InputDesktopTo500, fileList.at(2));
+
+    rename(fiveXPatchChkbxFive, "500X");
+    changeText500X();
+
+    getFiles(presetDirectory, fileFilterDesktop);
+    copyConvert(fiveXPatchChkbxDesktop);
+    processSettings("500X");
+    processChangeAmps();
+    convert("500X");
+
+    convertPresetFilesInputs(InputDesktopTo500, fileList.at(0));
+    convertBundleFilesInputs(InputDesktopTo500, fileList.at(1));
+    convertSetlistFilesInputs(InputDesktopTo500, fileList.at(2));
+
+    rename(fiveXPatchChkbxDesktop, "500X");
+    changeText500X();
+
+    getFiles(presetDirectory, fileFilterPro);
+    copyConvert(fiveXPatchChkbxPro);
+    processSettings("500X");
+    processChangeAmps();
+    convert("500X");
+
+    convertPresetFilesInputs(InputProTo500, fileList.at(0));
+    convertBundleFilesInputs(InputProTo500, fileList.at(1));
+    convertSetlistFilesInputs(InputProTo500, fileList.at(2));
+
+    rename(fiveXPatchChkbxPro, "500X");
+    changeText500X();
+
+    if(ui->fiveXChkbxModify5xe->isChecked() || ui->fiveXChkbxModify5xb->isChecked() || ui->fiveXChkbxModify5xs->isChecked()) {
+
+        getFiles(presetDirectory, fileFilter500X);
+        copyModify();
+        processSettings("500X");
+        processChangeAmps();
+        modify("500X");
+        changeAmps("500X");
+        changeText500X();
+
+    }
+}
+
 void MainWindow::runPro() {
 
     presetsPatched = 0;
@@ -4992,6 +5499,19 @@ void MainWindow::runPro() {
     convertSetlistFilesInputs(Input500ToPro, fileList.at(2));
 
     rename(proPatchChkbxFive, "Pro");
+    changeTextPro();
+
+    getFiles(presetDirectory, fileFilter500X);
+    copyConvert(proPatchChkbxFiveX);
+    processSettings("Pro");
+    processChangeAmps();
+    convert("Pro");
+
+    convertPresetFilesInputs(Input500ToPro, fileList.at(0));
+    convertBundleFilesInputs(Input500ToPro, fileList.at(1));
+    convertSetlistFilesInputs(Input500ToPro, fileList.at(2));
+
+    rename(proPatchChkbxFiveX, "Pro");
     changeTextPro();
 
     getFiles(presetDirectory, fileFilterDesktop);

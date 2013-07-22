@@ -69,6 +69,7 @@ public:
     void changeTextDesktop();
     void changeText300();
     void changeText500();
+    void changeText500X();
     void changeTextPro();
 
     bool poti(QFile &sourceFile, QFile &targetFile, int sourcePosition, int targetPosition);
@@ -87,6 +88,7 @@ public slots:
     void openDialogAbout();
     void run300();
     void run500();
+    void run500X();
     void runPro();
     void changePage300();
     void changePage400();

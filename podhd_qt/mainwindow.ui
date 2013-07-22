@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
+    <width>626</width>
     <height>580</height>
    </rect>
   </property>
@@ -25,63 +25,37 @@
         <string>HD 500</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_5">
-        <item row="0" column="0">
-         <widget class="QLabel" name="fiveLbMain">
+        <item row="1" column="0" colspan="2">
+         <widget class="QLineEdit" name="fiveLeDirectoryChoser">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
-          <property name="locale">
-           <locale language="English" country="UnitedStates"/>
-          </property>
           <property name="text">
-           <string>POD HD 500</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
+           <string>Select a Directory with Files</string>
           </property>
          </widget>
         </item>
-        <item row="1" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout">
-          <item>
-           <widget class="QLineEdit" name="fiveLeDirectoryChoser">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>Select a Directory with Files</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="fiveBtnBrowse">
-            <property name="toolTip">
-             <string>Press button to choose a directory</string>
-            </property>
-            <property name="text">
-             <string>Browse</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
+        <item row="1" column="2">
+         <widget class="QPushButton" name="fiveBtnBrowse">
+          <property name="toolTip">
+           <string>Press button to choose a directory</string>
+          </property>
+          <property name="text">
+           <string>Browse</string>
+          </property>
+         </widget>
         </item>
-        <item row="2" column="0">
+        <item row="2" column="0" colspan="2">
          <widget class="QLabel" name="fiveLbConvert">
           <property name="text">
-           <string>Convert POD HD Desktop &amp; Pro Files to HD 500 Files</string>
+           <string>Convert POD HD 500X &amp; Desktop &amp; Pro Files to HD 500 Files</string>
           </property>
          </widget>
         </item>
-        <item row="3" column="0">
+        <item row="3" column="0" colspan="3">
          <widget class="QScrollArea" name="fiveScrollAreaOne">
           <property name="widgetResizable">
            <bool>true</bool>
@@ -91,11 +65,25 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>439</width>
-             <height>207</height>
+             <width>569</width>
+             <height>333</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_9">
+            <item row="6" column="0">
+             <widget class="QCheckBox" name="fiveChkbxPatch5xb">
+              <property name="text">
+               <string>Patch HD 500X Bundles to 500 (.5xb -&gt; .h5b)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QCheckBox" name="fiveChkbxPatch5xe">
+              <property name="text">
+               <string>Patch HD 500X Presets to 500 (.5xe -&gt; .h5e)</string>
+              </property>
+             </widget>
+            </item>
             <item row="0" column="0">
              <widget class="QLabel" name="fiveLbPresets">
               <property name="text">
@@ -103,59 +91,66 @@
               </property>
              </widget>
             </item>
-            <item row="1" column="0">
+            <item row="2" column="0">
              <widget class="QCheckBox" name="fiveChkbxPatchHbe">
               <property name="text">
                <string>Patch HD Desktop Presets to 500 (.hbe -&gt; .h5e)</string>
               </property>
              </widget>
             </item>
-            <item row="8" column="0">
+            <item row="11" column="0">
              <widget class="QCheckBox" name="fiveChkbxPatchHbs">
               <property name="text">
                <string>Patch HD Desktop Setlists to 500 (.hbs -&gt; .h5s)</string>
               </property>
              </widget>
             </item>
-            <item row="4" column="0">
+            <item row="5" column="0">
              <widget class="QLabel" name="label_3">
               <property name="text">
                <string>Bundles:</string>
               </property>
              </widget>
             </item>
-            <item row="7" column="0">
+            <item row="9" column="0">
              <widget class="QLabel" name="label_2">
               <property name="text">
                <string>Setlists:</string>
               </property>
              </widget>
             </item>
-            <item row="5" column="0">
-             <widget class="QCheckBox" name="fiveChkbxPatchHbb">
-              <property name="text">
-               <string>Patch HD Desktop Bundles to 500 (.hbb -&gt; .h5b)</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="0">
-             <widget class="QCheckBox" name="fiveChkbxPatchHre">
-              <property name="text">
-               <string>Patch HD Pro Presets to 500 (.hre -&gt; .h5e)</string>
-              </property>
-             </widget>
-            </item>
-            <item row="6" column="0">
+            <item row="8" column="0">
              <widget class="QCheckBox" name="fiveChkbxPatchHrb">
               <property name="text">
                <string>Patch HD Pro Bundles to 500 (.hrb -&gt; .h5b)</string>
               </property>
              </widget>
             </item>
-            <item row="9" column="0">
+            <item row="7" column="0">
+             <widget class="QCheckBox" name="fiveChkbxPatchHbb">
+              <property name="text">
+               <string>Patch HD Desktop Bundles to 500 (.hbb -&gt; .h5b)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QCheckBox" name="fiveChkbxPatchHre">
+              <property name="text">
+               <string>Patch HD Pro Presets to 500 (.hre -&gt; .h5e)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="0">
              <widget class="QCheckBox" name="fiveChkbxPatchHrs">
               <property name="text">
                <string>Patch HD Pro Setlists to 500 (.hrs -&gt; .h5s)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="0">
+             <widget class="QCheckBox" name="fiveChkbxPatch5xs">
+              <property name="text">
+               <string>Patch HD 500X Setlists to 500 (.5xs -&gt; .h5s)</string>
               </property>
              </widget>
             </item>
@@ -163,14 +158,14 @@
           </widget>
          </widget>
         </item>
-        <item row="4" column="0">
+        <item row="4" column="0" colspan="2">
          <widget class="QLabel" name="fiveLbModify">
           <property name="text">
            <string>Modify HD 500 Files:</string>
           </property>
          </widget>
         </item>
-        <item row="5" column="0">
+        <item row="5" column="0" colspan="3">
          <widget class="QScrollArea" name="fiveScrollAreaTwo">
           <property name="widgetResizable">
            <bool>true</bool>
@@ -180,8 +175,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>439</width>
-             <height>478</height>
+             <width>569</width>
+             <height>581</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_4">
@@ -395,14 +390,14 @@
           </widget>
          </widget>
         </item>
-        <item row="6" column="0">
+        <item row="6" column="0" colspan="2">
          <widget class="QLabel" name="fiveLbGeneral">
           <property name="text">
            <string>General:</string>
           </property>
          </widget>
         </item>
-        <item row="7" column="0">
+        <item row="7" column="0" colspan="2">
          <widget class="QCheckBox" name="fiveChkbxBackup">
           <property name="text">
            <string>Make backup</string>
@@ -412,32 +407,484 @@
           </property>
          </widget>
         </item>
+        <item row="8" column="2">
+         <widget class="QPushButton" name="fiveBtnRun">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="toolTip">
+           <string>Click to perform selected actions</string>
+          </property>
+          <property name="text">
+           <string>Run</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="0" colspan="2">
+         <widget class="QLabel" name="fiveLbAfterRun">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="3">
+         <widget class="QLabel" name="fiveLbMain">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="locale">
+           <locale language="English" country="UnitedStates"/>
+          </property>
+          <property name="text">
+           <string>POD HD 500</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabHd500x">
+       <attribute name="title">
+        <string>HD 500X</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_18">
+        <item row="0" column="0" colspan="2">
+         <widget class="QLabel" name="fiveXLbMain">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="locale">
+           <locale language="English" country="UnitedStates"/>
+          </property>
+          <property name="text">
+           <string>POD HD 500X</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLineEdit" name="fiveXLeDirectoryChoser">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Select a Directory with Files</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="fiveXBtnBrowse">
+          <property name="toolTip">
+           <string>Press button to choose a directory</string>
+          </property>
+          <property name="text">
+           <string>Browse</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" colspan="2">
+         <widget class="QLabel" name="fiveXLbConvert">
+          <property name="text">
+           <string>Convert POD HD 500 &amp; Desktop &amp; Pro Files to HD 500X Files</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="2">
+         <widget class="QScrollArea" name="fiveXScrollAreaOne">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents_6">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>569</width>
+             <height>333</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_16">
+            <item row="1" column="0">
+             <widget class="QCheckBox" name="fiveXChkbxPatchH5e">
+              <property name="text">
+               <string>Patch HD 500 Presets to 500X (.h5e -&gt; .5xe)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="0">
+             <widget class="QLabel" name="fiveXLbSetlists">
+              <property name="text">
+               <string>Setlists:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QCheckBox" name="fiveXChkbxPatchH5b">
+              <property name="text">
+               <string>Patch HD 500 Bundles to 500X (.h5b -&gt; .5xb)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="fiveXLbPresets">
+              <property name="text">
+               <string>Presets:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="fiveXChkbxPatchHbe">
+              <property name="text">
+               <string>Patch HD Desktop Presets to 500X (.hbe -&gt; .5xe)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="0">
+             <widget class="QCheckBox" name="fiveXChkbxPatchHbs">
+              <property name="text">
+               <string>Patch HD Desktop Setlists to 500X (.hbs -&gt; .5xs)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="fiveXLbBundles">
+              <property name="text">
+               <string>Bundles:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="0">
+             <widget class="QCheckBox" name="fiveXChkbxPatchHrb">
+              <property name="text">
+               <string>Patch HD Pro Bundles to 500X (.hrb -&gt; .5xb)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="0">
+             <widget class="QCheckBox" name="fiveXChkbxPatchHbb">
+              <property name="text">
+               <string>Patch HD Desktop Bundles to 500X (.hbb -&gt; .5xb)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QCheckBox" name="fiveXChkbxPatchHre">
+              <property name="text">
+               <string>Patch HD Pro Presets to 500X (.hre -&gt; .5xe)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="0">
+             <widget class="QCheckBox" name="fiveXChkbxPatchHrs">
+              <property name="text">
+               <string>Patch HD Pro Setlists to 500X (.hrs -&gt; .5xs)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="0">
+             <widget class="QCheckBox" name="fiveXChkbxPatchH5s">
+              <property name="text">
+               <string>Patch HD 500 Setlists to 500X (.h5s -&gt; .5xs)</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item row="4" column="0" colspan="2">
+         <widget class="QLabel" name="fiveXLbModify">
+          <property name="text">
+           <string>Modify HD 500X Files:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0" colspan="2">
+         <widget class="QScrollArea" name="fiveXScrollAreaTwo">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents500_2">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>569</width>
+             <height>581</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_17">
+            <item row="0" column="0">
+             <widget class="QLabel" name="fiveXLbFilesToModify">
+              <property name="text">
+               <string>Select Files to Modify:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QCheckBox" name="fiveXChkbxModify5xe">
+              <property name="text">
+               <string>Modify .5xe files</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="fiveXChkbxModify5xb">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string>Modify .5xb files</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QCheckBox" name="fiveXChkbxModify5xs">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string>Modify .5xs files</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="0">
+             <widget class="QCheckBox" name="fiveXChkbxEditFirstAmp">
+              <property name="toolTip">
+               <string>You'll have to set &quot;Input Setup&quot; on you POD HD to 'Presets' (instead of 'Global') to see effects.</string>
+              </property>
+              <property name="text">
+               <string>1. Amp</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="1">
+             <widget class="QCheckBox" name="fiveXChkbxEditFirstCab">
+              <property name="toolTip">
+               <string>You'll have to set &quot;Input Setup&quot; on you POD HD to 'Presets' (instead of 'Global') to see effects.</string>
+              </property>
+              <property name="text">
+               <string>1. Cab</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="0">
+             <widget class="QComboBox" name="fiveXCbFirstAmp"/>
+            </item>
+            <item row="10" column="1">
+             <widget class="QComboBox" name="fiveXCbFirstCab"/>
+            </item>
+            <item row="11" column="0">
+             <widget class="QCheckBox" name="fiveXChkbxEditFirstMic">
+              <property name="toolTip">
+               <string>You'll have to set &quot;Input Setup&quot; on you POD HD to 'Presets' (instead of 'Global') to see effects.</string>
+              </property>
+              <property name="text">
+               <string>1. Mic</string>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="0">
+             <widget class="QComboBox" name="fiveXCbFirstMic"/>
+            </item>
+            <item row="13" column="0">
+             <widget class="QCheckBox" name="fiveXChkbxEditSecondAmp">
+              <property name="toolTip">
+               <string>You'll have to set &quot;Input Setup&quot; on you POD HD to 'Presets' (instead of 'Global') to see effects.</string>
+              </property>
+              <property name="text">
+               <string>2. Amp</string>
+              </property>
+             </widget>
+            </item>
+            <item row="13" column="1">
+             <widget class="QCheckBox" name="fiveXChkbxEditSecondCab">
+              <property name="toolTip">
+               <string>You'll have to set &quot;Input Setup&quot; on you POD HD to 'Presets' (instead of 'Global') to see effects.</string>
+              </property>
+              <property name="text">
+               <string>2. Cab</string>
+              </property>
+             </widget>
+            </item>
+            <item row="14" column="0">
+             <widget class="QComboBox" name="fiveXCbSecondAmp"/>
+            </item>
+            <item row="14" column="1">
+             <widget class="QComboBox" name="fiveXCbSecondCab"/>
+            </item>
+            <item row="15" column="0">
+             <widget class="QCheckBox" name="fiveXChkbxEditSecondMic">
+              <property name="toolTip">
+               <string>You'll have to set &quot;Input Setup&quot; on you POD HD to 'Presets' (instead of 'Global') to see effects.</string>
+              </property>
+              <property name="text">
+               <string>2. Mic</string>
+              </property>
+             </widget>
+            </item>
+            <item row="16" column="0">
+             <widget class="QComboBox" name="fiveXCbSecondMic"/>
+            </item>
+            <item row="4" column="0" colspan="2">
+             <widget class="Line" name="fiveXLine_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="18" column="0">
+             <widget class="Line" name="fiveXLine">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="19" column="0">
+             <widget class="QCheckBox" name="fiveXChkbxEditInputs">
+              <property name="text">
+               <string>Change Inputs:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="20" column="0">
+             <widget class="QLabel" name="fiveXLbInputOne">
+              <property name="text">
+               <string>Input Source 1</string>
+              </property>
+             </widget>
+            </item>
+            <item row="21" column="0">
+             <widget class="QComboBox" name="fiveXCbSourceOne"/>
+            </item>
+            <item row="21" column="1">
+             <widget class="QComboBox" name="fiveXCbSourceTwo"/>
+            </item>
+            <item row="22" column="0">
+             <widget class="QLabel" name="fiveXLbGuitarIn">
+              <property name="text">
+               <string>Guitar IN-Z</string>
+              </property>
+             </widget>
+            </item>
+            <item row="20" column="1">
+             <widget class="QLabel" name="fiveXLbInputTwo">
+              <property name="text">
+               <string>Input Source 2</string>
+              </property>
+             </widget>
+            </item>
+            <item row="23" column="0">
+             <widget class="QComboBox" name="fiveXCbGuitarInput"/>
+            </item>
+            <item row="7" column="0" colspan="2">
+             <widget class="Line" name="fiveXLine_3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QCheckBox" name="fiveXChkbxEditAmpToPre">
+              <property name="text">
+               <string>Set all Amps to Pre Amps</string>
+              </property>
+              <property name="autoExclusive">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QCheckBox" name="fiveXChkbxEditPreToAmp">
+              <property name="text">
+               <string>Set all Pre Amps to Amps</string>
+              </property>
+              <property name="autoExclusive">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="fiveXLbToEdit">
+              <property name="text">
+               <string>Select Parameter to Modify:</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item row="6" column="0" colspan="2">
+         <widget class="QLabel" name="fiveXLbGeneral">
+          <property name="text">
+           <string>General:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0" colspan="2">
+         <widget class="QCheckBox" name="fiveXChkbxBackup">
+          <property name="text">
+           <string>Make backup</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
         <item row="8" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <item>
-           <widget class="QLabel" name="fiveLbAfterRun">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="fiveBtnRun">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="toolTip">
-             <string>Click to perform selected actions</string>
-            </property>
-            <property name="text">
-             <string>Run</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
+         <widget class="QLabel" name="fiveXLbAfterRun">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="1">
+         <widget class="QPushButton" name="fiveXBtnRun">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="toolTip">
+           <string>Click to perform selected actions</string>
+          </property>
+          <property name="text">
+           <string>Run</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -446,7 +893,7 @@
         <string>HD Desktop</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_3">
-        <item row="0" column="1" colspan="3">
+        <item row="0" column="0" colspan="3">
          <widget class="QLabel" name="desktopLbMain">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -468,67 +915,14 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="1" colspan="3">
-         <layout class="QHBoxLayout" name="horizontalLayout_4">
-          <item>
-           <widget class="QLineEdit" name="desktopLeDirectoryChoser">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>Select a Directory with Files</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="desktopBtnBrowse">
-            <property name="toolTip">
-             <string>Press button to choose a directory</string>
-            </property>
-            <property name="text">
-             <string>Browse</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="9" column="1" colspan="2">
-         <widget class="QLabel" name="desktopLbAfterRun">
+        <item row="2" column="0" colspan="2">
+         <widget class="QLabel" name="desktopConvert">
           <property name="text">
-           <string/>
+           <string>Convert HD 500 &amp; 500X &amp; Pro Files to HD Desktop Files:</string>
           </property>
          </widget>
         </item>
-        <item row="9" column="3">
-         <widget class="QPushButton" name="desktopBtnRun">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="toolTip">
-           <string>Click to perform selected actions</string>
-          </property>
-          <property name="text">
-           <string>Run</string>
-          </property>
-         </widget>
-        </item>
-        <item row="8" column="1">
-         <widget class="QCheckBox" name="desktopChkbxBackup">
-          <property name="text">
-           <string>Make backup</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="1" colspan="3">
+        <item row="3" column="0" colspan="3">
          <widget class="QScrollArea" name="desktopScrollAreaOne">
           <property name="widgetResizable">
            <bool>true</bool>
@@ -538,11 +932,18 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>439</width>
-             <height>207</height>
+             <width>569</width>
+             <height>333</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_6">
+            <item row="4" column="1">
+             <widget class="QCheckBox" name="desktopChkbxPatchHre">
+              <property name="text">
+               <string>Patch HD Pro Presets to Desktop (.hre -&gt; .hbe)</string>
+              </property>
+             </widget>
+            </item>
             <item row="0" column="1">
              <widget class="QLabel" name="desktopLbPresets">
               <property name="text">
@@ -550,21 +951,21 @@
               </property>
              </widget>
             </item>
-            <item row="3" column="1">
+            <item row="5" column="1">
              <widget class="QLabel" name="desktopLbBundles">
               <property name="text">
                <string>Bundles:</string>
               </property>
              </widget>
             </item>
-            <item row="6" column="1">
+            <item row="9" column="1">
              <widget class="QLabel" name="desktopLbSetlists">
               <property name="text">
                <string>Setlists:</string>
               </property>
              </widget>
             </item>
-            <item row="7" column="1">
+            <item row="10" column="1">
              <widget class="QCheckBox" name="desktopChkbxPatchH5s">
               <property name="text">
                <string>Patch HD 500 Setlists to Desktop (.h5s -&gt; .hbs)</string>
@@ -574,7 +975,7 @@
               </property>
              </widget>
             </item>
-            <item row="4" column="1">
+            <item row="6" column="1">
              <widget class="QCheckBox" name="desktopChkbxPatchH5b">
               <property name="text">
                <string>Patch HD 500 Bundles to Dekstop (.h5b -&gt; .hbb)</string>
@@ -584,7 +985,14 @@
               </property>
              </widget>
             </item>
-            <item row="1" column="1">
+            <item row="8" column="1">
+             <widget class="QCheckBox" name="desktopChkbxPatchHrb">
+              <property name="text">
+               <string>Patch HD Pro Bundles to Dekstop (.hrb -&gt; .hbb)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
              <widget class="QCheckBox" name="desktopChkbxPatchH5e">
               <property name="text">
                <string>Patch HD 500 Presets to Desktop (.h5e -&gt; .hbe)</string>
@@ -594,24 +1002,31 @@
               </property>
              </widget>
             </item>
-            <item row="2" column="1">
-             <widget class="QCheckBox" name="desktopChkbxPatchHre">
-              <property name="text">
-               <string>Patch HD Pro Presets to Desktop (.hre -&gt; .hbe)</string>
-              </property>
-             </widget>
-            </item>
-            <item row="5" column="1">
-             <widget class="QCheckBox" name="desktopChkbxPatchHrb">
-              <property name="text">
-               <string>Patch HD Pro Bundles to Dekstop (.hrb -&gt; .hbb)</string>
-              </property>
-             </widget>
-            </item>
-            <item row="8" column="1">
+            <item row="12" column="1">
              <widget class="QCheckBox" name="desktopChkbxPatchHrs">
               <property name="text">
                <string>Patch HD Pro Setlists to Desktop (.hrs -&gt; .hbs)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="1">
+             <widget class="QCheckBox" name="desktopChkbxPatch5xb">
+              <property name="text">
+               <string>Patch HD 500X Bundles to Dekstop (.5xb -&gt; .hbb)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QCheckBox" name="desktopChkbxPatch5xe">
+              <property name="text">
+               <string>Patch HD 500X Presets to Desktop (.5xe -&gt; .hbe)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="1">
+             <widget class="QCheckBox" name="desktopChkbxPatch5xs">
+              <property name="text">
+               <string>Patch HD 500X Setlists to Desktop (.5xs -&gt; .hbs)</string>
               </property>
              </widget>
             </item>
@@ -619,28 +1034,14 @@
           </widget>
          </widget>
         </item>
-        <item row="6" column="1">
-         <widget class="QLabel" name="lbGeneral">
-          <property name="text">
-           <string>General:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1">
-         <widget class="QLabel" name="desktopConvert">
-          <property name="text">
-           <string>Convert HD 500 &amp; Pro Files to HD Desktop Files:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="1">
+        <item row="4" column="0" colspan="2">
          <widget class="QLabel" name="desktopModify">
           <property name="text">
            <string>Modify HD Desktop Files:</string>
           </property>
          </widget>
         </item>
-        <item row="5" column="1" colspan="3">
+        <item row="5" column="0" colspan="3">
          <widget class="QScrollArea" name="desktopScrollAreaTwo">
           <property name="widgetResizable">
            <bool>true</bool>
@@ -650,8 +1051,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>439</width>
-             <height>478</height>
+             <width>569</width>
+             <height>581</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_10">
@@ -847,6 +1248,69 @@
           </widget>
          </widget>
         </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="lbGeneral">
+          <property name="text">
+           <string>General:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0">
+         <widget class="QCheckBox" name="desktopChkbxBackup">
+          <property name="text">
+           <string>Make backup</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="0" colspan="2">
+         <widget class="QLabel" name="desktopLbAfterRun">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="2">
+         <widget class="QPushButton" name="desktopBtnRun">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="toolTip">
+           <string>Click to perform selected actions</string>
+          </property>
+          <property name="text">
+           <string>Run</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QPushButton" name="desktopBtnBrowse">
+          <property name="toolTip">
+           <string>Press button to choose a directory</string>
+          </property>
+          <property name="text">
+           <string>Browse</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="2">
+         <widget class="QLineEdit" name="desktopLeDirectoryChoser">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Select a Directory with Files</string>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="tabHdPro">
@@ -854,56 +1318,37 @@
         <string>HD Pro</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_7">
-        <item row="0" column="0">
-         <widget class="QLabel" name="proLbmain">
+        <item row="1" column="0" colspan="2">
+         <widget class="QLineEdit" name="proLeDirectoryChoser">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
-          <property name="locale">
-           <locale language="English" country="UnitedStates"/>
-          </property>
           <property name="text">
-           <string>POD HD Pro</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
+           <string>Select a Directory with Files</string>
           </property>
          </widget>
         </item>
-        <item row="1" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout_6">
-          <item>
-           <widget class="QLineEdit" name="proLeDirectoryChoser">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>Select a Directory with Files</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="proBtnBrowse">
-            <property name="toolTip">
-             <string>Press button to choose a directory</string>
-            </property>
-            <property name="text">
-             <string>Browse</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
+        <item row="1" column="2">
+         <widget class="QPushButton" name="proBtnBrowse">
+          <property name="toolTip">
+           <string>Press button to choose a directory</string>
+          </property>
+          <property name="text">
+           <string>Browse</string>
+          </property>
+         </widget>
         </item>
-        <item row="3" column="0">
+        <item row="2" column="0" colspan="3">
+         <widget class="QLabel" name="proLbConvert">
+          <property name="text">
+           <string>Convert HD 500 &amp; 500X &amp; Desktop Files to HD Pro Files:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="3">
          <widget class="QScrollArea" name="proScrollAreaOne">
           <property name="widgetResizable">
            <bool>true</bool>
@@ -913,29 +1358,15 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>439</width>
-             <height>207</height>
+             <width>569</width>
+             <height>333</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_8">
-            <item row="0" column="0">
-             <widget class="QLabel" name="proLbPresets">
+            <item row="12" column="0">
+             <widget class="QCheckBox" name="proChkbxPatchHbs">
               <property name="text">
-               <string>Presets:</string>
-              </property>
-             </widget>
-            </item>
-            <item row="3" column="0" colspan="2">
-             <widget class="QLabel" name="proLbBundles">
-              <property name="text">
-               <string>Bundles:</string>
-              </property>
-             </widget>
-            </item>
-            <item row="7" column="0">
-             <widget class="QLabel" name="proLbSetlists">
-              <property name="text">
-               <string>Setlists:</string>
+               <string>Patch HD Desktop Setlists to Pro (.hbs -&gt; .hrs)</string>
               </property>
              </widget>
             </item>
@@ -949,7 +1380,7 @@
               </property>
              </widget>
             </item>
-            <item row="8" column="0">
+            <item row="10" column="0">
              <widget class="QCheckBox" name="proChkbxPatchH5s">
               <property name="text">
                <string>Patch HD 500 Setlists to Pro (.h5s -&gt; .hrs)</string>
@@ -959,7 +1390,49 @@
               </property>
              </widget>
             </item>
-            <item row="5" column="0">
+            <item row="3" column="0">
+             <widget class="QCheckBox" name="proChkbxPatchHbe">
+              <property name="text">
+               <string>Patch HD Desktop Presets to Pro (.hbe -&gt; .hre)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="0">
+             <widget class="QLabel" name="proLbSetlists">
+              <property name="text">
+               <string>Setlists:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0" colspan="2">
+             <widget class="QLabel" name="proLbBundles">
+              <property name="text">
+               <string>Bundles:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="0">
+             <widget class="QCheckBox" name="proChkbxPatchHbb">
+              <property name="text">
+               <string>Patch HD Desktop Bundles to Pro (.hbb -&gt; .hrb)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="proChkbxPatch5xe">
+              <property name="text">
+               <string>Patch HD 500X Presets to Pro (.5xe -&gt; .hre)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="proLbPresets">
+              <property name="text">
+               <string>Presets:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
              <widget class="QCheckBox" name="proChkbxPatchH5b">
               <property name="enabled">
                <bool>true</bool>
@@ -972,24 +1445,17 @@
               </property>
              </widget>
             </item>
-            <item row="2" column="0">
-             <widget class="QCheckBox" name="proChkbxPatchHbe">
+            <item row="7" column="0">
+             <widget class="QCheckBox" name="proChkbxPatch5xb">
               <property name="text">
-               <string>Patch HD Desktop Presets to Pro (.hbe -&gt; .hre)</string>
+               <string>Patch HD 500X Bundles to Pro (.5xb -&gt; .hrb)</string>
               </property>
              </widget>
             </item>
-            <item row="6" column="0">
-             <widget class="QCheckBox" name="proChkbxPatchHbb">
+            <item row="11" column="0">
+             <widget class="QCheckBox" name="proChkbxPatch5xs">
               <property name="text">
-               <string>Patch HD Desktop Bundles to Pro (.hbb -&gt; .hrb)</string>
-              </property>
-             </widget>
-            </item>
-            <item row="9" column="0">
-             <widget class="QCheckBox" name="proChkbxPatchHbs">
-              <property name="text">
-               <string>Patch HD Desktop Setlists to Pro (.hbs -&gt; .hrs)</string>
+               <string>Patch HD 500X Setlists to Pro (.5xs -&gt; .hrs)</string>
               </property>
              </widget>
             </item>
@@ -997,65 +1463,14 @@
           </widget>
          </widget>
         </item>
-        <item row="6" column="0">
-         <widget class="QLabel" name="proLbGeneral">
-          <property name="text">
-           <string>General:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="0">
-         <widget class="QCheckBox" name="proChkbxBackup">
-          <property name="text">
-           <string>Make backup</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="8" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
-          <item>
-           <widget class="QLabel" name="proLbAfterRun">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="proBtnRun">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="toolTip">
-             <string>Click to perform selected actions</string>
-            </property>
-            <property name="text">
-             <string>Run</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="proLbConvert">
-          <property name="text">
-           <string>Convert HD 500 &amp; Desktop Files to HD Pro Files:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
+        <item row="4" column="0" colspan="2">
          <widget class="QLabel" name="proLbModifyFiles">
           <property name="text">
            <string>Modify HD Pro Files:</string>
           </property>
          </widget>
         </item>
-        <item row="5" column="0">
+        <item row="5" column="0" colspan="3">
          <widget class="QScrollArea" name="proScrollAreaTwo">
           <property name="widgetResizable">
            <bool>true</bool>
@@ -1065,8 +1480,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>439</width>
-             <height>478</height>
+             <width>569</width>
+             <height>581</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_11">
@@ -1253,78 +1668,15 @@
           </widget>
          </widget>
         </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tabHd300">
-       <attribute name="title">
-        <string>HD 300 / 400</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_2">
-        <item row="0" column="0" colspan="3">
-         <widget class="QLabel" name="threeLbMain">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="locale">
-           <locale language="English" country="UnitedStates"/>
-          </property>
-          <property name="text">
-           <string>Translate POD HD 500 / HD Desktop / HD Pro Presets to POD HD 300 / HD 400 Presets</string>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0" colspan="3">
-         <layout class="QHBoxLayout" name="horizontalLayout_5">
-          <item>
-           <widget class="QLineEdit" name="threeLeDirectoryChoser">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>Select a Directory with Presets</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="threeBtnbrowse">
-            <property name="toolTip">
-             <string>Press button to choose a directory</string>
-            </property>
-            <property name="text">
-             <string>Browse</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="6" column="0">
-         <widget class="QLabel" name="threeLbModify">
-          <property name="text">
-           <string>Modify Translation:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="9" column="0">
-         <widget class="QLabel" name="threeLbGeneral">
+        <item row="6" column="0" colspan="2">
+         <widget class="QLabel" name="proLbGeneral">
           <property name="text">
            <string>General:</string>
           </property>
          </widget>
         </item>
-        <item row="10" column="0">
-         <widget class="QCheckBox" name="threeChkbxBackup">
+        <item row="7" column="0" colspan="2">
+         <widget class="QCheckBox" name="proChkbxBackup">
           <property name="text">
            <string>Make backup</string>
           </property>
@@ -1333,15 +1685,15 @@
           </property>
          </widget>
         </item>
-        <item row="12" column="0" colspan="2">
-         <widget class="QLabel" name="threeLbAfterRun">
+        <item row="8" column="0">
+         <widget class="QLabel" name="proLbAfterRun">
           <property name="text">
            <string/>
           </property>
          </widget>
         </item>
-        <item row="12" column="2">
-         <widget class="QPushButton" name="threeBtnRun">
+        <item row="8" column="2">
+         <widget class="QPushButton" name="proBtnRun">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
             <horstretch>0</horstretch>
@@ -1356,45 +1708,41 @@
           </property>
          </widget>
         </item>
-        <item row="3" column="0" rowspan="2" colspan="3">
-         <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="0,0,0">
-          <item>
-           <widget class="QCheckBox" name="threeChkbxPatchH3e">
-            <property name="text">
-             <string>Translate Presets to POD HD 300</string>
-            </property>
-            <property name="checked">
-             <bool>false</bool>
-            </property>
-            <property name="autoExclusive">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="Line" name="threeLine">
-            <property name="lineWidth">
-             <number>1</number>
-            </property>
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="threeChkbxPatchH4e">
-            <property name="text">
-             <string>Translate Presets to POD HD 400</string>
-            </property>
-            <property name="checked">
-             <bool>false</bool>
-            </property>
-            <property name="autoExclusive">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
+        <item row="0" column="0" colspan="3">
+         <widget class="QLabel" name="proLbmain">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="locale">
+           <locale language="English" country="UnitedStates"/>
+          </property>
+          <property name="text">
+           <string>POD HD Pro</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabHd300">
+       <attribute name="title">
+        <string>HD 300 / 400</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="9" column="0">
+         <widget class="QLabel" name="threeLbGeneral">
+          <property name="text">
+           <string>General:</string>
+          </property>
+         </widget>
         </item>
         <item row="7" column="0" colspan="3">
          <widget class="QStackedWidget" name="threeStackedWidget">
@@ -1414,8 +1762,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>421</width>
-                 <height>781</height>
+                 <width>251</width>
+                 <height>951</height>
                 </rect>
                </property>
                <layout class="QGridLayout" name="gridLayout_14">
@@ -1766,8 +2114,8 @@ p, li { white-space: pre-wrap; }
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>438</width>
-                 <height>292</height>
+                 <width>222</width>
+                 <height>323</height>
                 </rect>
                </property>
                <layout class="QGridLayout" name="gridLayout_15">
@@ -1893,6 +2241,135 @@ p, li { white-space: pre-wrap; }
           </widget>
          </widget>
         </item>
+        <item row="12" column="0" colspan="2">
+         <widget class="QLabel" name="threeLbAfterRun">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="3">
+         <widget class="QLabel" name="threeLbMain">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="locale">
+           <locale language="English" country="UnitedStates"/>
+          </property>
+          <property name="text">
+           <string>Translate POD HD 500 / HD Desktop / HD Pro Presets to POD HD 300 / HD 400 Presets</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0" rowspan="2" colspan="3">
+         <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="0,0,0">
+          <item>
+           <widget class="QCheckBox" name="threeChkbxPatchH3e">
+            <property name="text">
+             <string>Translate Presets to POD HD 300</string>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="Line" name="threeLine">
+            <property name="lineWidth">
+             <number>1</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="threeChkbxPatchH4e">
+            <property name="text">
+             <string>Translate Presets to POD HD 400</string>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="10" column="0">
+         <widget class="QCheckBox" name="threeChkbxBackup">
+          <property name="text">
+           <string>Make backup</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="12" column="2">
+         <widget class="QPushButton" name="threeBtnRun">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="toolTip">
+           <string>Click to perform selected actions</string>
+          </property>
+          <property name="text">
+           <string>Run</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="3">
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QLineEdit" name="threeLeDirectoryChoser">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Select a Directory with Presets</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="threeBtnbrowse">
+            <property name="toolTip">
+             <string>Press button to choose a directory</string>
+            </property>
+            <property name="text">
+             <string>Browse</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="threeLbModify">
+          <property name="text">
+           <string>Modify Translation:</string>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
      </widget>
@@ -1904,8 +2381,8 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>500</width>
-     <height>21</height>
+     <width>626</width>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuDatei">
