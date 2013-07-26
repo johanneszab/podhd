@@ -32,12 +32,14 @@ public:
 
     bool getFiles(QDir dir, QList<QStringList> fileFilter);
     void copyModify();
+    void copyTranslate();
     void copyConvert(QList<QCheckBox*> chkbx);
     bool copyFiles(QDir source, QStringList files, const bool override);
     void rename(QList<QCheckBox*> chkbx, QString pressedFrom);
     bool renameFiles(QDir source, QStringList files, QStringList extension);
     void convert(QString pressedFrom);
     void modify(QString pressedFrom);
+    void translate(QString pressedFrom);
 
     void processSettings(QString pressedFrom);
     void processChangeAmps();
@@ -47,7 +49,8 @@ public:
     void convertBundleFiles(QStringList presetFiles, QString pressedFrom);
     void convertSetlistFiles(QStringList presetFiles, QString pressedFrom);
 
-    void translatePresetFiles(QDir source, QStringList files, QStringList extension, const bool override);
+    void translatePresetFilesBigToSmall(QDir source, QStringList files, QStringList extension, const bool override);
+    void translatePresetFilesSmallToBig(QDir source, QStringList files, QStringList extension, const bool override);
 
     void modifyPresetFiles(QStringList files);
     void modifyBundleFiles(QStringList files);
@@ -72,10 +75,21 @@ public:
     void changeText500X();
     void changeTextPro();
 
+    void changeTextTranslateDesktop();
+    void changeTextTranslate500();
+    void changeTextTranslate500X();
+    void changeTextTranslatePro();
+
     bool poti(QFile &sourceFile, QFile &targetFile, int sourcePosition, int targetPosition);
     bool potiDecibel(QFile &sourceFile, QFile &targetFile, int sourcePosition, int targetPosition);
     bool potiReversed(QFile &sourceFile, QFile &targetFile, int sourcePosition, int targetPosition);
     bool potiByte(QFile &sourceFile, QFile &targetFile, int sourcePosition, int targetPosition);
+
+    bool potiInt(QFile &sourceFile, QFile &targetFile, int sourcePosition, int targetPosition);
+    bool potiDecibelInt(QFile &sourceFile, QFile &targetFile, int sourcePosition, int targetPosition);
+    bool potiReversedInt(QFile &sourceFile, QFile &targetFile, int sourcePosition, int targetPosition);
+    bool potiByteInt(QFile &sourceFile, QFile &targetFile, int sourcePosition, int targetPosition);
+
 
 
 private:
