@@ -74,11 +74,13 @@ public:
     void changeText500();
     void changeText500X();
     void changeTextPro();
+    void changeTextProX();
 
     void changeTextTranslateDesktop();
     void changeTextTranslate500();
     void changeTextTranslate500X();
     void changeTextTranslatePro();
+    void changeTextTranslateProX();
 
     bool poti(QFile &sourceFile, QFile &targetFile, int sourcePosition, int targetPosition);
     bool potiDecibel(QFile &sourceFile, QFile &targetFile, int sourcePosition, int targetPosition);
@@ -104,6 +106,7 @@ public slots:
     void run500();
     void run500X();
     void runPro();
+    void runProX();
     void changePage300();
     void changePage400();
 };

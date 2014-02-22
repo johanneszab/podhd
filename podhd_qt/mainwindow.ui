@@ -51,7 +51,7 @@
         <item row="2" column="0" colspan="2">
          <widget class="QLabel" name="fiveLbConvert">
           <property name="text">
-           <string>Convert POD HD 500X &amp; Desktop &amp; Pro Files to HD 500 Files:</string>
+           <string>Convert POD HD 500X &amp; Desktop &amp; Pro &amp; ProX Files to HD 500 Files:</string>
           </property>
          </widget>
         </item>
@@ -64,23 +64,30 @@
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>0</y>
-             <width>569</width>
-             <height>333</height>
+             <y>-205</y>
+             <width>565</width>
+             <height>345</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_9">
+            <item row="13" column="0">
+             <widget class="QCheckBox" name="fiveChkbxPatchHrs">
+              <property name="text">
+               <string>Patch HD Pro Setlists to 500 (.hrs -&gt; .h5s)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="0">
+             <widget class="QCheckBox" name="fiveChkbxPatch5xs">
+              <property name="text">
+               <string>Patch HD 500X Setlists to 500 (.5xs -&gt; .h5s)</string>
+              </property>
+             </widget>
+            </item>
             <item row="6" column="0">
              <widget class="QCheckBox" name="fiveChkbxPatch5xb">
               <property name="text">
                <string>Patch HD 500X Bundles to 500 (.5xb -&gt; .h5b)</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="QCheckBox" name="fiveChkbxPatch5xe">
-              <property name="text">
-               <string>Patch HD 500X Presets to 500 (.5xe -&gt; .h5e)</string>
               </property>
              </widget>
             </item>
@@ -91,6 +98,13 @@
               </property>
              </widget>
             </item>
+            <item row="1" column="0">
+             <widget class="QCheckBox" name="fiveChkbxPatch5xe">
+              <property name="text">
+               <string>Patch HD 500X Presets to 500 (.5xe -&gt; .h5e)</string>
+              </property>
+             </widget>
+            </item>
             <item row="2" column="0">
              <widget class="QCheckBox" name="fiveChkbxPatchHbe">
               <property name="text">
@@ -98,10 +112,17 @@
               </property>
              </widget>
             </item>
-            <item row="11" column="0">
+            <item row="12" column="0">
              <widget class="QCheckBox" name="fiveChkbxPatchHbs">
               <property name="text">
                <string>Patch HD Desktop Setlists to 500 (.hbs -&gt; .h5s)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="0">
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>Setlists:</string>
               </property>
              </widget>
             </item>
@@ -109,13 +130,6 @@
              <widget class="QLabel" name="label_3">
               <property name="text">
                <string>Bundles:</string>
-              </property>
-             </widget>
-            </item>
-            <item row="9" column="0">
-             <widget class="QLabel" name="label_2">
-              <property name="text">
-               <string>Setlists:</string>
               </property>
              </widget>
             </item>
@@ -140,17 +154,24 @@
               </property>
              </widget>
             </item>
-            <item row="12" column="0">
-             <widget class="QCheckBox" name="fiveChkbxPatchHrs">
+            <item row="9" column="0">
+             <widget class="QCheckBox" name="fiveChkbxPatchPxb">
               <property name="text">
-               <string>Patch HD Pro Setlists to 500 (.hrs -&gt; .h5s)</string>
+               <string>Patch HD ProX Bundles to 500 (.pxb -&gt; .h5b)</string>
               </property>
              </widget>
             </item>
-            <item row="10" column="0">
-             <widget class="QCheckBox" name="fiveChkbxPatch5xs">
+            <item row="14" column="0">
+             <widget class="QCheckBox" name="fiveChkbxPatchPxs">
               <property name="text">
-               <string>Patch HD 500X Setlists to 500 (.5xs -&gt; .h5s)</string>
+               <string>Patch HD ProX Setlists to 500 (.pxs -&gt; .h5s)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QCheckBox" name="fiveChkbxPatchPxe">
+              <property name="text">
+               <string>Patch HD ProX Presets to 500 (.pxe -&gt; .h5e)</string>
               </property>
              </widget>
             </item>
@@ -192,8 +213,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>569</width>
-             <height>581</height>
+             <width>565</width>
+             <height>478</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_4">
@@ -469,8 +490,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>584</width>
-             <height>79</height>
+             <width>582</width>
+             <height>69</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_19">
@@ -547,7 +568,7 @@
         <item row="2" column="0" colspan="2">
          <widget class="QLabel" name="fiveXLbConvert">
           <property name="text">
-           <string>Convert POD HD 500 &amp; Desktop &amp; Pro Files to HD 500X Files:</string>
+           <string>Convert POD HD 500 &amp; Desktop &amp; Pro &amp; ProX Files to HD 500X Files:</string>
           </property>
          </widget>
         </item>
@@ -561,26 +582,19 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>569</width>
-             <height>333</height>
+             <width>565</width>
+             <height>345</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_16">
-            <item row="1" column="0">
-             <widget class="QCheckBox" name="fiveXChkbxPatchH5e">
-              <property name="text">
-               <string>Patch HD 500 Presets to 500X (.h5e -&gt; .5xe)</string>
-              </property>
-             </widget>
-            </item>
-            <item row="9" column="0">
+            <item row="11" column="0">
              <widget class="QLabel" name="fiveXLbSetlists">
               <property name="text">
                <string>Setlists:</string>
               </property>
              </widget>
             </item>
-            <item row="6" column="0">
+            <item row="7" column="0">
              <widget class="QCheckBox" name="fiveXChkbxPatchH5b">
               <property name="text">
                <string>Patch HD 500 Bundles to 500X (.h5b -&gt; .5xb)</string>
@@ -601,28 +615,14 @@
               </property>
              </widget>
             </item>
-            <item row="11" column="0">
+            <item row="13" column="0">
              <widget class="QCheckBox" name="fiveXChkbxPatchHbs">
               <property name="text">
                <string>Patch HD Desktop Setlists to 500X (.hbs -&gt; .5xs)</string>
               </property>
              </widget>
             </item>
-            <item row="5" column="0">
-             <widget class="QLabel" name="fiveXLbBundles">
-              <property name="text">
-               <string>Bundles:</string>
-              </property>
-             </widget>
-            </item>
             <item row="8" column="0">
-             <widget class="QCheckBox" name="fiveXChkbxPatchHrb">
-              <property name="text">
-               <string>Patch HD Pro Bundles to 500X (.hrb -&gt; .5xb)</string>
-              </property>
-             </widget>
-            </item>
-            <item row="7" column="0">
              <widget class="QCheckBox" name="fiveXChkbxPatchHbb">
               <property name="text">
                <string>Patch HD Desktop Bundles to 500X (.hbb -&gt; .5xb)</string>
@@ -636,17 +636,59 @@
               </property>
              </widget>
             </item>
-            <item row="12" column="0">
+            <item row="9" column="0">
+             <widget class="QCheckBox" name="fiveXChkbxPatchHrb">
+              <property name="text">
+               <string>Patch HD Pro Bundles to 500X (.hrb -&gt; .5xb)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="fiveXLbBundles">
+              <property name="text">
+               <string>Bundles:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="14" column="0">
              <widget class="QCheckBox" name="fiveXChkbxPatchHrs">
               <property name="text">
                <string>Patch HD Pro Setlists to 500X (.hrs -&gt; .5xs)</string>
               </property>
              </widget>
             </item>
-            <item row="10" column="0">
+            <item row="12" column="0">
              <widget class="QCheckBox" name="fiveXChkbxPatchH5s">
               <property name="text">
                <string>Patch HD 500 Setlists to 500X (.h5s -&gt; .5xs)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QCheckBox" name="fiveXChkbxPatchH5e">
+              <property name="text">
+               <string>Patch HD 500 Presets to 500X (.h5e -&gt; .5xe)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QCheckBox" name="fiveXChkbxPatchPxe">
+              <property name="text">
+               <string>Patch HD ProX Presets to 500X (.pxe -&gt; .5xe)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="0">
+             <widget class="QCheckBox" name="fiveXChkbxPatchPxb">
+              <property name="text">
+               <string>Patch HD ProX Bundles to 500X (.pxb -&gt; .5xb)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="15" column="0">
+             <widget class="QCheckBox" name="fiveXChkbxPatchPxs">
+              <property name="text">
+               <string>Patch HD ProX Setlists to 500X (.pxs -&gt; .5xs)</string>
               </property>
              </widget>
             </item>
@@ -688,8 +730,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>569</width>
-             <height>581</height>
+             <width>565</width>
+             <height>478</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_17">
@@ -943,8 +985,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>584</width>
-             <height>79</height>
+             <width>582</width>
+             <height>69</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_22">
@@ -998,7 +1040,7 @@
         <item row="2" column="0" colspan="2">
          <widget class="QLabel" name="desktopConvert">
           <property name="text">
-           <string>Convert HD 500 &amp; 500X &amp; Pro Files to HD Desktop Files:</string>
+           <string>Convert HD 500 &amp; 500X &amp; Pro &amp; ProX Files to HD Desktop Files:</string>
           </property>
          </widget>
         </item>
@@ -1011,16 +1053,30 @@
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>0</y>
-             <width>569</width>
-             <height>333</height>
+             <y>-205</y>
+             <width>565</width>
+             <height>345</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_6">
+            <item row="3" column="1">
+             <widget class="QCheckBox" name="desktopChkbxPatch5xe">
+              <property name="text">
+               <string>Patch HD 500X Presets to Desktop (.5xe -&gt; .hbe)</string>
+              </property>
+             </widget>
+            </item>
             <item row="4" column="1">
              <widget class="QCheckBox" name="desktopChkbxPatchHre">
               <property name="text">
                <string>Patch HD Pro Presets to Desktop (.hre -&gt; .hbe)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="1">
+             <widget class="QLabel" name="desktopLbSetlists">
+              <property name="text">
+               <string>Setlists:</string>
               </property>
              </widget>
             </item>
@@ -1031,21 +1087,7 @@
               </property>
              </widget>
             </item>
-            <item row="5" column="1">
-             <widget class="QLabel" name="desktopLbBundles">
-              <property name="text">
-               <string>Bundles:</string>
-              </property>
-             </widget>
-            </item>
-            <item row="9" column="1">
-             <widget class="QLabel" name="desktopLbSetlists">
-              <property name="text">
-               <string>Setlists:</string>
-              </property>
-             </widget>
-            </item>
-            <item row="10" column="1">
+            <item row="12" column="1">
              <widget class="QCheckBox" name="desktopChkbxPatchH5s">
               <property name="text">
                <string>Patch HD 500 Setlists to Desktop (.h5s -&gt; .hbs)</string>
@@ -1056,16 +1098,13 @@
              </widget>
             </item>
             <item row="6" column="1">
-             <widget class="QCheckBox" name="desktopChkbxPatchH5b">
+             <widget class="QLabel" name="desktopLbBundles">
               <property name="text">
-               <string>Patch HD 500 Bundles to Dekstop (.h5b -&gt; .hbb)</string>
-              </property>
-              <property name="checked">
-               <bool>false</bool>
+               <string>Bundles:</string>
               </property>
              </widget>
             </item>
-            <item row="8" column="1">
+            <item row="9" column="1">
              <widget class="QCheckBox" name="desktopChkbxPatchHrb">
               <property name="text">
                <string>Patch HD Pro Bundles to Dekstop (.hrb -&gt; .hbb)</string>
@@ -1082,7 +1121,7 @@
               </property>
              </widget>
             </item>
-            <item row="12" column="1">
+            <item row="14" column="1">
              <widget class="QCheckBox" name="desktopChkbxPatchHrs">
               <property name="text">
                <string>Patch HD Pro Setlists to Desktop (.hrs -&gt; .hbs)</string>
@@ -1090,23 +1129,47 @@
              </widget>
             </item>
             <item row="7" column="1">
+             <widget class="QCheckBox" name="desktopChkbxPatchH5b">
+              <property name="text">
+               <string>Patch HD 500 Bundles to Dekstop (.h5b -&gt; .hbb)</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="1">
              <widget class="QCheckBox" name="desktopChkbxPatch5xb">
               <property name="text">
                <string>Patch HD 500X Bundles to Dekstop (.5xb -&gt; .hbb)</string>
               </property>
              </widget>
             </item>
-            <item row="3" column="1">
-             <widget class="QCheckBox" name="desktopChkbxPatch5xe">
-              <property name="text">
-               <string>Patch HD 500X Presets to Desktop (.5xe -&gt; .hbe)</string>
-              </property>
-             </widget>
-            </item>
-            <item row="11" column="1">
+            <item row="13" column="1">
              <widget class="QCheckBox" name="desktopChkbxPatch5xs">
               <property name="text">
                <string>Patch HD 500X Setlists to Desktop (.5xs -&gt; .hbs)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <widget class="QCheckBox" name="desktopChkbxPatchPxe">
+              <property name="text">
+               <string>Patch HD ProX Presets to Desktop (.pxe -&gt; .hbe)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="1">
+             <widget class="QCheckBox" name="desktopChkbxPatchPxb">
+              <property name="text">
+               <string>Patch HD ProX Bundles to Dekstop (.pxb -&gt; .hbb)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="15" column="1">
+             <widget class="QCheckBox" name="desktopChkbxPatchPxs">
+              <property name="text">
+               <string>Patch HD ProX Setlists to Desktop (.pxs -&gt; .hbs)</string>
               </property>
              </widget>
             </item>
@@ -1131,8 +1194,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>569</width>
-             <height>581</height>
+             <width>565</width>
+             <height>478</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_10">
@@ -1408,8 +1471,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>584</width>
-             <height>79</height>
+             <width>582</width>
+             <height>69</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_21">
@@ -1464,7 +1527,7 @@
         <item row="2" column="0" colspan="3">
          <widget class="QLabel" name="proLbConvert">
           <property name="text">
-           <string>Convert HD 500 &amp; 500X &amp; Desktop Files to HD Pro Files:</string>
+           <string>Convert HD 500 &amp; 500X &amp; Desktop &amp; ProX Files to HD Pro Files:</string>
           </property>
          </widget>
         </item>
@@ -1477,30 +1540,13 @@
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>0</y>
-             <width>569</width>
-             <height>333</height>
+             <y>-205</y>
+             <width>565</width>
+             <height>345</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_8">
             <item row="12" column="0">
-             <widget class="QCheckBox" name="proChkbxPatchHbs">
-              <property name="text">
-               <string>Patch HD Desktop Setlists to Pro (.hbs -&gt; .hrs)</string>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="QCheckBox" name="proChkbxPatchH5e">
-              <property name="text">
-               <string>Patch HD 500 Presets to Pro (.h5e -&gt; .hre)</string>
-              </property>
-              <property name="checked">
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-            <item row="10" column="0">
              <widget class="QCheckBox" name="proChkbxPatchH5s">
               <property name="text">
                <string>Patch HD 500 Setlists to Pro (.h5s -&gt; .hrs)</string>
@@ -1517,21 +1563,24 @@
               </property>
              </widget>
             </item>
+            <item row="1" column="0">
+             <widget class="QCheckBox" name="proChkbxPatchH5e">
+              <property name="text">
+               <string>Patch HD 500 Presets to Pro (.h5e -&gt; .hre)</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="14" column="0">
+             <widget class="QCheckBox" name="proChkbxPatchHbs">
+              <property name="text">
+               <string>Patch HD Desktop Setlists to Pro (.hbs -&gt; .hrs)</string>
+              </property>
+             </widget>
+            </item>
             <item row="9" column="0">
-             <widget class="QLabel" name="proLbSetlists">
-              <property name="text">
-               <string>Setlists:</string>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="0" colspan="2">
-             <widget class="QLabel" name="proLbBundles">
-              <property name="text">
-               <string>Bundles:</string>
-              </property>
-             </widget>
-            </item>
-            <item row="8" column="0">
              <widget class="QCheckBox" name="proChkbxPatchHbb">
               <property name="text">
                <string>Patch HD Desktop Bundles to Pro (.hbb -&gt; .hrb)</string>
@@ -1545,14 +1594,21 @@
               </property>
              </widget>
             </item>
-            <item row="0" column="0">
-             <widget class="QLabel" name="proLbPresets">
+            <item row="11" column="0">
+             <widget class="QLabel" name="proLbSetlists">
               <property name="text">
-               <string>Presets:</string>
+               <string>Setlists:</string>
               </property>
              </widget>
             </item>
-            <item row="6" column="0">
+            <item row="5" column="0" colspan="2">
+             <widget class="QLabel" name="proLbBundles">
+              <property name="text">
+               <string>Bundles:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="0">
              <widget class="QCheckBox" name="proChkbxPatchH5b">
               <property name="enabled">
                <bool>true</bool>
@@ -1565,17 +1621,45 @@
               </property>
              </widget>
             </item>
-            <item row="7" column="0">
+            <item row="8" column="0">
              <widget class="QCheckBox" name="proChkbxPatch5xb">
               <property name="text">
                <string>Patch HD 500X Bundles to Pro (.5xb -&gt; .hrb)</string>
               </property>
              </widget>
             </item>
-            <item row="11" column="0">
+            <item row="13" column="0">
              <widget class="QCheckBox" name="proChkbxPatch5xs">
               <property name="text">
                <string>Patch HD 500X Setlists to Pro (.5xs -&gt; .hrs)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="proLbPresets">
+              <property name="text">
+               <string>Presets:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="0">
+             <widget class="QCheckBox" name="proChkbxPatchPxb">
+              <property name="text">
+               <string>Patch HD ProX Bundles to Pro (.pxb -&gt; .hrb)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QCheckBox" name="proChkbxPatchPxe">
+              <property name="text">
+               <string>Patch HD ProX Presets to Pro (.pxe -&gt; .hre)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="15" column="0">
+             <widget class="QCheckBox" name="proChkbxPatchPxs">
+              <property name="text">
+               <string>Patch HD ProX Setlists to Pro (.pxs -&gt; .hrs)</string>
               </property>
              </widget>
             </item>
@@ -1617,8 +1701,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>569</width>
-             <height>581</height>
+             <width>565</width>
+             <height>478</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_11">
@@ -1640,7 +1724,7 @@
              </widget>
             </item>
             <item row="4" column="0">
-             <widget class="QCheckBox" name="proChkbxModifyHrb">
+             <widget class="QCheckBox" name="proChkbxModifyHrs">
               <property name="enabled">
                <bool>true</bool>
               </property>
@@ -1657,7 +1741,7 @@
              </widget>
             </item>
             <item row="3" column="0">
-             <widget class="QCheckBox" name="proChkbxModifyHrs">
+             <widget class="QCheckBox" name="proChkbxModifyHrb">
               <property name="enabled">
                <bool>true</bool>
               </property>
@@ -1851,7 +1935,7 @@
          </widget>
         </item>
         <item row="4" column="0">
-         <widget class="QLabel" name="proXLbTranslate">
+         <widget class="QLabel" name="proLbTranslate">
           <property name="text">
            <string>Translate POD HD 300 &amp; 400 Files:</string>
           </property>
@@ -1867,8 +1951,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>584</width>
-             <height>79</height>
+             <width>582</width>
+             <height>69</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_20">
@@ -1888,6 +1972,486 @@
             </item>
            </layout>
           </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabHdProX">
+       <attribute name="title">
+        <string>HD ProX</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_29">
+        <item row="0" column="0" colspan="2">
+         <widget class="QLabel" name="proXLbmain">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="locale">
+           <locale language="English" country="UnitedStates"/>
+          </property>
+          <property name="text">
+           <string>POD HD ProX</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLineEdit" name="proXLeDirectoryChoser">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Select a Directory with Files</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="proXBtnBrowse">
+          <property name="toolTip">
+           <string>Press button to choose a directory</string>
+          </property>
+          <property name="text">
+           <string>Browse</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" colspan="2">
+         <widget class="QLabel" name="proXLbConvert">
+          <property name="text">
+           <string>Convert HD 500 &amp; 500X &amp; Desktop &amp; Pro Files to HD ProX Files:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="2">
+         <widget class="QScrollArea" name="proXScrollAreaOne">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContentsProX">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>-205</y>
+             <width>565</width>
+             <height>345</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_27">
+            <item row="14" column="0">
+             <widget class="QCheckBox" name="proXChkbxPatchHbs">
+              <property name="text">
+               <string>Patch HD Desktop Setlists to ProX (.hbs -&gt; .pxs)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QCheckBox" name="proXChkbxPatchHbe">
+              <property name="text">
+               <string>Patch HD Desktop Presets to ProX (.hbe -&gt; .pxe)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="0">
+             <widget class="QCheckBox" name="proXChkbxPatchH5s">
+              <property name="text">
+               <string>Patch HD 500 Setlists to ProX (.h5s -&gt; .pxs)</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="0">
+             <widget class="QLabel" name="proXLbSetlists">
+              <property name="text">
+               <string>Setlists:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QCheckBox" name="proXChkbxPatchH5e">
+              <property name="text">
+               <string>Patch HD 500 Presets to ProX (.h5e -&gt; .pxe)</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="proXChkbxPatch5xe">
+              <property name="text">
+               <string>Patch HD 500X Presets to ProX (.5xe -&gt; .pxe)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="proXLbPresets">
+              <property name="text">
+               <string>Presets:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="0">
+             <widget class="QCheckBox" name="proXChkbxPatchHbb">
+              <property name="text">
+               <string>Patch HD Desktop Bundles to ProX (.hbb -&gt; .pxb)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0" colspan="2">
+             <widget class="QLabel" name="proXLbBundles">
+              <property name="text">
+               <string>Bundles:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="13" column="0">
+             <widget class="QCheckBox" name="proXChkbxPatch5xs">
+              <property name="text">
+               <string>Patch HD 500X Setlists to ProX (.5xs -&gt; .pxs)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="0">
+             <widget class="QCheckBox" name="proXChkbxPatch5xb">
+              <property name="text">
+               <string>Patch HD 500X Bundles to ProX (.5xb -&gt; .pxb)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="0">
+             <widget class="QCheckBox" name="proXChkbxPatchH5b">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string>Patch HD 500 Bundles to ProX (.h5b -&gt; .pxb)</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="0">
+             <widget class="QCheckBox" name="proXChkbxPatchHrb">
+              <property name="text">
+               <string>Patch HD Pro Bundles to ProX (.hrb -&gt; .pxb)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QCheckBox" name="proXChkbxPatchHre">
+              <property name="text">
+               <string>Patch HD Pro Presets to ProX (.hre -&gt; .pxe)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="15" column="0">
+             <widget class="QCheckBox" name="proXChkbxPatchHrs">
+              <property name="text">
+               <string>Patch HD Pro Setlists to ProX (.hrs -&gt; .pxs)</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="proXLbTranslate">
+          <property name="text">
+           <string>Translate POD HD 300 &amp; 400 Files:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0" colspan="2">
+         <widget class="QScrollArea" name="proXScrollAreaThree">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContentsProX2">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>582</width>
+             <height>69</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_28">
+            <item row="0" column="0">
+             <widget class="QLabel" name="proXLbTranslatePresets">
+              <property name="text">
+               <string>Presets:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QCheckBox" name="proXChkbxPatchH3e">
+              <property name="text">
+               <string>Translate POD HD 300 &amp;&amp; 400 Presets (.h3e &amp;&amp; .h4e -&gt; .pxe)</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="proXLbModifyFiles">
+          <property name="text">
+           <string>Modify HD ProX Files:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0" colspan="2">
+         <widget class="QScrollArea" name="proXScrollAreaTwo">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents_13">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>565</width>
+             <height>478</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_26">
+            <item row="13" column="1">
+             <widget class="QComboBox" name="proXCbFirstCab"/>
+            </item>
+            <item row="10" column="1">
+             <widget class="QCheckBox" name="proXChkbxEditFirstCab">
+              <property name="text">
+               <string>1. Cab</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="0">
+             <widget class="QCheckBox" name="proXChkbxEditFirstAmp">
+              <property name="text">
+               <string>1. Amp</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QCheckBox" name="proXChkbxModifyPxs">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string>Modify .pxs files</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QCheckBox" name="proXChkbxModifyPxe">
+              <property name="text">
+               <string>Modify .pxe files</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QCheckBox" name="proXChkbxModifyPxb">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string>Modify .pxb files</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="proXLbFilesToModify">
+              <property name="text">
+               <string>Select Files to Modify:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0" colspan="2">
+             <widget class="Line" name="proXLine3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="13" column="0">
+             <widget class="QComboBox" name="proXCbFirstAmp"/>
+            </item>
+            <item row="14" column="0">
+             <widget class="QCheckBox" name="proXChkbxEditFirstMic">
+              <property name="text">
+               <string>1. Mic</string>
+              </property>
+             </widget>
+            </item>
+            <item row="15" column="0">
+             <widget class="QComboBox" name="proXCbFirstMic"/>
+            </item>
+            <item row="16" column="0">
+             <widget class="QCheckBox" name="proXChkbxEditSecondAmp">
+              <property name="text">
+               <string>2. Amp</string>
+              </property>
+             </widget>
+            </item>
+            <item row="16" column="1">
+             <widget class="QCheckBox" name="proXChkbxEditSecondCab">
+              <property name="text">
+               <string>2. Cab</string>
+              </property>
+             </widget>
+            </item>
+            <item row="18" column="0">
+             <widget class="QCheckBox" name="proXChkbxEditSecondMic">
+              <property name="text">
+               <string>2. Mic</string>
+              </property>
+             </widget>
+            </item>
+            <item row="17" column="0">
+             <widget class="QComboBox" name="proXCbSecondAmp"/>
+            </item>
+            <item row="17" column="1">
+             <widget class="QComboBox" name="proXCbSecondCab"/>
+            </item>
+            <item row="19" column="0">
+             <widget class="QComboBox" name="proXCbSecondMic"/>
+            </item>
+            <item row="20" column="0" colspan="2">
+             <widget class="Line" name="proXLine2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="21" column="0">
+             <widget class="QCheckBox" name="proXChkbxEditInputs">
+              <property name="text">
+               <string>Change Inputs:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="22" column="0">
+             <widget class="QLabel" name="proXLbInputOne">
+              <property name="text">
+               <string>Input Source 1</string>
+              </property>
+             </widget>
+            </item>
+            <item row="22" column="1">
+             <widget class="QLabel" name="proXLbInputTwo">
+              <property name="text">
+               <string>Input Source 2</string>
+              </property>
+             </widget>
+            </item>
+            <item row="24" column="0">
+             <widget class="QLabel" name="proXLbGuitarIn">
+              <property name="text">
+               <string>Guitar IN-Z</string>
+              </property>
+             </widget>
+            </item>
+            <item row="23" column="0">
+             <widget class="QComboBox" name="proXCbSourceOne"/>
+            </item>
+            <item row="25" column="0">
+             <widget class="QComboBox" name="proXCbGuitarInput"/>
+            </item>
+            <item row="23" column="1">
+             <widget class="QComboBox" name="proXCbSourceTwo"/>
+            </item>
+            <item row="7" column="0">
+             <widget class="QCheckBox" name="proXChkbxEditAmpToPre">
+              <property name="text">
+               <string>Set all Amps to Pre Amps</string>
+              </property>
+              <property name="autoExclusive">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="1">
+             <widget class="QCheckBox" name="proXChkbxEditPreToAmp">
+              <property name="text">
+               <string>Set all Pre Amps to Amps</string>
+              </property>
+              <property name="autoExclusive">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="0" colspan="2">
+             <widget class="Line" name="proXLine">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="proXLbToEdit">
+              <property name="text">
+               <string>Select Parameter to Modify:</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item row="8" column="0">
+         <widget class="QLabel" name="proXLbGeneral">
+          <property name="text">
+           <string>General:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="0">
+         <widget class="QCheckBox" name="proXChkbxBackup">
+          <property name="text">
+           <string>Make backup</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="0">
+         <widget class="QLabel" name="proXLbAfterRun">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="1">
+         <widget class="QPushButton" name="proXBtnRun">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="toolTip">
+           <string>Click to perform selected actions</string>
+          </property>
+          <property name="text">
+           <string>Run</string>
+          </property>
          </widget>
         </item>
        </layout>
@@ -1922,8 +2486,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>251</width>
-                 <height>951</height>
+                 <width>198</width>
+                 <height>781</height>
                 </rect>
                </property>
                <layout class="QGridLayout" name="gridLayout_14">
@@ -2274,8 +2838,8 @@ p, li { white-space: pre-wrap; }
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>222</width>
-                 <height>323</height>
+                 <width>198</width>
+                 <height>270</height>
                 </rect>
                </property>
                <layout class="QGridLayout" name="gridLayout_15">
@@ -2420,7 +2984,7 @@ p, li { white-space: pre-wrap; }
            <locale language="English" country="UnitedStates"/>
           </property>
           <property name="text">
-           <string>Translate POD HD 500 / HD Desktop / HD Pro Presets to POD HD 300 / HD 400 Presets</string>
+           <string>Translate POD HD 500(X) / HD Desktop / HD Pro(X) Presets to POD HD 300 / HD 400 Presets</string>
           </property>
           <property name="scaledContents">
            <bool>false</bool>
@@ -2542,7 +3106,7 @@ p, li { white-space: pre-wrap; }
      <x>0</x>
      <y>0</y>
      <width>626</width>
-     <height>23</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuDatei">
