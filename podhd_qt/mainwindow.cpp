@@ -220,13 +220,21 @@ QList<QStringList> fileExtensionProX;
 QList<QStringList> fileExtension300;
 QList<QStringList> fileExtension400;
 
-QList<QCheckBox*> listChkbxEditAmp;
-QList<QCheckBox*> listChkbxEditCab;
-QList<QCheckBox*> listChkbxEditMic;
+QList<QCheckBox*> listChkbxEditFirstAmp;
+QList<QCheckBox*> listChkbxEditFirstCab;
+QList<QCheckBox*> listChkbxEditFirstMic;
 
-QList<QComboBox*> listCbEditAmp;
-QList<QComboBox*> listCbEditCab;
-QList<QComboBox*> listCbEditMic;
+QList<QCheckBox*> listChkbxEditSecondAmp;
+QList<QCheckBox*> listChkbxEditSecondCab;
+QList<QCheckBox*> listChkbxEditSecondMic;
+
+QList<QComboBox*> listCbEditFirstAmp;
+QList<QComboBox*> listCbEditFirstCab;
+QList<QComboBox*> listCbEditFirstMic;
+
+QList<QComboBox*> listCbEditSecondAmp;
+QList<QComboBox*> listCbEditSecondCab;
+QList<QComboBox*> listCbEditSecondMic;
 
 
 // QHashes
@@ -750,78 +758,78 @@ MainWindow::MainWindow(QWidget *parent) :
     // Process Amp, Cab, Mic QLists
     // CheckBoxes
 
-    listChkbxEditAmp.append(ui->fiveChkbxEditFirstAmp);
-    listChkbxEditAmp.append(ui->fiveXChkbxEditFirstAmp);
-    listChkbxEditAmp.append(ui->desktopChkbxEditFirstAmp);
-    listChkbxEditAmp.append(ui->proChkbxEditFirstAmp);
-    listChkbxEditAmp.append(ui->proXChkbxEditFirstAmp);
+    listChkbxEditFirstAmp.append(ui->fiveChkbxEditFirstAmp);
+    listChkbxEditFirstAmp.append(ui->fiveXChkbxEditFirstAmp);
+    listChkbxEditFirstAmp.append(ui->desktopChkbxEditFirstAmp);
+    listChkbxEditFirstAmp.append(ui->proChkbxEditFirstAmp);
+    listChkbxEditFirstAmp.append(ui->proXChkbxEditFirstAmp);
 
-    listChkbxEditCab.append(ui->fiveChkbxEditFirstCab);
-    listChkbxEditCab.append(ui->fiveXChkbxEditFirstCab);
-    listChkbxEditCab.append(ui->desktopChkbxEditFirstCab);
-    listChkbxEditCab.append(ui->proChkbxEditFirstCab);
-    listChkbxEditCab.append(ui->proXChkbxEditFirstCab);
+    listChkbxEditFirstCab.append(ui->fiveChkbxEditFirstCab);
+    listChkbxEditFirstCab.append(ui->fiveXChkbxEditFirstCab);
+    listChkbxEditFirstCab.append(ui->desktopChkbxEditFirstCab);
+    listChkbxEditFirstCab.append(ui->proChkbxEditFirstCab);
+    listChkbxEditFirstCab.append(ui->proXChkbxEditFirstCab);
 
-    listChkbxEditMic.append(ui->fiveChkbxEditFirstMic);
-    listChkbxEditMic.append(ui->fiveXChkbxEditFirstMic);
-    listChkbxEditMic.append(ui->desktopChkbxEditFirstMic);
-    listChkbxEditMic.append(ui->proChkbxEditFirstMic);
-    listChkbxEditMic.append(ui->proXChkbxEditFirstMic);
+    listChkbxEditFirstMic.append(ui->fiveChkbxEditFirstMic);
+    listChkbxEditFirstMic.append(ui->fiveXChkbxEditFirstMic);
+    listChkbxEditFirstMic.append(ui->desktopChkbxEditFirstMic);
+    listChkbxEditFirstMic.append(ui->proChkbxEditFirstMic);
+    listChkbxEditFirstMic.append(ui->proXChkbxEditFirstMic);
 
-    listChkbxEditAmp.append(ui->fiveChkbxEditSecondAmp);
-    listChkbxEditAmp.append(ui->fiveXChkbxEditSecondAmp);
-    listChkbxEditAmp.append(ui->desktopChkbxEditSecondAmp);
-    listChkbxEditAmp.append(ui->proChkbxEditSecondAmp);
-    listChkbxEditAmp.append(ui->proXChkbxEditSecondAmp);
+    listChkbxEditSecondAmp.append(ui->fiveChkbxEditSecondAmp);
+    listChkbxEditSecondAmp.append(ui->fiveXChkbxEditSecondAmp);
+    listChkbxEditSecondAmp.append(ui->desktopChkbxEditSecondAmp);
+    listChkbxEditSecondAmp.append(ui->proChkbxEditSecondAmp);
+    listChkbxEditSecondAmp.append(ui->proXChkbxEditSecondAmp);
 
-    listChkbxEditCab.append(ui->fiveChkbxEditSecondCab);
-    listChkbxEditCab.append(ui->fiveXChkbxEditSecondCab);
-    listChkbxEditCab.append(ui->desktopChkbxEditSecondCab);
-    listChkbxEditCab.append(ui->proChkbxEditSecondCab);
-    listChkbxEditCab.append(ui->proXChkbxEditSecondCab);
+    listChkbxEditSecondCab.append(ui->fiveChkbxEditSecondCab);
+    listChkbxEditSecondCab.append(ui->fiveXChkbxEditSecondCab);
+    listChkbxEditSecondCab.append(ui->desktopChkbxEditSecondCab);
+    listChkbxEditSecondCab.append(ui->proChkbxEditSecondCab);
+    listChkbxEditSecondCab.append(ui->proXChkbxEditSecondCab);
 
-    listChkbxEditMic.append(ui->fiveChkbxEditSecondMic);
-    listChkbxEditMic.append(ui->fiveXChkbxEditSecondMic);
-    listChkbxEditMic.append(ui->desktopChkbxEditSecondMic);
-    listChkbxEditMic.append(ui->proChkbxEditSecondMic);
-    listChkbxEditMic.append(ui->proXChkbxEditSecondMic);
+    listChkbxEditSecondMic.append(ui->fiveChkbxEditSecondMic);
+    listChkbxEditSecondMic.append(ui->fiveXChkbxEditSecondMic);
+    listChkbxEditSecondMic.append(ui->desktopChkbxEditSecondMic);
+    listChkbxEditSecondMic.append(ui->proChkbxEditSecondMic);
+    listChkbxEditSecondMic.append(ui->proXChkbxEditSecondMic);
 
     // ComboBoxes
-    listCbEditAmp.append(ui->fiveCbFirstAmp);
-    listCbEditAmp.append(ui->fiveXCbFirstAmp);
-    listCbEditAmp.append(ui->desktopCbFirstAmp);
-    listCbEditAmp.append(ui->proCbFirstAmp);
-    listCbEditAmp.append(ui->proXCbFirstAmp);
+    listCbEditFirstAmp.append(ui->fiveCbFirstAmp);
+    listCbEditFirstAmp.append(ui->fiveXCbFirstAmp);
+    listCbEditFirstAmp.append(ui->desktopCbFirstAmp);
+    listCbEditFirstAmp.append(ui->proCbFirstAmp);
+    listCbEditFirstAmp.append(ui->proXCbFirstAmp);
 
-    listCbEditCab.append(ui->fiveCbFirstCab);
-    listCbEditCab.append(ui->fiveXCbFirstCab);
-    listCbEditCab.append(ui->desktopCbFirstCab);
-    listCbEditCab.append(ui->proCbFirstCab);
-    listCbEditCab.append(ui->proXCbFirstCab);
+    listCbEditFirstCab.append(ui->fiveCbFirstCab);
+    listCbEditFirstCab.append(ui->fiveXCbFirstCab);
+    listCbEditFirstCab.append(ui->desktopCbFirstCab);
+    listCbEditFirstCab.append(ui->proCbFirstCab);
+    listCbEditFirstCab.append(ui->proXCbFirstCab);
 
-    listCbEditMic.append(ui->fiveCbFirstMic);
-    listCbEditMic.append(ui->fiveXCbFirstMic);
-    listCbEditMic.append(ui->desktopCbFirstMic);
-    listCbEditMic.append(ui->proCbFirstMic);
-    listCbEditMic.append(ui->proXCbFirstMic);
+    listCbEditFirstMic.append(ui->fiveCbFirstMic);
+    listCbEditFirstMic.append(ui->fiveXCbFirstMic);
+    listCbEditFirstMic.append(ui->desktopCbFirstMic);
+    listCbEditFirstMic.append(ui->proCbFirstMic);
+    listCbEditFirstMic.append(ui->proXCbFirstMic);
 
-    listCbEditAmp.append(ui->fiveCbSecondAmp);
-    listCbEditAmp.append(ui->fiveXCbSecondAmp);
-    listCbEditAmp.append(ui->desktopCbSecondAmp);
-    listCbEditAmp.append(ui->proCbSecondAmp);
-    listCbEditAmp.append(ui->proXCbSecondAmp);
+    listCbEditSecondAmp.append(ui->fiveCbSecondAmp);
+    listCbEditSecondAmp.append(ui->fiveXCbSecondAmp);
+    listCbEditSecondAmp.append(ui->desktopCbSecondAmp);
+    listCbEditSecondAmp.append(ui->proCbSecondAmp);
+    listCbEditSecondAmp.append(ui->proXCbSecondAmp);
 
-    listCbEditCab.append(ui->fiveCbSecondCab);
-    listCbEditCab.append(ui->fiveXCbSecondCab);
-    listCbEditCab.append(ui->desktopCbSecondCab);
-    listCbEditCab.append(ui->proCbSecondCab);
-    listCbEditCab.append(ui->proXCbSecondCab);
+    listCbEditSecondCab.append(ui->fiveCbSecondCab);
+    listCbEditSecondCab.append(ui->fiveXCbSecondCab);
+    listCbEditSecondCab.append(ui->desktopCbSecondCab);
+    listCbEditSecondCab.append(ui->proCbSecondCab);
+    listCbEditSecondCab.append(ui->proXCbSecondCab);
 
-    listCbEditMic.append(ui->fiveCbSecondMic);
-    listCbEditMic.append(ui->fiveXCbSecondMic);
-    listCbEditMic.append(ui->desktopCbSecondMic);
-    listCbEditMic.append(ui->proCbSecondMic);
-    listCbEditMic.append(ui->proXCbSecondMic);
+    listCbEditSecondMic.append(ui->fiveCbSecondMic);
+    listCbEditSecondMic.append(ui->fiveXCbSecondMic);
+    listCbEditSecondMic.append(ui->desktopCbSecondMic);
+    listCbEditSecondMic.append(ui->proCbSecondMic);
+    listCbEditSecondMic.append(ui->proXCbSecondMic);
 
     // Generate QHashes
 
@@ -3263,7 +3271,7 @@ void MainWindow::translatePresetFilesSmallToBig(QDir source, QStringList files, 
     // Generate basic Filestructure
     // Empty .h5e File
 
-    const char h5eStructure[] = {
+    const unsigned char h5eStructure[] = {
         0x48,0x35,0x45,0x50,0x00,0x00,0x00,0x01,0x7D,0x01,0x00,0x27,0x02,0x21,0x00,0x00,0x00,
         0x14,0x00,0x02,0x01,0x30,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
         0x00,0x00,0x00,0x00,0x00,0x00,0x4E,0x65,0x77,0x20,0x54,0x6F,0x6E,0x65,0x20,0x20,0x20,
@@ -3800,7 +3808,7 @@ void MainWindow::translatePresetFilesSmallToBig(QDir source, QStringList files, 
         // Start Writing
         // Write default template
 
-        targetFile.write(h5eStructure,lenH5eStructure);
+        targetFile.write((const char*) h5eStructure,lenH5eStructure);
 
         // Set Preset Name
 
@@ -4601,7 +4609,7 @@ void MainWindow::translatePresetFilesBigToSmall(QDir source, QStringList files, 
     // Generate basic Filestructur
     // Empty .h3e Preset File
 
-    const char h3eStructure[] = {
+    const unsigned char h3eStructure[] = {
         0x48,0x33,0x45,0x50,0x00,0x00,0x00,0x01,0x7D,0x01,0x00,0x25,0x02,0x01,0x00,0x00,0x00,
         0x14,0x00,0x00,0x01,0x02,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
         0x00,0x00,0x00,0x00,0x00,0x00,0x44,0x65,0x66,0x61,0x75,0x6C,0x74,0x20,0x50,0x72,0x65,
@@ -5003,7 +5011,7 @@ void MainWindow::translatePresetFilesBigToSmall(QDir source, QStringList files, 
         // Start Writing
         // Write default template
 
-        targetFile.write(h3eStructure,lenH3eStructure);
+        targetFile.write((const char*) h3eStructure,lenH3eStructure);
 
         // Set Preset Name
 
@@ -6502,9 +6510,9 @@ bool MainWindow::potiByte(QFile &sourceFile, QFile &targetFile, int sourcePositi
 
 void MainWindow::processChangeAmps() {
 
-    for (int i = 0; i < listChkbxEditAmp.size(); i++) {
-        if (listChkbxEditAmp.at(i)->isChecked() ) {
-            switch (listCbEditAmp.at(i)->currentIndex())  {
+    for (int i = 0; i < listChkbxEditFirstAmp.size(); i++) {
+        if (listChkbxEditFirstAmp.at(i)->isChecked() ) {
+            switch (listCbEditFirstAmp.at(i)->currentIndex())  {
 
                 case 0:
                     ampOne[0] = '\x05';
@@ -6693,9 +6701,10 @@ void MainWindow::processChangeAmps() {
         }
     }
 
-    for (int i = 0; i < listChkbxEditCab.size(); i++) {
-        if (listChkbxEditCab.at(i)->isChecked() ) {
-            switch (listCbEditCab.at(i)->currentIndex())  {
+    for (int i = 0; i < listChkbxEditFirstCab.size(); i++) {
+        if (listChkbxEditFirstCab.at(i)->isChecked() ) {
+            CabOneOff = false;
+            switch (listCbEditFirstCab.at(i)->currentIndex())  {
 
                 case 0:
                     cabOne[0] = '\x00';
@@ -6756,9 +6765,9 @@ void MainWindow::processChangeAmps() {
         }
     }
 
-    for (int i = 0; i < listChkbxEditMic.size(); i++) {
-        if (listChkbxEditMic.at(i)->isChecked() ) {
-            switch (listCbEditMic.at(i)->currentIndex())  {
+    for (int i = 0; i < listChkbxEditFirstMic.size(); i++) {
+        if (listChkbxEditFirstMic.at(i)->isChecked() ) {
+            switch (listCbEditFirstMic.at(i)->currentIndex())  {
 
                 case 0:
                     micOne[0] = '\x00';
@@ -6787,6 +6796,292 @@ void MainWindow::processChangeAmps() {
             }
         }
     }
+    for (int i = 0; i < listChkbxEditSecondAmp.size(); i++) {
+        if (listChkbxEditSecondAmp.at(i)->isChecked() ) {
+            switch (listCbEditSecondAmp.at(i)->currentIndex())  {
+
+                case 0:
+                    ampTwo[0] = '\x05';
+                    break;
+                case 1:
+                    ampTwo[0] = '\x06';
+                    break;
+                case 2:
+                    ampTwo[0] = '\x08';
+                    break;
+                case 3:
+                    ampTwo[0] = '\x0E';
+                    break;
+                case 4:
+                    ampTwo[0] = '\x14';
+                    break;
+                case 5:
+                    ampTwo[0] = '\x01';
+                    break;
+                case 6:
+                    ampTwo[0] = '\x02';
+                    break;
+                case 7:
+                    ampTwo[0] = '\x03';
+                    break;
+                case 8:
+                    ampTwo[0] = '\x04';
+                    break;
+                case 9:
+                    ampTwo[0] = '\x12';
+                    break;
+                case 10:
+                    ampTwo[0] = '\x00';
+                    break;
+                case 11:
+                    ampTwo[0] = '\x10';
+                    break;
+                case 12:
+                    ampTwo[0] = '\x11';
+                    break;
+                case 13:
+                    ampTwo[0] = '\x09';
+                    break;
+                case 14:
+                    ampTwo[0] = '\x0A';
+                    break;
+                case 15:
+                    ampTwo[0] = '\x55';
+                    break;
+                case 16:
+                    ampTwo[0] = '\x58';
+                    break;
+                case 17:
+                    ampTwo[0] = '\x0C';
+                    break;
+                case 18:
+                    ampTwo[0] = '\x0D';
+                    break;
+                case 19:
+                    ampTwo[0] = '\x15';
+                    break;
+                case 20:
+                    ampTwo[0] = '\x17';
+                    break;
+                case 21:
+                    ampTwo[0] = '\x0B';
+                    break;
+                case 22:
+                    ampTwo[0] = '\x19';
+                    break;
+                case 23:
+                    ampTwo[0] = '\x52';
+                    break;
+                case 24:
+                    ampTwo[0] = '\x5E';
+                    break;
+                case 25:
+                    ampTwo[0] = '\x61';
+                    break;
+                case 26:
+                    ampTwo[0] = '\x64';
+                    break;
+                case 27:
+                    ampTwo[0] = '\x67';
+                    break;
+                case 28:
+                    ampTwo[0] = '\x6A';
+                    break;
+                case 29:
+                    ampTwo[0] = '\x5B';
+                    break;
+
+                // Pre Amps
+                case 30:
+                    ampTwo[0] = '\x20';
+                    break;
+                case 31:
+                    ampTwo[0] = '\x21';
+                    break;
+                case 32:
+                    ampTwo[0] = '\x23';
+                    break;
+                case 33:
+                    ampTwo[0] = '\x29';
+                    break;
+                case 34:
+                    ampTwo[0] = '\x2F';
+                    break;
+                case 35:
+                    ampTwo[0] = '\x1C';
+                    break;
+                case 36:
+                    ampTwo[0] = '\x1D';
+                    break;
+                case 37:
+                    ampTwo[0] = '\x1E';
+                    break;
+                case 38:
+                    ampTwo[0] = '\x1F';
+                    break;
+                case 39:
+                    ampTwo[0] = '\x2D';
+                    break;
+                case 40:
+                    ampTwo[0] = '\x1B';
+                    break;
+                case 41:
+                    ampTwo[0] = '\x2B';
+                    break;
+                case 42:
+                    ampTwo[0] = '\x2C';
+                    break;
+                case 43:
+                    ampTwo[0] = '\x24';
+                    break;
+                case 44:
+                    ampTwo[0] = '\x25';
+                    break;
+                case 45:
+                    ampTwo[0] = '\x56';
+                    break;
+                case 46:
+                    ampTwo[0] = '\x59';
+                    break;
+                case 47:
+                    ampTwo[0] = '\x27';
+                    break;
+                case 48:
+                    ampTwo[0] = '\x28';
+                    break;
+                case 49:
+                    ampTwo[0] = '\x30';
+                    break;
+                case 50:
+                    ampTwo[0] = '\x32';
+                    break;
+                case 51:
+                    ampTwo[0] = '\x26';
+                    break;
+                case 52:
+                    ampTwo[0] = '\x34';
+                    break;
+                case 53:
+                    ampTwo[0] = '\x53';
+                    break;
+                case 54:
+                    ampTwo[0] = '\x5F';
+                    break;
+                case 55:
+                    ampTwo[0] = '\x62';
+                    break;
+                case 56:
+                    ampTwo[0] = '\x65';
+                    break;
+                case 57:
+                    ampTwo[0] = '\x68';
+                    break;
+                case 58:
+                    ampTwo[0] = '\x6B';
+                    break;
+                case 59:
+                    ampTwo[0] = '\x5C';
+                    break;
+
+            }
+        }
+    }
+
+    for (int i = 0; i < listChkbxEditSecondCab.size(); i++) {
+        if (listChkbxEditSecondCab.at(i)->isChecked() ) {
+            CabTwoOff = false;
+            switch (listCbEditSecondCab.at(i)->currentIndex())  {
+
+                case 0:
+                    cabTwo[0] = '\x00';
+                    break;
+                case 1:
+                    cabTwo[0] = '\x01';
+                    break;
+                case 2:
+                    cabTwo[0] = '\x02';
+                    break;
+                case 3:
+                    cabTwo[0] = '\x03';
+                    break;
+                case 4:
+                    cabTwo[0] = '\x04';
+                    break;
+                case 5:
+                    cabTwo[0] = '\x05';
+                    break;
+                case 6:
+                    cabTwo[0] = '\x06';
+                    break;
+                case 7:
+                    cabTwo[0] = '\x08';
+                    break;
+                case 8:
+                    cabTwo[0] = '\x09';
+                    break;
+                case 9:
+                    cabTwo[0] = '\x0A';
+                    break;
+                case 10:
+                    cabTwo[0] = '\x0B';
+                    break;
+                case 11:
+                    cabTwo[0] = '\x0C';
+                    break;
+                case 12:
+                    cabTwo[0] = '\x0E';
+                    break;
+                case 13:
+                    cabTwo[0] = '\x11';
+                    break;
+                case 14:
+                    cabTwo[0] = '\x10';
+                    break;
+                case 15:
+                    cabTwo[0] = '\x0F';
+                    break;
+                case 16:
+                    cabTwo[0] = '\x12';
+                    break;
+                case 17:
+                    CabTwoOff = true;
+                    break;
+
+            }
+        }
+    }
+
+    for (int i = 0; i < listChkbxEditSecondMic.size(); i++) {
+        if (listChkbxEditSecondMic.at(i)->isChecked() ) {
+            switch (listCbEditSecondMic.at(i)->currentIndex())  {
+
+                case 0:
+                    micTwo[0] = '\x00';
+                    break;
+                case 1:
+                    micTwo[0] = '\x01';
+                    break;
+                case 2:
+                    micTwo[0] = '\x02';
+                    break;
+                case 3:
+                    micTwo[0] = '\x03';
+                    break;
+                case 4:
+                    micTwo[0] = '\x04';
+                    break;
+                case 5:
+                    micTwo[0] = '\x05';
+                    break;
+                case 6:
+                    micTwo[0] = '\x06';
+                    break;
+                case 7:
+                    micTwo[0] = '\x07';
+                    break;
+            }
+        }
+    }
 }
 
 void MainWindow::modifyPresetFiles(QStringList files) {
@@ -6800,55 +7095,56 @@ void MainWindow::modifyPresetFiles(QStringList files) {
 
             if (ui->fiveChkbxEditFirstAmp->isChecked() || ui->fiveXChkbxEditFirstAmp->isChecked() || ui->desktopChkbxEditFirstAmp->isChecked() || ui->proChkbxEditFirstAmp->isChecked() || ui->proXChkbxEditFirstAmp->isChecked()) {
 
-                // Check if first Amp is On
+                // Check if first Amp is Off and turn it on otherwise
                 fileToModify.seek(0x58);
                 fileToModify.read(hexIn,1);
-                if(hexIn[0] == 0x01) {
-                    // Seek and Change first Amp Model
-
-                    fileToModify.seek(0x53);
-                    fileToModify.write(ampOne, maxSize);
+                if(hexIn[0] == 0x00) {
+                    fileToModify.seek(0x58);
+                    fileToModify.write("\x01", maxSize);
                 }
+                // Seek and Change first Amp Model
+                fileToModify.seek(0x53);
+                fileToModify.write(ampOne, maxSize);
             }
             if (ui->fiveChkbxEditSecondAmp->isChecked() || ui->fiveXChkbxEditSecondAmp->isChecked() || ui->desktopChkbxEditSecondAmp->isChecked() || ui->proChkbxEditSecondAmp->isChecked()  || ui->proXChkbxEditSecondAmp->isChecked()) {
-                // Check if second Amp is On
+                // Check if second Amp is Off and turn it on otherwise
                 fileToModify.seek(0x15B);
                 fileToModify.read(hexIn,1);
-                if(hexIn[0] == 0x01) {
-                    // Seek and Change first Amp Model
-
-                    fileToModify.seek(0x153);
-                    fileToModify.write(ampTwo, maxSize);
+                if(hexIn[0] == 0x00) {
+                    fileToModify.seek(0x15B);
+                    fileToModify.write("\x01", maxSize);
                 }
+                // Seek and Change second Amp Model
+                fileToModify.seek(0x153);
+                fileToModify.write(ampTwo, maxSize);
             }
             if (ui->fiveChkbxEditFirstCab->isChecked() || ui->fiveXChkbxEditFirstCab->isChecked() || ui->desktopChkbxEditFirstCab->isChecked() || ui->proChkbxEditFirstCab->isChecked() || ui->proXChkbxEditFirstCab->isChecked()) {
-                // Check if first Cab is On
+                // Check if first Cab is Off
                 if(CabOneOff == true) {
+                    // Set it off
                     fileToModify.seek(0x25B);
                     fileToModify.write("\x00", maxSize);
-                }
-                fileToModify.seek(0x25B);
-                fileToModify.read(hexIn, 1);
-                if(hexIn[0] == 0x01) {
-                    // Seek and Change first Cab Model
+                } else if (CabOneOff == false) {
+                    // Set in on and write desired Cab.
+                    fileToModify.seek(0x25B);
+                    fileToModify.write("\x01", maxSize);
                     fileToModify.seek(0x253);
                     fileToModify.write(cabOne, maxSize);
                 }
             }
             if (ui->fiveChkbxEditSecondCab->isChecked() || ui->fiveXChkbxEditSecondCab->isChecked() || ui->desktopChkbxEditSecondCab->isChecked() || ui->proChkbxEditSecondCab->isChecked() || ui->proXChkbxEditSecondCab->isChecked()) {
-                // Check if second Cab is On
+                // Check if second Cab is Off
                 if(CabTwoOff == true) {
+                    // Set if off
                     fileToModify.seek(0x35B);
                     fileToModify.write("\x00", maxSize);
-                }
-                fileToModify.seek(0x35B);
-                fileToModify.read(hexIn, 1);
-                if(hexIn[0] == 0x01) {
-                    // Seek and Change first Cab Model
+                } else if (CabTwoOff == false) {
+                    // Set in on and write desired Cab.
+                    fileToModify.seek(0x35B);
+                    fileToModify.write("\x01", maxSize);
                     fileToModify.seek(0x353);
                     fileToModify.write(cabTwo, maxSize);
                 }
-
             }
             if (ui->fiveChkbxEditFirstMic->isChecked() || ui->fiveXChkbxEditFirstMic->isChecked() || ui->desktopChkbxEditFirstMic->isChecked() || ui->proChkbxEditFirstMic->isChecked() || ui->proXChkbxEditFirstMic->isChecked()) {
 
@@ -6876,7 +7172,6 @@ void MainWindow::modifyPresetFiles(QStringList files) {
             fileToModify.close();
         }
     }
-
 }
 
 void MainWindow::modifySetlistFiles(QStringList files) {
@@ -6890,60 +7185,65 @@ void MainWindow::modifySetlistFiles(QStringList files) {
 
             if (ui->fiveChkbxEditFirstAmp->isChecked() || ui->fiveXChkbxEditFirstAmp->isChecked() || ui->desktopChkbxEditFirstAmp->isChecked() || ui->proChkbxEditFirstAmp->isChecked() || ui->proXChkbxEditFirstAmp->isChecked()) {
 
-                // Check if first Amp is On
+                // Check if first Amp is off and turn it on otherwise
                 for (int i=0; i<64; i++) {
-                fileToModify.seek(0x90 + (i * 0x001028));
-                fileToModify.read(hexIn,1);
-                if(hexIn[0] == 0x01) {
-                    // Seek and Change first Amp Model
-                        fileToModify.seek(0x8B + (i * 0x001028));
-                        fileToModify.write(ampOne, maxSize);
+                    fileToModify.seek(0x90 + (i * 0x001028));
+                    fileToModify.read(hexIn,1);
+                    if(hexIn[0] == 0x00) {
+                        fileToModify.seek(0x90 + (i * 0x001028));
+                        fileToModify.write("\x01", maxSize);
                     }
+                    // Seek and Change first Amp Model
+                    fileToModify.seek(0x8B + (i * 0x001028));
+                    fileToModify.write(ampOne, maxSize);
                 }
             }
             if (ui->fiveChkbxEditSecondAmp->isChecked() || ui->fiveXChkbxEditSecondAmp->isChecked() || ui->desktopChkbxEditSecondAmp->isChecked() || ui->proChkbxEditSecondAmp->isChecked() || ui->proXChkbxEditSecondAmp->isChecked()) {
-                // Check if second Amp is On
+                // Check if second Amp is off and turn it on otherwise
                 for (int i=0; i<64; i++) {
-                fileToModify.seek(0x190  + (i * 0x001028));
-                fileToModify.read(hexIn,1);
-                if(hexIn[0] == 0x01) {
-                    // Seek and Change second Amp Model
-                        fileToModify.seek(0x018B + (i * 0x001028));
-                        fileToModify.write(ampTwo, maxSize);
+                    fileToModify.seek(0x190  + (i * 0x001028));
+                    fileToModify.read(hexIn,1);
+                    if(hexIn[0] == 0x00) {
+                        fileToModify.seek(0x190 + (i * 0x001028));
+                        fileToModify.write("\x01", maxSize);
                     }
+                    // Seek and Change second Amp Model
+                    fileToModify.seek(0x018B + (i * 0x001028));
+                    fileToModify.write(ampTwo, maxSize);
+
                 }
             }
             if (ui->fiveChkbxEditFirstCab->isChecked() || ui->fiveXChkbxEditFirstCab->isChecked() || ui->desktopChkbxEditFirstCab->isChecked() || ui->proChkbxEditFirstCab->isChecked() || ui->proXChkbxEditFirstCab->isChecked()) {
-                // Check if first Cab is On
+                // Check if first Cab is Off
                 if(CabOneOff == true) {
+                    // Set it off
                     for (int i=0; i<64; i++) {
-                        fileToModify.seek(0x28B + (i * 0x001028));
-                        fileToModify.write(cabOne, maxSize);
+                        fileToModify.seek(0x293 + (i * 0x001028));
+                        fileToModify.write("\x00", maxSize);
                     }
-                }
-                for (int i=0; i<64; i++) {
-                fileToModify.seek(0x293 + (i * 0x001028));
-                fileToModify.read(hexIn, 1);
-                if(hexIn[0] == 0x01) {
-                    // Seek and Change first Cab Model
+                } else if (CabOneOff == false) {
+                    // Set it on and write desired Cab.
+                    for (int i=0; i<64; i++) {
+                        fileToModify.seek(0x293 + (i * 0x001028));
+                        fileToModify.write("\x01", maxSize);
                         fileToModify.seek(0x28B + (i * 0x001028));
                         fileToModify.write(cabOne, maxSize);
                     }
                 }
             }
             if (ui->fiveChkbxEditSecondCab->isChecked() || ui->fiveXChkbxEditSecondCab->isChecked() || ui->desktopChkbxEditSecondCab->isChecked() || ui->proChkbxEditSecondCab->isChecked() || ui->proXChkbxEditSecondCab->isChecked()) {
-                // Check if second Cab is On
+                // Check if second Cab should be off.
                 if(CabTwoOff == true) {
+                    // Set it off
                     for (int i=0; i<64; i++) {
-                        fileToModify.seek(0x38B + (i * 0x001028));
-                        fileToModify.write(cabOne, maxSize);
+                        fileToModify.seek(0x393 + (i * 0x001028));
+                        fileToModify.write("\x00", maxSize);
                     }
-                }
-                for (int i=0; i<64; i++) {
-                fileToModify.seek(0x393 + (i * 0x001028));
-                fileToModify.read(hexIn, maxSize);
-                if(hexIn[0] == 0x01) {
-                    // Seek and Change second Cab Model
+                } else if (CabTwoOff == false) {
+                    // Set if on and write desired Cab.
+                    for (int i=0; i<64; i++) {
+                        fileToModify.seek(0x393 + (i * 0x001028));
+                        fileToModify.write("\x01", maxSize);
                         fileToModify.seek(0x38B + (i * 0x001028));
                         fileToModify.write(cabTwo, maxSize);
                     }
@@ -6994,141 +7294,143 @@ void MainWindow::modifyBundleFiles(QStringList files) {
 
             if (ui->fiveChkbxEditFirstAmp->isChecked() || ui->fiveXChkbxEditFirstAmp->isChecked() || ui->desktopChkbxEditFirstAmp->isChecked() || ui->proChkbxEditFirstAmp->isChecked() || ui->proXChkbxEditFirstAmp->isChecked()) {
 
-                // Check if first Amp is On
+                // Check if first Amp is off and turn it on otherwise
                 // Content
                 for (int j=0; j<8; j++) {
                     for (int i=0; i<64; i++) {
                         fileToModify.seek((0x0000B8 + (j * 0x040A38)) + (i * 0x001028));
                         fileToModify.read(hexIn,1);
-                        if(hexIn[0] == 0x01) {
-                            // Seek and Change first Amp Model
-
-                                fileToModify.seek((0x0000B3 + (j * 0x040A38)) + (i * 0x001028));
-                                fileToModify.write(ampOne, maxSize);
+                        if(hexIn[0] == 0x00) {
+                            // Turn amp on if necessary
+                            fileToModify.seek((0x0000B8 + (j * 0x040A38)) + (i * 0x001028));
+                            fileToModify.write("\x01", maxSize);
                         }
+                        // Seek and Change first Amp Model
+                        fileToModify.seek((0x0000B3 + (j * 0x040A38)) + (i * 0x001028));
+                        fileToModify.write(ampOne, maxSize);
                     }
                 }
                 // Setlist
                 for (int i=0; i<7; i++) {
                     fileToModify.seek(0x0400B8 + (i * 0x040A38));
                     fileToModify.read(hexIn,1);
-                    if(hexIn[0] == 0x01) {
-                        // Seek and Change first Amp Model
-
-                            fileToModify.seek(0x0400B3 + (i * 0x040A38));
-                            fileToModify.write(ampOne, maxSize);
+                    if(hexIn[0] == 0x00) {
+                        // Turn amp on if necessary
+                        fileToModify.seek(0x0400B8 + (i * 0x040A38));
+                        fileToModify.write("\x01", maxSize);
                     }
+                    // Seek and Change first Amp Model
+                    fileToModify.seek(0x0400B3 + (i * 0x040A38));
+                    fileToModify.write(ampOne, maxSize);
                 }
             }
 
             if (ui->fiveChkbxEditSecondAmp->isChecked() || ui->fiveXChkbxEditSecondAmp->isChecked() || ui->desktopChkbxEditSecondAmp->isChecked() || ui->proChkbxEditSecondAmp->isChecked() || ui->proXChkbxEditSecondAmp->isChecked()) {
-                // Check if second Amp is On
+                // Check if second Amp is Off and turn it on elsewise.
                 // Content
                 for (int j=0; j<8; j++) {
                     for (int i=0; i<64; i++) {
                         fileToModify.seek((0x0001B8 + (j * 0x040A38)) + (i * 0x001028));
                         fileToModify.read(hexIn,1);
-                        if(hexIn[0] == 0x01) {
-                            // Seek and Change second Amp Model
-
-                                fileToModify.seek((0x0001B3 + (j * 0x040A38)) + (i * 0x001028));
-                                fileToModify.write(ampTwo, maxSize);
+                        if(hexIn[0] == 0x00) {
+                            // Turn second amp on if necessary
+                            fileToModify.seek((0x0001B8 + (j * 0x040A38)) + (i * 0x001028));
+                            fileToModify.write("\x01", maxSize);
                         }
+                        // Seek and Change second Amp Model
+                        fileToModify.seek((0x0001B3 + (j * 0x040A38)) + (i * 0x001028));
+                        fileToModify.write(ampTwo, maxSize);
                     }
                 }
                 // Setlist
                 for (int i=0; i<7; i++) {
                     fileToModify.seek(0x0401B8 + (i * 0x040A38));
                     fileToModify.read(hexIn,1);
-                    if(hexIn[0] == 0x01) {
-                        // Seek and Change second Amp Model
-
-                            fileToModify.seek(0x0401B3 + (i * 0x040A38));
-                            fileToModify.write(ampTwo, maxSize);
+                    if(hexIn[0] == 0x00) {
+                        // Turn second amp on if necessary
+                        fileToModify.seek(0x0401B8 + (i * 0x040A38));
+                        fileToModify.write("\01", maxSize);
                     }
+                    // Seek and Change second Amp Model
+                    fileToModify.seek(0x0401B3 + (i * 0x040A38));
+                    fileToModify.write(ampTwo, maxSize);
                 }
             }
             if (ui->fiveChkbxEditFirstCab->isChecked() || ui->fiveXChkbxEditFirstCab->isChecked() || ui->desktopChkbxEditFirstCab->isChecked() || ui->proChkbxEditFirstCab->isChecked() || ui->proXChkbxEditFirstCab->isChecked()) {
                 // Content
-                // Check if first Cab is On
+                // Check if first Cab should be off.
                 if(CabOneOff == true) {
-
                     for (int j=0; j<8; j++) {
                         for (int i=0; i<64; i++) {
+                            fileToModify.seek((0x0002BB + (j * 0x040A38)) + (i * 0x001028));
+                            fileToModify.write("\x00", maxSize);
+                        }
+                    }
+                } else if (CabOneOff == false) {
+                    // Set it on and set desired Cab.
+                    for (int j=0; j<8; j++) {
+                        for (int i=0; i<64; i++) {
+                            fileToModify.seek((0x0002BB + (j * 0x040A38)) + (i * 0x001028));
+                            fileToModify.write("\x01", maxSize);
                             fileToModify.seek((0x0002B3 + (j * 0x040A38)) + (i * 0x001028));
                             fileToModify.write(cabOne, maxSize);
                         }
                     }
                 }
-                for (int j=0; j<8; j++) {
-                    for (int i=0; i<64; i++) {
-                        fileToModify.seek((0x0002BB + (j * 0x040A38)) + (i * 0x001028));
-                        fileToModify.read(hexIn, maxSize);
-                        if(hexIn[0] == 0x01) {
-                            // Seek and Change first Cab Model
-                                fileToModify.seek((0x0002B3 + (j * 0x040A38)) + (i * 0x001028));
-                                fileToModify.write(cabOne, maxSize);
-                        }
-                    }
-                }
                 // Setlist
 
-                // Check if first Cab is On
+                // Check if first Cab should be off.
                 if(CabOneOff == true) {
                     for (int i=0; i<7; i++) {
+                        fileToModify.seek(0x0402BB + (i * 0x040A38));
+                        fileToModify.write("\x00", maxSize);
+                    }
+                } else if (CabOneOff == false) {
+                    // Set it on and set desired Cab.
+                    for (int i=0; i<7; i++) {
+                        fileToModify.seek(0x0402BB + (i * 0x040A38));
+                        fileToModify.write("\x01", maxSize);
                         fileToModify.seek(0x0402B3 + (i * 0x040A38));
                         fileToModify.write(cabOne, maxSize);
-                    }
-                }
-                for (int i=0; i<7; i++) {
-                    fileToModify.seek(0x0402BB + (i * 0x040A38));
-                    fileToModify.read(hexIn, maxSize);
-                    if(hexIn[0] == 0x01) {
-                        // Seek and Change first Cab Model
-                            fileToModify.seek(0x0402B3 + (i * 0x040A38));
-                            fileToModify.write(cabOne, maxSize);
                     }
                 }
             }
             if (ui->fiveChkbxEditSecondCab->isChecked() || ui->fiveXChkbxEditSecondCab->isChecked() || ui->desktopChkbxEditSecondCab->isChecked() || ui->proChkbxEditSecondCab->isChecked() || ui->proXChkbxEditSecondCab->isChecked()) {
                 // Content
-                // Check if second Cab is On
+                // Check if second Cab should be off.
                 if(CabTwoOff == true) {
-
                     for (int j=0; j<8; j++) {
                         for (int i=0; i<64; i++) {
+                            fileToModify.seek((0x0003BB + (j * 0x040A38)) + (i * 0x001028));
+                            fileToModify.write("\x00", maxSize);
+                        }
+                    }
+                } else if (CabTwoOff == false) {
+                    // Set it on and set desired Cab.
+                    for (int j=0; j<8; j++) {
+                        for (int i=0; i<64; i++) {
+                            fileToModify.seek((0x0003BB + (j * 0x040A38)) + (i * 0x001028));
+                            fileToModify.write("\x01", maxSize);
                             fileToModify.seek((0x0003B3 + (j * 0x040A38)) + (i * 0x001028));
                             fileToModify.write(cabTwo, maxSize);
                         }
                     }
                 }
-                for (int j=0; j<8; j++) {
-                    for (int i=0; i<64; i++) {
-                        fileToModify.seek((0x0003BB + (j * 0x040A38)) + (i * 0x001028));
-                        fileToModify.read(hexIn, maxSize);
-                        if(hexIn[0] == 0x01) {
-                            // Seek and Change second Cab Model
-                                fileToModify.seek((0x0003B3 + (j * 0x040A38)) + (i * 0x001028));
-                                fileToModify.write(cabTwo, maxSize);
-                        }
-                    }
-                }
                 // Setlist
 
-                // Check if second Cab is On
+                // Check if second Cab should be off.
                 if(CabTwoOff == true) {
                     for (int i=0; i<7; i++) {
+                        fileToModify.seek(0x0403BB + (i * 0x040A38));
+                        fileToModify.write("\x00", maxSize);
+                    }
+                } else if (CabTwoOff == false) {
+                    // Set if on and set desired cab.
+                    for (int i=0; i<7; i++) {
+                        fileToModify.seek(0x0403BB + (i * 0x040A38));
+                        fileToModify.write("\x01", maxSize);
                         fileToModify.seek(0x0403B3 + (i * 0x040A38));
                         fileToModify.write(cabTwo, maxSize);
-                    }
-                }
-                for (int i=0; i<7; i++) {
-                    fileToModify.seek(0x0403BB + (i * 0x040A38));
-                    fileToModify.read(hexIn, maxSize);
-                    if(hexIn[0] == 0x01) {
-                        // Seek and Change second Cab Model
-                            fileToModify.seek(0x0403B3 + (i * 0x040A38));
-                            fileToModify.write(cabTwo, maxSize);
                     }
                 }
             }

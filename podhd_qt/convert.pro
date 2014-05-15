@@ -20,10 +20,12 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui \
     dialogabout.ui
 
-#CONFIG += static
+CONFIG += static # for msvc
 
-QMAKE_LFLAGS += -static-libgcc
+#QMAKE_LFLAGS += -static-libgcc # for gcc
 
+## never used:
+#
 #win32 {
 #    QMAKE_LFLAGS += -static-libgcc
 #    }
