@@ -103,6 +103,10 @@ const QStringList sCab = QStringList() << "2x12 PhD Ported" << "1x(6x9) Super O"
                                        << "4x12 Blackback 30" << "4x12 Tread V-30" << "4x12 Brit T-75" << "115 Flip Flop" << "No Cab";
 const QStringList sMic = QStringList() << "57 On Axis" << "57 Off Axis" << "409 Dynamic" << "421 Dynamic" << "4038 Ribbon" << "121 Ribbon" << "67 Condenser" << "87 Condenser";
 
+const QStringList sFxVertical = QStringList() << "First Row" << "Second Row" << "Both";
+const QStringList sFxHorizontal = QStringList() << "1. Place" << "2. Place" << "3. Place" << "4. Place" << "5. Place" << "6. Place" << "7. Place" << "8. Place";
+const QStringList sFxPostPre = QStringList() << "Pre Amp" << "Post Amp";
+
 // HD 300 Mapping
 const QStringList sFx1300 = QStringList() << "Screamer" << "Tube Drive" << "Classic Distortion" << "Heavy Distortion" << "Color Drive" << "Overdrive" << "Line 6 Drive"
                                           << "Line 6 Distortion" << "Boost Comp" << "Red Comp" << "Blue Comp" << "Vetta Comp" << "Fuzz Pi" << "Octave Fuzz" << "Jet Fuzz" << "Sub Octave Fuzz"
@@ -159,7 +163,16 @@ char ampTwo[1] = { '\x01' };
 char cabTwo[1] = { '\x00' };
 char micTwo[1] = { '\x00' };
 
+char midFocusEQFXPosition[1] = { '\x01' };
+char midFocusEQFXHorizontal[1] = { '\x01' };
+char midFocusEQFXSlot[1] = { '\x00' };
+
 bool CabOneOff = false, CabTwoOff = false;
+
+union uIntToFloat {
+  char chars[4];
+  float f;
+} reverseFloat;
 
 
 // QLists
@@ -228,6 +241,9 @@ QList<QCheckBox*> listChkbxEditSecondAmp;
 QList<QCheckBox*> listChkbxEditSecondCab;
 QList<QCheckBox*> listChkbxEditSecondMic;
 
+QList<QCheckBox*> listChkbxEditMidFocusEQ;
+QList<QCheckBox*> listChkbxEditStudioEQ;
+
 QList<QComboBox*> listCbEditFirstAmp;
 QList<QComboBox*> listCbEditFirstCab;
 QList<QComboBox*> listCbEditFirstMic;
@@ -236,6 +252,19 @@ QList<QComboBox*> listCbEditSecondAmp;
 QList<QComboBox*> listCbEditSecondCab;
 QList<QComboBox*> listCbEditSecondMic;
 
+QList<QComboBox*> listCbEditMidFocusEQFXSlot;
+QList<QComboBox*> listCbEditMidFocusEQFXSlotPostPre;
+QList<QComboBox*> listCbEditMidFocusEQHorizontal;
+QList<QComboBox*> listCbEditMidFocusEQVertical;
+QList<QComboBox*> listCbEditStudioEQFXSlot;
+QList<QComboBox*> listCbEditStudioEQHorizontal;
+QList<QComboBox*> listCbEditStudioEQVertical;
+
+QList<QSpinBox*> listSbEditMidFocusEQHP;
+QList<QSpinBox*> listSbEditMidFocusEQHPQ;
+QList<QSpinBox*> listSbEditMidFocusEQLP;
+QList<QSpinBox*> listSbEditMidFocusEQLPQ;
+QList<QSpinBox*> listSbEditMidFocusEQGain;
 
 // QHashes
 
@@ -364,6 +393,22 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->fiveCbSecondMic->addItems(sMic);
     ui->fiveCbSecondMic->setCurrentIndex(0);
     ui->fiveCbSecondMic->setDisabled(true);
+
+    ui->fiveCbMidfocusEQFXSlot->addItems(sFxHorizontal);
+    ui->fiveCbMidfocusEQFXSlot->setCurrentIndex(7);
+    ui->fiveCbMidfocusEQFXSlot->setDisabled(true);
+
+    ui->fiveCbMidfocusEQFXSlotPostPre->addItems(sFxPostPre);
+    ui->fiveCbMidfocusEQFXSlotPostPre->setCurrentIndex(1);
+    ui->fiveCbMidfocusEQFXSlotPostPre->setDisabled(true);
+
+    ui->fiveCbMidfocusEQHorizontal->addItems(sFxHorizontal);
+    ui->fiveCbMidfocusEQHorizontal->setCurrentIndex(7);
+    ui->fiveCbMidfocusEQHorizontal->setDisabled(true);
+
+    ui->fiveCbMidfocusEQVertical->addItems(sFxVertical);
+    ui->fiveCbMidfocusEQVertical->setCurrentIndex(2);
+    ui->fiveCbMidfocusEQVertical->setDisabled(true);
 
     // HD 500X
 
@@ -794,6 +839,19 @@ MainWindow::MainWindow(QWidget *parent) :
     listChkbxEditSecondMic.append(ui->proChkbxEditSecondMic);
     listChkbxEditSecondMic.append(ui->proXChkbxEditSecondMic);
 
+    listChkbxEditMidFocusEQ.append(ui->fiveChkbxEditMidfocusEQ);
+    //listChkbxEditMidFocusEQ.append(ui->fiveXChkbxEditMidfocusEQ);
+    //listChkbxEditMidFocusEQ.append(ui->desktopChkbxEditMidfocusEQ);
+    //listChkbxEditMidFocusEQ.append(ui->proChkbxEditMidfocusEQ);
+    //listChkbxEditMidFocusEQ.append(ui->proXChkbxEditMidfocusEQ);
+
+    //listChkbxEditStudioEQ.append(ui->fiveChkbxEditStudioEQ);
+    //listChkbxEditStudioEQ.append(ui->fiveXChkbxEditStudioEQ);
+    //listChkbxEditStudioEQ.append(ui->desktopChkbxEditStudioEQ);
+    //listChkbxEditStudioEQ.append(ui->proChkbxEditStudioEQ);
+    //listChkbxEditStudioEQ.append(ui->proXChkbxEditStudioEQ);
+
+
     // ComboBoxes
     listCbEditFirstAmp.append(ui->fiveCbFirstAmp);
     listCbEditFirstAmp.append(ui->fiveXCbFirstAmp);
@@ -831,43 +889,98 @@ MainWindow::MainWindow(QWidget *parent) :
     listCbEditSecondMic.append(ui->proCbSecondMic);
     listCbEditSecondMic.append(ui->proXCbSecondMic);
 
+    listCbEditMidFocusEQFXSlot.append(ui->fiveCbMidfocusEQFXSlot);
+    //listCbEditMidFocusEQFXSlot.append(ui->fiveXCbMidfocusEQFXSlot);
+    //listCbEditMidFocusEQFXSlot.append(ui->desktopCbMidfocusEQFXSlot);
+    //listCbEditMidFocusEQFXSlot.append(ui->proCbMidfocusEQFXSlot);
+    //listCbEditMidFocusEQFXSlot.append(ui->proXCbMidfocusEQFXSlot);
+
+    listCbEditMidFocusEQFXSlotPostPre.append(ui->fiveCbMidfocusEQFXSlotPostPre);
+    //listCbEditMidFocusEQFXSlotPostPre.append(ui->fiveXCbMidfocusEQFXSlotPostPre);
+    //listCbEditMidFocusEQFXSlotPostPre.append(ui->desktopCbMidfocusEQFXSlotPostPre);
+    //listCbEditMidFocusEQFXSlotPostPre.append(ui->proCbMidfocusEQFXSlotPostPre);
+    //listCbEditMidFocusEQFXSlotPostPre.append(ui->proXCbMidfocusEQFXSlotPostPre);
+
+    listCbEditMidFocusEQHorizontal.append(ui->fiveCbMidfocusEQHorizontal);
+    //listCbEditMidFocusEQHorizontal.append(ui->fiveXCbMidfocusEQHorizontal);
+    //listCbEditMidFocusEQHorizontal.append(ui->desktopCbMidfocusEQHorizontal);
+    //listCbEditMidFocusEQHorizontal.append(ui->proCbMidfocusEQHorizontal);
+    //listCbEditMidFocusEQHorizontal.append(ui->proXCbMidfocusEQHorizontal);
+
+    listCbEditMidFocusEQVertical.append(ui->fiveCbMidfocusEQVertical);
+    //listCbEditMidFocusEQVertical.append(ui->fiveXCbMidfocusEQVertical);
+    //listCbEditMidFocusEQVertical.append(ui->desktopCbMidfocusEQVertical);
+    //listCbEditMidFocusEQVertical.append(ui->proCbMidfocusEQVertical);
+    //listCbEditMidFocusEQVertical.append(ui->proXCbMidfocusEQVertical);
+
+    listSbEditMidFocusEQHP.append(ui->fiveSBMidFocusEQHP);
+    //listSbEditMidFocusEQHP.append(ui->fiveXSBMidFocusEQHP);
+    //listSbEditMidFocusEQHP.append(ui->desktopSBMidFocusEQHP);
+    //listSbEditMidFocusEQHP.append(ui->proSBMidFocusEQHP);
+    //listSbEditMidFocusEQHP.append(ui->proXSBMidFocusEQHP);
+
+    listSbEditMidFocusEQHPQ.append(ui->fiveSBMidFocusEQHPQ);
+    //listSbEditMidFocusEQHPQ.append(ui->fiveXSBMidFocusEQHPQ);
+    //listSbEditMidFocusEQHPQ.append(ui->desktopSBMidFocusEQHPQ);
+    //listSbEditMidFocusEQHPQ.append(ui->proSBMidFocusEQHPQ);
+    //listSbEditMidFocusEQHPQ.append(ui->proXSBMidFocusEQHPQ);
+
+    listSbEditMidFocusEQLP.append(ui->fiveSBMidFocusEQLP);
+    //listSbEditMidFocusEQLP.append(ui->fiveXSBMidFocusEQLP);
+    //listSbEditMidFocusEQLP.append(ui->desktopSBMidFocusEQLP);
+    //listSbEditMidFocusEQLP.append(ui->proSBMidFocusEQLP);
+    //listSbEditMidFocusEQLP.append(ui->proXSBMidFocusEQLP);
+
+    listSbEditMidFocusEQLPQ.append(ui->fiveSBMidFocusEQLPQ);
+    //listSbEditMidFocusEQLPQ.append(ui->fiveXSBMidFocusEQLPQ);
+    //listSbEditMidFocusEQLPQ.append(ui->desktopSBMidFocusEQLPQ);
+    //listSbEditMidFocusEQLPQ.append(ui->proSBMidFocusEQLPQ);
+    //listSbEditMidFocusEQLPQ.append(ui->proXSBMidFocusEQLPQ);
+
+    listSbEditMidFocusEQGain.append(ui->fiveSBMidFocusEQGain);
+    //listSbEditMidFocusEQGain.append(ui->fiveXSBMidFocusEQGain);
+    //listSbEditMidFocusEQGain.append(ui->desktopSBMidFocusEQGain);
+    //listSbEditMidFocusEQGain.append(ui->proSBMidFocusEQGain);
+    //listSbEditMidFocusEQGain.append(ui->proXSBMidFocusEQGain);
+
+
     // Generate QHashes
 
     // Amp Models
-    AmpsToPreAmps.insert(0x05, 0x20);
-    AmpsToPreAmps.insert(0x06, 0x21);
-    AmpsToPreAmps.insert(0x08, 0x23);
-    AmpsToPreAmps.insert(0x0E, 0x29);
-    AmpsToPreAmps.insert(0x14, 0x2F);
-    AmpsToPreAmps.insert(0x01, 0x1C);
-    AmpsToPreAmps.insert(0x02, 0x1D);
-    AmpsToPreAmps.insert(0x03, 0x1E);
-    AmpsToPreAmps.insert(0x04, 0x1F);
-    AmpsToPreAmps.insert(0x12, 0x2D);
-    AmpsToPreAmps.insert(0x00, 0x1B);
-    AmpsToPreAmps.insert(0x10, 0x2B);
-    AmpsToPreAmps.insert(0x11, 0x2C);
-    AmpsToPreAmps.insert(0x09, 0x24);
-    AmpsToPreAmps.insert(0x0A, 0x25);
-    AmpsToPreAmps.insert(0x55, 0x56);
-    AmpsToPreAmps.insert(0x58, 0x59);
-    AmpsToPreAmps.insert(0x0C, 0x27);
-    AmpsToPreAmps.insert(0x0D, 0x28);
-    AmpsToPreAmps.insert(0x15, 0x30);
-    AmpsToPreAmps.insert(0x17, 0x32);
-    AmpsToPreAmps.insert(0x0B, 0x26);
-    AmpsToPreAmps.insert(0x19, 0x34);
-    AmpsToPreAmps.insert(0x52, 0x53);
-    AmpsToPreAmps.insert(0x5E, 0x5F);
-    AmpsToPreAmps.insert(0x61, 0x62);
-    AmpsToPreAmps.insert(0x64, 0x65);
-    AmpsToPreAmps.insert(0x67, 0x68);
-    AmpsToPreAmps.insert(0x6A, 0x6B);
-    AmpsToPreAmps.insert(0x5B, 0x5C);
+    AmpsToPreAmps.insert(0x05, 0x20); // Blackface Dbl Nrm (0x05) to Blackface Dbl Nrm Pre (0x20)
+    AmpsToPreAmps.insert(0x06, 0x21); // Blackface Dbl Vib (0x06) to Blackface Dbl Vib Pre (0x21)
+    AmpsToPreAmps.insert(0x08, 0x23); // Highway 100 (0x08) to Highway 100 Pre (0x23)
+    AmpsToPreAmps.insert(0x0E, 0x29); // Super O (0x0E) to Super O Pre (0x29)
+    AmpsToPreAmps.insert(0x14, 0x2F); // Gibtone 185 (0x14) to Gibtone 185 Pre (0x2F)
+    AmpsToPreAmps.insert(0x01, 0x1C); // Tweed B-Man Nrm
+    AmpsToPreAmps.insert(0x02, 0x1D); // Tweed B-Man Brt
+    AmpsToPreAmps.insert(0x03, 0x1E); // Blackface 'Lux Nrm
+    AmpsToPreAmps.insert(0x04, 0x1F); // Blackface 'Lux Vib
+    AmpsToPreAmps.insert(0x12, 0x2D); // Divide 9/15
+    AmpsToPreAmps.insert(0x00, 0x1B); // PhD Motorway
+    AmpsToPreAmps.insert(0x10, 0x2B); // Class A-15
+    AmpsToPreAmps.insert(0x11, 0x2C); // Class A-30 Tb
+    AmpsToPreAmps.insert(0x09, 0x24); // Brit J-45 Nrm
+    AmpsToPreAmps.insert(0x0A, 0x25); // Brit J-45 Brt
+    AmpsToPreAmps.insert(0x55, 0x56); // Plexi Lead 100 Nrm
+    AmpsToPreAmps.insert(0x58, 0x59); // Plexi Lead 100 Brt
+    AmpsToPreAmps.insert(0x0C, 0x27); // Brit P-75 Nrm
+    AmpsToPreAmps.insert(0x0D, 0x28); // Brit P-75 Brt
+    AmpsToPreAmps.insert(0x15, 0x30); // Brit J-800
+    AmpsToPreAmps.insert(0x17, 0x32); // Bomber Uber
+    AmpsToPreAmps.insert(0x0B, 0x26); // Treadplate
+    AmpsToPreAmps.insert(0x19, 0x34); // Angel F-Ball
+    AmpsToPreAmps.insert(0x52, 0x53); // Line 6 Elektrik
+    AmpsToPreAmps.insert(0x5E, 0x5F); // Solo-100 Clean
+    AmpsToPreAmps.insert(0x61, 0x62); // Solo-100 Crunch
+    AmpsToPreAmps.insert(0x64, 0x65); // Solo-100 Overdrive
+    AmpsToPreAmps.insert(0x67, 0x68); // Line 6 Doom
+    AmpsToPreAmps.insert(0x6A, 0x6B); // Line 6 Epic
+    AmpsToPreAmps.insert(0x5B, 0x5C); // Flip Top
 
     // Pre Models
-    PreAmpsToAmps.insert(0x20, 0x05);
-    PreAmpsToAmps.insert(0x21, 0x06);
+    PreAmpsToAmps.insert(0x20, 0x05); // Blackface Dbl Nrm Pre (0x20) to Blackface Dbl Nrm (0x05)
+    PreAmpsToAmps.insert(0x21, 0x06); // Blackface Dbl Vib Pre (0x21) to Blackface Dbl Vib Pre (0x06)
     PreAmpsToAmps.insert(0x23, 0x08);
     PreAmpsToAmps.insert(0x29, 0x0E);
     PreAmpsToAmps.insert(0x2F, 0x14);
@@ -1001,7 +1114,23 @@ MainWindow::MainWindow(QWidget *parent) :
     connect( ui->fiveChkbxEditInputs, SIGNAL(clicked(bool)), ui->fiveCbSourceTwo, SLOT(setEnabled(bool)) );
     connect( ui->fiveChkbxEditInputs, SIGNAL(clicked(bool)), ui->fiveCbGuitarInput, SLOT(setEnabled(bool)) );
 
-    // HD 500
+    connect( ui->fiveSBMidFocusEQHP,SIGNAL(valueChanged(int)), ui->fiveDMidFocusEQHP,SLOT(setValue(int))); // Changing the value of spinbox will change the position of dial
+    connect( ui->fiveDMidFocusEQHP,SIGNAL(valueChanged(int)), ui->fiveSBMidFocusEQHP,SLOT(setValue(int))); //Changing the position of dial will change the value of the spinbox
+    connect( ui->fiveSBMidFocusEQHPQ,SIGNAL(valueChanged(int)), ui->fiveDMidFocusEQHPQ,SLOT(setValue(int))); // Changing the value of spinbox will change the position of dial
+    connect( ui->fiveDMidFocusEQHPQ,SIGNAL(valueChanged(int)), ui->fiveSBMidFocusEQHPQ,SLOT(setValue(int))); //Changing the position of dial will change the value of the spinbox
+    connect( ui->fiveSBMidFocusEQLP,SIGNAL(valueChanged(int)), ui->fiveDMidFocusEQLP,SLOT(setValue(int))); // Changing the value of spinbox will change the position of dial
+    connect( ui->fiveDMidFocusEQLP,SIGNAL(valueChanged(int)), ui->fiveSBMidFocusEQLP,SLOT(setValue(int))); //Changing the position of dial will change the value of the spinbox
+    connect( ui->fiveSBMidFocusEQLPQ,SIGNAL(valueChanged(int)), ui->fiveDMidFocusEQLPQ,SLOT(setValue(int))); // Changing the value of spinbox will change the position of dial
+    connect( ui->fiveDMidFocusEQLPQ,SIGNAL(valueChanged(int)), ui->fiveSBMidFocusEQLPQ,SLOT(setValue(int))); //Changing the position of dial will change the value of the spinbox
+    connect( ui->fiveSBMidFocusEQGain,SIGNAL(valueChanged(int)), ui->fiveDMidFocusEQGain,SLOT(setValue(int))); // Changing the value of spinbox will change the position of dial
+    connect( ui->fiveDMidFocusEQGain,SIGNAL(valueChanged(int)), ui->fiveSBMidFocusEQGain,SLOT(setValue(int))); //Changing the position of dial will change the value of the spinbox
+
+    connect( ui->fiveChkbxEditMidfocusEQ, SIGNAL(clicked(bool)), ui->fiveCbMidfocusEQFXSlot, SLOT(setEnabled(bool)) );
+    connect( ui->fiveChkbxEditMidfocusEQ, SIGNAL(clicked(bool)), ui->fiveCbMidfocusEQFXSlotPostPre, SLOT(setEnabled(bool)) );
+    connect( ui->fiveChkbxEditMidfocusEQ, SIGNAL(clicked(bool)), ui->fiveCbMidfocusEQHorizontal, SLOT(setEnabled(bool)) );
+    connect( ui->fiveChkbxEditMidfocusEQ, SIGNAL(clicked(bool)), ui->fiveCbMidfocusEQVertical, SLOT(setEnabled(bool)) );
+
+    // HD 500X
     connect( ui->fiveXBtnBrowse, SIGNAL( clicked() ), this, SLOT( getPath() ) );
     connect( ui->fiveXBtnRun, SIGNAL( clicked() ), this, SLOT( run500X() ) );
     connect( ui->fiveXLeDirectoryChoser, SIGNAL( textEdited(QString) ), this, SLOT( onTextEdit(QString) ) );
@@ -3019,6 +3148,7 @@ void MainWindow::convertBundleFiles(QStringList presetFiles, QString pressedFrom
                 //fileToModify.write(bytes000E5A, maxSize);
 
                 // Content
+                // Iterate 8 times (8 Setlists) over 64 Presets (per Setlist)
                 for (int j=0; j<8; j++) {
                     for (int i=0; i<64; i++) {
                         //fileToModify.seek((0x000E5A + (j * 0x040A38)) + (i * 0x001028));
@@ -3236,6 +3366,7 @@ void MainWindow::convertSetlistFiles(QStringList presetFiles, QString pressedFro
                 //fileToModify.write(bytes000E32, maxSize);
 
                 // Content
+                // Iterate over 64 Presets per Setlist.
                 for (int i=0; i<64; i++) {
                     //fileToModify.seek(0x000E32 + (i * 0x001028));
                     //fileToModify.write(guitarIn, maxSize);
@@ -6289,6 +6420,19 @@ bool MainWindow::potiInt(QFile &sourceFile, QFile &targetFile, int sourcePositio
 
 }
 
+char* MainWindow::intToFloat(int sourceValue, int range, int offset) {
+
+    uIntToFloat ufloat;
+
+    ufloat.f = (float)(((float)sourceValue - (float)offset) / (float)range);
+
+    for (int i = 0; i < 4; i++) {
+        reverseFloat.chars[i] = ufloat.chars[3-i];
+    }
+
+    return &reverseFloat.chars[0];
+}
+
 bool MainWindow::potiReversedInt(QFile &sourceFile, QFile &targetFile, int sourcePosition, int targetPosition) {
 
     float multiPoti = 0x7FFF;
@@ -7082,6 +7226,62 @@ void MainWindow::processChangeAmps() {
             }
         }
     }
+    for (int i = 0; i < listChkbxEditMidFocusEQ.size(); i++) {
+        if (listChkbxEditMidFocusEQ.at(i)->isChecked() ) {
+            switch (listCbEditMidFocusEQHorizontal.at(i)->currentIndex())  {
+
+                case 0:
+                    midFocusEQFXHorizontal[0] = '\x00';
+                    break;
+                case 1:
+                    midFocusEQFXHorizontal[0] = '\x01';
+                    break;
+                case 2:
+                    midFocusEQFXHorizontal[0] = '\x02';
+                    break;
+                case 3:
+                    midFocusEQFXHorizontal[0] = '\x03';
+                    break;
+                case 4:
+                    midFocusEQFXHorizontal[0] = '\x04';
+                    break;
+                case 5:
+                    midFocusEQFXHorizontal[0] = '\x05';
+                    break;
+                case 6:
+                    midFocusEQFXHorizontal[0] = '\x06';
+                    break;
+                case 7:
+                    midFocusEQFXHorizontal[0] = '\x07';
+                    break;
+            }
+            if (listCbEditMidFocusEQFXSlotPostPre.at(i)->currentIndex() == 0) {
+                switch (listCbEditMidFocusEQVertical.at(i)->currentIndex())  {
+                    case 0:
+                        midFocusEQFXPosition[0] = '\x01';
+                        break;
+                    case 1:
+                        midFocusEQFXPosition[0] = '\x02';
+                        break;
+                    case 2:
+                        midFocusEQFXPosition[0] = '\x00';
+                        break;
+                }
+            } else if (listCbEditMidFocusEQFXSlotPostPre.at(i)->currentIndex() == 1) {
+                switch (listCbEditMidFocusEQVertical.at(i)->currentIndex())  {
+                    case 0:
+                        midFocusEQFXPosition[0] = '\x03';
+                        break;
+                    case 1:
+                        midFocusEQFXPosition[0] = '\x04';
+                        break;
+                    case 2:
+                        midFocusEQFXPosition[0] = '\x05';
+                        break;
+                }
+            }
+        }
+    }
 }
 
 void MainWindow::modifyPresetFiles(QStringList files) {
@@ -7167,6 +7367,498 @@ void MainWindow::modifyPresetFiles(QStringList files) {
 
                 fileToModify.seek(0x0DFA);
                 fileToModify.write(guitarIn, maxSize);
+            }
+            if (ui->fiveChkbxEditMidfocusEQ->isChecked()) { // || ui->fiveXChkbxEditMidfocusEQ->isChecked() || ui->desktopChkbxEditMidfocusEQ->isChecked() || ui->proChkbxEditMidfocusEQ->isChecked() || ui->proXChkbxEditMidfocusEQ->isChecked()) {
+                switch (listCbEditMidFocusEQFXSlot.at(i)->currentIndex())  {
+                    case 0:
+                        // Turn FX on
+                        fileToModify.seek(0x458);
+                        fileToModify.write("\x01", maxSize);
+                        fileToModify.seek(0x45B);
+                        fileToModify.write("\x01", maxSize);
+                        fileToModify.seek(0x452);
+                        fileToModify.write("\x00", maxSize);
+                        // Set FX Typ (Pre+EQ)
+                        fileToModify.seek(0x451);
+                        fileToModify.write("\x0C", maxSize);
+                        // Set MidFocus EQ FX
+                        fileToModify.seek(0x453);
+                        fileToModify.write("\x0D", maxSize);
+                        // Set Horizontal Location (1-8 FX Postions)
+                        fileToModify.seek(0x457);
+                        fileToModify.write(midFocusEQFXHorizontal, maxSize);
+                        // Set Location (Pre / Post Amp, Dual, Single (first or second only) Amp)
+                        fileToModify.seek(0x455);
+                        fileToModify.write(midFocusEQFXPosition, maxSize);
+                        // Set HP Freq
+                        fileToModify.seek(0x464);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQHP.at(i)->value(), 525, 0), 4);
+                        fileToModify.seek(0x460);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x01", maxSize);
+                        // Set HP Q
+                        fileToModify.seek(0x478);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQHPQ.at(i)->value(), 100, 0), 4);
+                        fileToModify.seek(0x474);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x02", maxSize);
+                        // Set LP Freq
+                        fileToModify.seek(0x48C);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQLP.at(i)->value(), 17500, 500), 4);
+                        fileToModify.seek(0x488);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x03", maxSize);
+                        // Set LP Q
+                        fileToModify.seek(0x4A0);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQLPQ.at(i)->value(), 100, 0), 4);
+                        fileToModify.seek(0x49C);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x04", maxSize);
+                        // Set Gain
+                        fileToModify.seek(0x4B4);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQGain.at(i)->value(), 100, 0), 4);
+                        fileToModify.seek(0x4B0);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x05", maxSize);
+                        break;
+                    case 1:
+                        // Turn FX on
+                        fileToModify.seek(0x558);
+                        fileToModify.write("\x01", maxSize);
+                        fileToModify.seek(0x55B);
+                        fileToModify.write("\x01", maxSize);
+                        fileToModify.seek(0x552);
+                        fileToModify.write("\x00", maxSize);
+                        // Set FX Typ (Pre+EQ)
+                        fileToModify.seek(0x551);
+                        fileToModify.write("\x0C", maxSize);
+                        // Set MidFocus EQ FX
+                        fileToModify.seek(0x553);
+                        fileToModify.write("\x0D", maxSize);
+                        // Set Horizontal Location (1-8 FX Postions)
+                        fileToModify.seek(0x557);
+                        fileToModify.write(midFocusEQFXHorizontal, maxSize);
+                        // Set Location (Pre / Post Amp, Dual, Single (first or second only) Amp)
+                        fileToModify.seek(0x555);
+                        fileToModify.write(midFocusEQFXPosition, maxSize);
+                        // Set HP Freq
+                        fileToModify.seek(0x564);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQHP.at(i)->value(), 525, 0), 4);
+                        fileToModify.seek(0x560);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x01", maxSize);
+                        // Set HP Q
+                        fileToModify.seek(0x578);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQHPQ.at(i)->value(), 100, 0), 4);
+                        fileToModify.seek(0x574);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x02", maxSize);
+                        // Set LP Freq
+                        fileToModify.seek(0x58C);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQLP.at(i)->value(), 17500, 500), 4);
+                        fileToModify.seek(0x588);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x03", maxSize);
+                        // Set LP Q
+                        fileToModify.seek(0x5A0);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQLPQ.at(i)->value(), 100, 0), 4);
+                        fileToModify.seek(0x59C);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x04", maxSize);
+                        // Set Gain
+                        fileToModify.seek(0x5B4);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQGain.at(i)->value(), 100, 0), 4);
+                        fileToModify.seek(0x5B0);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x05", maxSize);
+                        break;
+                    case 2:
+                        // Turn FX on
+                        fileToModify.seek(0x658);
+                        fileToModify.write("\x01", maxSize);
+                        fileToModify.seek(0x65B);
+                        fileToModify.write("\x01", maxSize);
+                        fileToModify.seek(0x652);
+                        fileToModify.write("\x00", maxSize);
+                        // Set FX Typ (Pre+EQ)
+                        fileToModify.seek(0x651);
+                        fileToModify.write("\x0C", maxSize);
+                        // Set MidFocus EQ FX
+                        fileToModify.seek(0x653);
+                        fileToModify.write("\x0D", maxSize);
+                        // Set Horizontal Location (1-8 FX Postions)
+                        fileToModify.seek(0x657);
+                        fileToModify.write(midFocusEQFXHorizontal, maxSize);
+                        // Set Location (Pre / Post Amp, Dual, Single (first or second only) Amp)
+                        fileToModify.seek(0x655);
+                        fileToModify.write(midFocusEQFXPosition, maxSize);
+                        // Set HP Freq
+                        fileToModify.seek(0x664);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQHP.at(i)->value(), 525, 0), 4);
+                        fileToModify.seek(0x660);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x01", maxSize);
+                        // Set HP Q
+                        fileToModify.seek(0x678);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQHPQ.at(i)->value(), 100, 0), 4);
+                        fileToModify.seek(0x674);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x02", maxSize);
+                        // Set LP Freq
+                        fileToModify.seek(0x68C);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQLP.at(i)->value(), 17500, 500), 4);
+                        fileToModify.seek(0x688);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x03", maxSize);
+                        // Set LP Q
+                        fileToModify.seek(0x6A0);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQLPQ.at(i)->value(), 100, 0), 4);
+                        fileToModify.seek(0x69C);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x04", maxSize);
+                        // Set Gain
+                        fileToModify.seek(0x6B4);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQGain.at(i)->value(), 100, 0), 4);
+                        fileToModify.seek(0x6B0);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x05", maxSize);
+                        break;
+                    case 3:
+                        // Turn FX on
+                        fileToModify.seek(0x758);
+                        fileToModify.write("\x01", maxSize);
+                        fileToModify.seek(0x75B);
+                        fileToModify.write("\x01", maxSize);
+                        fileToModify.seek(0x752);
+                        fileToModify.write("\x00", maxSize);
+                        // Set FX Typ (Pre+EQ)
+                        fileToModify.seek(0x751);
+                        fileToModify.write("\x0C", maxSize);
+                        // Set MidFocus EQ FX
+                        fileToModify.seek(0x753);
+                        fileToModify.write("\x0D", maxSize);
+                        // Set Horizontal Location (1-8 FX Postions)
+                        fileToModify.seek(0x757);
+                        fileToModify.write(midFocusEQFXHorizontal, maxSize);
+                        // Set Location (Pre / Post Amp, Dual, Single (first or second only) Amp)
+                        fileToModify.seek(0x755);
+                        fileToModify.write(midFocusEQFXPosition, maxSize);
+                        // Set HP Freq
+                        fileToModify.seek(0x764);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQHP.at(i)->value(), 525, 0), 4);
+                        fileToModify.seek(0x760);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x01", maxSize);
+                        // Set HP Q
+                        fileToModify.seek(0x778);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQHPQ.at(i)->value(), 100, 0), 4);
+                        fileToModify.seek(0x774);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x02", maxSize);
+                        // Set LP Freq
+                        fileToModify.seek(0x78C);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQLP.at(i)->value(), 17500, 500), 4);
+                        fileToModify.seek(0x788);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x03", maxSize);
+                        // Set LP Q
+                        fileToModify.seek(0x7A0);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQLPQ.at(i)->value(), 100, 0), 4);
+                        fileToModify.seek(0x79C);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x04", maxSize);
+                        // Set Gain
+                        fileToModify.seek(0x7B4);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQGain.at(i)->value(), 100, 0), 4);
+                        fileToModify.seek(0x7B0);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x05", maxSize);
+                        break;
+                    case 4:
+                        // Turn FX on
+                        fileToModify.seek(0x858);
+                        fileToModify.write("\x01", maxSize);
+                        fileToModify.seek(0x85B);
+                        fileToModify.write("\x01", maxSize);
+                        fileToModify.seek(0x852);
+                        fileToModify.write("\x00", maxSize);
+                        // Set FX Typ (Pre+EQ)
+                        fileToModify.seek(0x851);
+                        fileToModify.write("\x0C", maxSize);
+                        // Set MidFocus EQ FX
+                        fileToModify.seek(0x853);
+                        fileToModify.write("\x0D", maxSize);
+                        // Set Horizontal Location (1-8 FX Postions)
+                        fileToModify.seek(0x857);
+                        fileToModify.write(midFocusEQFXHorizontal, maxSize);
+                        // Set Location (Pre / Post Amp, Dual, Single (first or second only) Amp)
+                        fileToModify.seek(0x855);
+                        fileToModify.write(midFocusEQFXPosition, maxSize);
+                        // Set HP Freq
+                        fileToModify.seek(0x864);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQHP.at(i)->value(), 525, 0), 4);
+                        fileToModify.seek(0x860);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x01", maxSize);
+                        // Set HP Q
+                        fileToModify.seek(0x878);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQHPQ.at(i)->value(), 100, 0), 4);
+                        fileToModify.seek(0x874);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x02", maxSize);
+                        // Set LP Freq
+                        fileToModify.seek(0x88C);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQLP.at(i)->value(), 17500, 500), 4);
+                        fileToModify.seek(0x888);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x03", maxSize);
+                        // Set LP Q
+                        fileToModify.seek(0x8A0);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQLPQ.at(i)->value(), 100, 0), 4);
+                        fileToModify.seek(0x89C);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x04", maxSize);
+                        // Set Gain
+                        fileToModify.seek(0x8B4);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQGain.at(i)->value(), 100, 0), 4);
+                        fileToModify.seek(0x8B0);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x05", maxSize);
+                        break;
+                    case 5:
+                        // Turn FX on
+                        fileToModify.seek(0x958);
+                        fileToModify.write("\x01", maxSize);
+                        fileToModify.seek(0x95B);
+                        fileToModify.write("\x01", maxSize);
+                        fileToModify.seek(0x952);
+                        fileToModify.write("\x00", maxSize);
+                        // Set FX Typ (Pre+EQ)
+                        fileToModify.seek(0x951);
+                        fileToModify.write("\x0C", maxSize);
+                        // Set MidFocus EQ FX
+                        fileToModify.seek(0x953);
+                        fileToModify.write("\x0D", maxSize);
+                        // Set Horizontal Location (1-8 FX Postions)
+                        fileToModify.seek(0x957);
+                        fileToModify.write(midFocusEQFXHorizontal, maxSize);
+                        // Set Location (Pre / Post Amp, Dual, Single (first or second only) Amp)
+                        fileToModify.seek(0x955);
+                        fileToModify.write(midFocusEQFXPosition, maxSize);
+                        // Set HP Freq
+                        fileToModify.seek(0x964);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQHP.at(i)->value(), 525, 0), 4);
+                        fileToModify.seek(0x960);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x01", maxSize);
+                        // Set HP Q
+                        fileToModify.seek(0x978);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQHPQ.at(i)->value(), 100, 0), 4);
+                        fileToModify.seek(0x974);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x02", maxSize);
+                        // Set LP Freq
+                        fileToModify.seek(0x98C);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQLP.at(i)->value(), 17500, 500), 4);
+                        fileToModify.seek(0x988);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x03", maxSize);
+                        // Set LP Q
+                        fileToModify.seek(0x9A0);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQLPQ.at(i)->value(), 100, 0), 4);
+                        fileToModify.seek(0x99C);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x04", maxSize);
+                        // Set Gain
+                        fileToModify.seek(0x9B4);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQGain.at(i)->value(), 100, 0), 4);
+                        fileToModify.seek(0x9B0);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x05", maxSize);
+                        break;
+                    case 6:
+                        // Turn FX on
+                        fileToModify.seek(0xA58);
+                        fileToModify.write("\x01", maxSize);
+                        fileToModify.seek(0xA5B);
+                        fileToModify.write("\x01", maxSize);
+                        fileToModify.seek(0xA52);
+                        fileToModify.write("\x00", maxSize);
+                        // Set FX Typ (Pre+EQ)
+                        fileToModify.seek(0xA51);
+                        fileToModify.write("\x0C", maxSize);
+                        // Set MidFocus EQ FX
+                        fileToModify.seek(0xA53);
+                        fileToModify.write("\x0D", maxSize);
+                        // Set Horizontal Location (1-8 FX Postions)
+                        fileToModify.seek(0xA57);
+                        fileToModify.write(midFocusEQFXHorizontal, maxSize);
+                        // Set Location (Pre / Post Amp, Dual, Single (first or second only) Amp)
+                        fileToModify.seek(0xA55);
+                        fileToModify.write(midFocusEQFXPosition, maxSize);
+                        // Set HP Freq
+                        fileToModify.seek(0xA64);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQHP.at(i)->value(), 525, 0), 4);
+                        fileToModify.seek(0xA60);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x01", maxSize);
+                        // Set HP Q
+                        fileToModify.seek(0xA78);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQHPQ.at(i)->value(), 100, 0), 4);
+                        fileToModify.seek(0xA74);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x02", maxSize);
+                        // Set LP Freq
+                        fileToModify.seek(0xA8C);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQLP.at(i)->value(), 17500, 500), 4);
+                        fileToModify.seek(0xA88);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x03", maxSize);
+                        // Set LP Q
+                        fileToModify.seek(0xAA0);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQLPQ.at(i)->value(), 100, 0), 4);
+                        fileToModify.seek(0xA9C);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x04", maxSize);
+                        // Set Gain
+                        fileToModify.seek(0xAB4);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQGain.at(i)->value(), 100, 0), 4);
+                        fileToModify.seek(0xAB0);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x05", maxSize);
+                        break;
+                    case 7:
+                        // Turn FX on
+                        fileToModify.seek(0xB58);
+                        fileToModify.write("\x01", maxSize);
+                        fileToModify.seek(0xB5B);
+                        fileToModify.write("\x01", maxSize);
+                        fileToModify.seek(0xB52);
+                        fileToModify.write("\x00", maxSize);
+                        // Set FX Typ (Pre+EQ)
+                        fileToModify.seek(0xB51);
+                        fileToModify.write("\x0C", maxSize);
+                        // Set MidFocus EQ FX
+                        fileToModify.seek(0xB53);
+                        fileToModify.write("\x0D", maxSize);
+                        // Set Horizontal Location (1-8 FX Postions)
+                        fileToModify.seek(0xB57);
+                        fileToModify.write(midFocusEQFXHorizontal, maxSize);
+                        // Set Location (Pre / Post Amp, Dual, Single (first or second only) Amp)
+                        fileToModify.seek(0xB55);
+                        fileToModify.write(midFocusEQFXPosition, maxSize);
+                        // Set HP Freq
+                        fileToModify.seek(0xB64);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQHP.at(i)->value(), 525, 0), 4);
+                        fileToModify.seek(0xB60);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x01", maxSize);
+                        // Set HP Q
+                        fileToModify.seek(0xB78);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQHPQ.at(i)->value(), 100, 0), 4);
+                        fileToModify.seek(0xB74);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x02", maxSize);
+                        // Set LP Freq
+                        fileToModify.seek(0xB8C);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQLP.at(i)->value(), 17500, 500), 4);
+                        fileToModify.seek(0xB88);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x03", maxSize);
+                        // Set LP Q
+                        fileToModify.seek(0xBA0);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQLPQ.at(i)->value(), 100, 0), 4);
+                        fileToModify.seek(0xB9C);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x04", maxSize);
+                        // Set Gain
+                        fileToModify.seek(0xBB4);
+                        fileToModify.write(intToFloat(listSbEditMidFocusEQGain.at(i)->value(), 100, 0), 4);
+                        fileToModify.seek(0xBB0);
+                        fileToModify.write("\x3F", maxSize);
+                        fileToModify.write("\x10", maxSize);
+                        fileToModify.write("\x00", maxSize);
+                        fileToModify.write("\x05", maxSize);
+                        break;
+                }
             }
 
             fileToModify.close();

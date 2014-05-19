@@ -92,7 +92,7 @@ public:
     bool potiReversedInt(QFile &sourceFile, QFile &targetFile, int sourcePosition, int targetPosition);
     bool potiByteInt(QFile &sourceFile, QFile &targetFile, int sourcePosition, int targetPosition);
 
-
+    char* intToFloat(int sourceValue, int range, int offset);
 
 private:
     Ui::MainWindow *ui;
