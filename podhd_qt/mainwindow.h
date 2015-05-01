@@ -30,6 +30,8 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+    static const char* kSettingsGroup;
+
     bool getFiles(QDir dir, QList<QStringList> fileFilter);
     void copyModify();
     void copyTranslate();

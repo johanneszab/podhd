@@ -1,3 +1,5 @@
+#include <QSettings>
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -8,6 +10,8 @@ qint8 presetsPatched; // Counts files patched
 qint8 presetsModified; // Counts files moved
 
 // Constants
+
+const char* MainWindow::kSettingsGroup = "MainWindow";
 
 const QStringList h5eFilter = QStringList() << "*.h5e";
 const QStringList h5bFilter = QStringList() << "*.h5b";
@@ -1051,10 +1055,337 @@ MainWindow::MainWindow(QWidget *parent) :
     connect( ui->proXChkbxEditInputs, SIGNAL(clicked(bool)), ui->proXCbSourceOne, SLOT(setEnabled(bool)) );
     connect( ui->proXChkbxEditInputs, SIGNAL(clicked(bool)), ui->proXCbSourceTwo, SLOT(setEnabled(bool)) );
     connect( ui->proXChkbxEditInputs, SIGNAL(clicked(bool)), ui->proXCbGuitarInput, SLOT(setEnabled(bool)) );
+
+    // load last saved directory
+    QSettings settings;
+    settings.beginGroup(kSettingsGroup);
+
+    QString path = settings.value("last_save_dir", QDir::homePath()).toString();;
+    presetDirectory.setPath(path);
+    ui->desktopLeDirectoryChoser->setText(path);
+    ui->fiveLeDirectoryChoser->setText(path);
+    ui->fiveXLeDirectoryChoser->setText(path);
+    ui->proLeDirectoryChoser->setText(path);
+    ui->proXLeDirectoryChoser->setText(path);
+    ui->threeLeDirectoryChoser->setText(path);
+
+    // Load Checkbox states
+    foreach (QCheckBox *checkbox, desktopPatchChkbxFive) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, desktopPatchChkbxFiveX) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, desktopPatchChkbxPro) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, desktopPatchChkbxProX) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, desktopModifyChkbx) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, desktopTranslateChkbx) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+
+    foreach (QCheckBox *checkbox, fivePatchChkbxFiveX) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, fivePatchChkbxDesktop) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, fivePatchChkbxPro) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, fivePatchChkbxProX) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, fiveModifyChkbx) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, fiveTranslateChkbx) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+
+    foreach (QCheckBox *checkbox, fiveXPatchChkbxFive) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, fiveXPatchChkbxDesktop) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, fiveXPatchChkbxPro) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, fiveXPatchChkbxProX) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, fiveXModifyChkbx) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, fiveXTranslateChkbx) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+
+    foreach (QCheckBox *checkbox, proPatchChkbxFive) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, proPatchChkbxFiveX) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, proPatchChkbxDesktop) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, proPatchChkbxProX) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, proModifyChkbx) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, proTranslateChkbx) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+
+    foreach (QCheckBox *checkbox, proXPatchChkbxFive) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, proXPatchChkbxFiveX) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, proXPatchChkbxDesktop) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, proXPatchChkbxPro) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, proXModifyChkbx) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, proTranslateChkbx) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+
+    foreach (QCheckBox *checkbox, translateCheckboxes300) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, translateCheckboxes400) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+
+    foreach (QCheckBox *checkbox, listChkbxEditFirstAmp) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, listChkbxEditFirstCab) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, listChkbxEditFirstMic) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, listChkbxEditSecondAmp) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, listChkbxEditSecondCab) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+    foreach (QCheckBox *checkbox, listChkbxEditSecondMic) {
+        checkbox->setChecked(settings.value(checkbox->objectName(), false).toBool());
+    }
+
+    foreach (QComboBox *combobox, listCbEditFirstAmp) {
+        combobox->setCurrentIndex(settings.value(combobox->objectName(), 0).toInt());
+    }
+    foreach (QComboBox *combobox, listCbEditFirstCab) {
+        combobox->setCurrentIndex(settings.value(combobox->objectName(), 0).toInt());
+    }
+    foreach (QComboBox *combobox, listCbEditFirstMic) {
+        combobox->setCurrentIndex(settings.value(combobox->objectName(), 0).toInt());
+    }
+    foreach (QComboBox *combobox, listCbEditSecondAmp) {
+        combobox->setCurrentIndex(settings.value(combobox->objectName(), 0).toInt());
+    }
+    foreach (QComboBox *combobox, listCbEditSecondCab) {
+        combobox->setCurrentIndex(settings.value(combobox->objectName(), 0).toInt());
+    }
+    foreach (QComboBox *combobox, listCbEditSecondMic) {
+        combobox->setCurrentIndex(settings.value(combobox->objectName(), 0).toInt());
+    }
+
+    ui->desktopChkbxBackup->setChecked(settings.value(ui->desktopChkbxBackup->objectName(), true).toBool());
+    ui->fiveChkbxBackup->setChecked(settings.value(ui->fiveChkbxBackup->objectName(), true).toBool());
+    ui->fiveXChkbxBackup->setChecked(settings.value(ui->fiveXChkbxBackup->objectName(), true).toBool());
+    ui->proChkbxBackup->setChecked(settings.value(ui->proChkbxBackup->objectName(), true).toBool());
+    ui->proXChkbxBackup->setChecked(settings.value(ui->proXChkbxBackup->objectName(), true).toBool());
+    ui->threeChkbxBackup->setChecked(settings.value(ui->threeChkbxBackup->objectName(), true).toBool());
+
+    ui->desktopChkbxEditInputs->setChecked(settings.value(ui->desktopChkbxEditInputs->objectName(), true).toBool());
+    ui->fiveChkbxEditInputs->setChecked(settings.value(ui->fiveChkbxEditInputs->objectName(), true).toBool());
+    ui->fiveXChkbxEditInputs->setChecked(settings.value(ui->fiveXChkbxEditInputs->objectName(), true).toBool());
+    ui->proChkbxEditInputs->setChecked(settings.value(ui->proChkbxEditInputs->objectName(), true).toBool());
+    ui->proXChkbxEditInputs->setChecked(settings.value(ui->proXChkbxEditInputs->objectName(), true).toBool());
+
+    settings.endGroup();
+
 }
 
 MainWindow::~MainWindow()
 {
+    QSettings settings;
+    settings.beginGroup(kSettingsGroup);
+    foreach (QCheckBox *checkbox, desktopPatchChkbxFive) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, desktopPatchChkbxFiveX) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, desktopPatchChkbxPro) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, desktopPatchChkbxProX) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, desktopModifyChkbx) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, desktopTranslateChkbx) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+
+    foreach (QCheckBox *checkbox, fivePatchChkbxFiveX) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, fivePatchChkbxDesktop) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, fivePatchChkbxPro) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, fivePatchChkbxProX) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, fiveModifyChkbx) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, fiveTranslateChkbx) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+
+    foreach (QCheckBox *checkbox, fiveXPatchChkbxFive) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, fiveXPatchChkbxDesktop) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, fiveXPatchChkbxPro) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, fiveXPatchChkbxProX) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, fiveXModifyChkbx) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, fiveXTranslateChkbx) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+
+    foreach (QCheckBox *checkbox, proPatchChkbxFive) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, proPatchChkbxFiveX) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, proPatchChkbxDesktop) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, proPatchChkbxProX) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, proModifyChkbx) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, proTranslateChkbx) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+
+    foreach (QCheckBox *checkbox, proXPatchChkbxFive) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, proXPatchChkbxFiveX) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, proXPatchChkbxDesktop) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, proXPatchChkbxPro) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, proXModifyChkbx) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, proTranslateChkbx) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+
+    foreach (QCheckBox *checkbox, translateCheckboxes300) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, translateCheckboxes400) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+
+    foreach (QCheckBox *checkbox, listChkbxEditFirstAmp) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, listChkbxEditFirstCab) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, listChkbxEditFirstMic) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, listChkbxEditSecondAmp) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, listChkbxEditSecondCab) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+    foreach (QCheckBox *checkbox, listChkbxEditSecondMic) {
+        settings.setValue(checkbox->objectName(), checkbox->isChecked());
+    }
+
+    foreach (QComboBox *combobox, listCbEditFirstAmp) {
+        settings.setValue(combobox->objectName(), combobox->currentIndex());
+    }
+    foreach (QComboBox *combobox, listCbEditFirstCab) {
+        settings.setValue(combobox->objectName(), combobox->currentIndex());
+    }
+    foreach (QComboBox *combobox, listCbEditFirstMic) {
+        settings.setValue(combobox->objectName(), combobox->currentIndex());
+    }
+    foreach (QComboBox *combobox, listCbEditSecondAmp) {
+        settings.setValue(combobox->objectName(), combobox->currentIndex());
+    }
+    foreach (QComboBox *combobox, listCbEditSecondCab) {
+        settings.setValue(combobox->objectName(), combobox->currentIndex());
+    }
+    foreach (QComboBox *combobox, listCbEditSecondMic) {
+        settings.setValue(combobox->objectName(), combobox->currentIndex());
+    }
+
+    settings.setValue(ui->desktopChkbxBackup->objectName(), ui->desktopChkbxBackup->isChecked());
+    settings.setValue(ui->fiveChkbxBackup->objectName(), ui->fiveChkbxBackup->isChecked());
+    settings.setValue(ui->fiveXChkbxBackup->objectName(), ui->fiveXChkbxBackup->isChecked());
+    settings.setValue(ui->proChkbxBackup->objectName(), ui->proChkbxBackup->isChecked());
+    settings.setValue(ui->proXChkbxBackup->objectName(), ui->proXChkbxBackup->isChecked());
+    settings.setValue(ui->threeChkbxBackup->objectName(), ui->threeChkbxBackup->isChecked());
+
+    settings.setValue(ui->desktopChkbxEditInputs->objectName(), ui->desktopChkbxEditInputs->isChecked());
+    settings.setValue(ui->fiveChkbxEditInputs->objectName(), ui->fiveChkbxEditInputs->isChecked());
+    settings.setValue(ui->fiveXChkbxEditInputs->objectName(), ui->fiveXChkbxEditInputs->isChecked());
+    settings.setValue(ui->proChkbxEditInputs->objectName(), ui->proChkbxEditInputs->isChecked());
+    settings.setValue(ui->proXChkbxEditInputs->objectName(), ui->proXChkbxEditInputs->isChecked());
+
+    settings.setValue("presetDirectory", presetDirectory.path());
+    settings.endGroup();
     delete ui;
 }
 
@@ -1086,9 +1417,7 @@ void MainWindow::changePage400() {
 
 void MainWindow::getPath() {
 
-    QString path;
-
-    path = QFileDialog::getExistingDirectory(this, tr("Select Directory with Preset Files"), presetDirectory.path(), QFileDialog::ShowDirsOnly);
+    QString path = QFileDialog::getExistingDirectory(this, tr("%1").arg(path), presetDirectory.path(), QFileDialog::ShowDirsOnly);
     if ( path.isNull() == false )
     {
         presetDirectory.setPath(path);
