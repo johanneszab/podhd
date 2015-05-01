@@ -1060,7 +1060,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QSettings settings;
     settings.beginGroup(kSettingsGroup);
 
-    QString path = settings.value("last_save_dir", QDir::homePath()).toString();;
+    QString path = settings.value("presetDirectory", QDir::homePath()).toString();;
     presetDirectory.setPath(path);
     ui->desktopLeDirectoryChoser->setText(path);
     ui->fiveLeDirectoryChoser->setText(path);
