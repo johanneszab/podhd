@@ -1417,7 +1417,9 @@ void MainWindow::changePage400() {
 
 void MainWindow::getPath() {
 
-    QString path = QFileDialog::getExistingDirectory(this, tr("%1").arg(path), presetDirectory.path(), QFileDialog::ShowDirsOnly);
+    QString path;
+
+    path = QFileDialog::getExistingDirectory(this, tr("Select Directory with Preset Files"), presetDirectory.path(), QFileDialog::ShowDirsOnly);
     if ( path.isNull() == false )
     {
         presetDirectory.setPath(path);
