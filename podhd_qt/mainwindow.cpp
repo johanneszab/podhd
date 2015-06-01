@@ -2993,7 +2993,7 @@ void MainWindow::convertPresetFiles(QStringList presetFiles, QString pressedFrom
     char bytes0003[1] = { 0x45 }; // E
     char bytes0004[1] = { 0x50 }; // P
     char bytes000B[1]; // Model Bit - 0x27 - HD 500 ; 0x2D - HD 500X ; 0x28 - HD Desktop ; 0x29 - HD Pro ; 0x2E - HD ProX
-    char bytes000C[1]; // Major Version 0x01 == v1.x ; here set to v2.21
+    char bytes000C[1]; // Major Version 0x01 == v1.x ; here set to v2.26
     char bytes000D[1]; // Minor Version 0x06 == vx.06 ;
 
     char bytes0013[1]; // don't know, whats good for. Changing in random value doesn't matter
@@ -3002,40 +3002,40 @@ void MainWindow::convertPresetFiles(QStringList presetFiles, QString pressedFrom
 
     if (pressedFrom.compare("Desktop") == 0) {
         bytes000B[0] = '\x28'; // Model Bit - 0x27 - HD 500 ; 0x2D - HD 500X ; 0x28 - HD Desktop ; 0x29 - HD Pro ; 0x2E - HD ProX
-        bytes000C[0] = '\x02'; // Major Version 0x01 == v1.x ; here set to v2.21
-        bytes000D[0] = '\x21'; // Minor Version 0x06 == vx.06 ;
+        bytes000C[0] = '\x02'; // Major Version 0x01 == v1.x ; here set to v2.26
+        bytes000D[0] = '\x26'; // Minor Version 0x06 == vx.06 ;
 
         bytes0013[0] = '\x03'; // don't know, whats good for. Changing in random value doesn't matter
-        bytes0014[0] = '\x01'; // default with blank preset: HD Pro 0x04 0x00 0x02
-        bytes0015[0] = '\x01'; // HD 500 0x02 0x01 0x30 ; HD Desktop 0x03 0x01 0x01
+        bytes0014[0] = '\x02'; // default with blank preset: HD Pro 0x04 0x00 0x02
+        bytes0015[0] = '\x62'; // HD 500 0x02 0x01 0x30 ; HD Desktop 0x03 0x01 0x01
     } else if (pressedFrom.compare("500") == 0) {
-        bytes000B[0] = '\x27';
-        bytes000C[0] = '\x02';
-        bytes000D[0] = '\x21';
+        bytes000B[0] = '\x27'; // default for v2.26: HD Desktop: 0x03 0x02 0x62
+        bytes000C[0] = '\x02'; // HD 500 0x02 0x02 0x62 ; HD 500X 0x05 0x02 0x62
+        bytes000D[0] = '\x26'; // HD Pro 0x04 0x02 0x62 ; HD ProX 0x06 0x02 0x62
         bytes0013[0] = '\x02';
-        bytes0014[0] = '\x01';
-        bytes0015[0] = '\x30';
+        bytes0014[0] = '\x02';
+        bytes0015[0] = '\x62';
     } else if (pressedFrom.compare("500X") == 0) {
         bytes000B[0] = '\x2d';
         bytes000C[0] = '\x02';
-        bytes000D[0] = '\x21';
+        bytes000D[0] = '\x26';
         bytes0013[0] = '\x05';
-        bytes0014[0] = '\x00';
-        bytes0015[0] = '\x00';
+        bytes0014[0] = '\x02';
+        bytes0015[0] = '\x62';
     } else if (pressedFrom.compare("Pro") == 0) {
         bytes000B[0] = '\x29';
         bytes000C[0] = '\x02';
-        bytes000D[0] = '\x21';
+        bytes000D[0] = '\x26';
         bytes0013[0] = '\x04';
-        bytes0014[0] = '\x00';
-        bytes0015[0] = '\x02';
+        bytes0014[0] = '\x02';
+        bytes0015[0] = '\x62';
     } else if (pressedFrom.compare("ProX") == 0) {
         bytes000B[0] = '\x2E';
         bytes000C[0] = '\x02';
-        bytes000D[0] = '\x23';
+        bytes000D[0] = '\x26';
         bytes0013[0] = '\x06';
-        bytes0014[0] = '\x00';
-        bytes0015[0] = '\x00';
+        bytes0014[0] = '\x02';
+        bytes0015[0] = '\x62';
     }
 
     //const char bytes0DFA[] = { '\x07' };
@@ -3603,8 +3603,8 @@ void MainWindow::translatePresetFilesSmallToBig(QDir source, QStringList files, 
     // Empty .h5e File
 
     const unsigned char h5eStructure[] = {
-        0x48,0x35,0x45,0x50,0x00,0x00,0x00,0x01,0x7D,0x01,0x00,0x27,0x02,0x21,0x00,0x00,0x00,
-        0x14,0x00,0x02,0x01,0x30,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+        0x48,0x35,0x45,0x50,0x00,0x00,0x00,0x01,0x7D,0x01,0x00,0x27,0x02,0x26,0x00,0x00,0x00,
+        0x14,0x00,0x02,0x02,0x62,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
         0x00,0x00,0x00,0x00,0x00,0x00,0x4E,0x65,0x77,0x20,0x54,0x6F,0x6E,0x65,0x20,0x20,0x20,
         0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,
         0x20,0x20,0x20,0x20,0x00,0x01,0x00,0x07,0x00,0x00,0x00,0x00,0x00,0x07,0x00,0x0B,0x05,
